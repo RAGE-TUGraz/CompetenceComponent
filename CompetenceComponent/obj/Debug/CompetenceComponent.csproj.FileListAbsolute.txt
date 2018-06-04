@@ -1,0 +1,7 @@
+c:\users\mojaw\documents\visual studio 2017\Projects\CompetenceComponent\CompetenceComponent\bin\Debug\CompetenceComponent.dll
+c:\users\mojaw\documents\visual studio 2017\Projects\CompetenceComponent\CompetenceComponent\bin\Debug\CompetenceComponent.pdb
+c:\users\mojaw\documents\visual studio 2017\Projects\CompetenceComponent\CompetenceComponent\bin\Debug\RageAssetManager.dll
+c:\users\mojaw\documents\visual studio 2017\Projects\CompetenceComponent\CompetenceComponent\obj\Debug\CompetenceComponent.dll
+c:\users\mojaw\documents\visual studio 2017\Projects\CompetenceComponent\CompetenceComponent\obj\Debug\CompetenceComponent.pdb
+c:\users\mojaw\documents\visual studio 2017\Projects\CompetenceComponent\CompetenceComponent\bin\Debug\RageAssetManager.pdb
+c:\users\mojaw\documents\visual studio 2017\Projects\CompetenceComponent\CompetenceComponent\bin\Debug\RageAssetManager.xml
