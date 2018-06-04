@@ -1,0 +1,13 @@
+C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\obj\Debug\TestCompetenceComponent.csprojResolveAssemblyReference.cache
+C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\TestCompetenceComponent.exe.config
+C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\TestCompetenceComponent.exe
+C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\TestCompetenceComponent.pdb
+C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\CompetenceComponent.dll
+C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\RageAssetManager.dll
+C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\CompetenceComponent.pdb
+C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\RageAssetManager.pdb
+C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\RageAssetManager.xml
+C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\obj\Debug\TestCompetenceComponent.exe
+C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\obj\Debug\TestCompetenceComponent.pdb

@@ -1,16 +1,40 @@
-// <copyright file="CompetenceComponent.cs" company="RAGE">
-// Copyright (c) 2016 RAGE All rights reserved.
-// </copyright>
-// <author>mojaW</author>
-// <date>6/4/2018 12:32:53 PM</date>
+/*
+  Copyright 2016 TUGraz, http://www.tugraz.at/
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  This project has received funding from the European Union’s Horizon
+  2020 research and innovation programme under grant agreement No 644187.
+  You may obtain a copy of the License at
+  
+      http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  
+  This software has been created in the context of the EU-funded RAGE project.
+  Realising and Applied Gaming Eco-System (RAGE), Grant agreement No 644187, 
+  http://rageproject.eu/
+
+  Development was done by Cognitive Science Section (CSS) 
+  at Knowledge Technologies Institute (KTI)at Graz University of Technology (TUGraz).
+  http://kti.tugraz.at/css/
+
+  Created by: Matthias Maurer, TUGraz <mmaurer@tugraz.at>
+*/
+
 // <summary>Implements the CompetenceComponent class</summary>
-namespace AssetPackage
+namespace CompetenceComponentNamespace
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
 
     using AssetManagerPackage;
+    using AssetPackage;
 
     /// <summary>
     /// An asset.
@@ -24,6 +48,11 @@ namespace AssetPackage
         /// </summary>
         private CompetenceComponentSettings settings = null;
 
+        /// <summary>
+        /// Instance of the class CompetenceComponent - Singelton pattern
+        /// </summary>
+        static readonly CompetenceComponent instance = new CompetenceComponent();
+
         #endregion Fields
 
         #region Constructors
@@ -31,7 +60,7 @@ namespace AssetPackage
         /// <summary>
         /// Initializes a new instance of the CompetenceComponent.Asset class.
         /// </summary>
-        public CompetenceComponent()
+        private CompetenceComponent()
             : base()
         {
             //! Create Settings and let it's BaseSettings class assign Defaultvalues where it can.
@@ -68,12 +97,61 @@ namespace AssetPackage
             }
         }
 
+        /// <summary>
+        /// Getter for Instance of the DomainModelAsset - Singelton pattern
+        /// </summary>
+        public static CompetenceComponent Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
+
         #endregion Properties
 
         #region Methods
 
-        // Your code goes here.
+        /// <summary>
+        /// Method for updating a single competence
+        /// </summary>
+        /// <param name="competence">string id of the competence for the update</param>
+        /// <param name="success">true if the competence is upgraded, false if it is downgraded</param>
+        public void Update(string competence, bool success)
+        {
+            CompetenceComponentFunctionality.Update(competence, success);
+        }
+
+        /// <summary>
+        /// Request the string id of the next competence to test/train
+        /// </summary>
+        /// <returns> the string id of the competence to train/test</returns>
+        public string GetCompetenceRecommendation()
+        {
+            return CompetenceComponentFunctionality.GetCompetenceRecommendation();
+        }
 
         #endregion Methods
+        #region internal Methods
+
+        /// <summary>
+        /// Wrapper method for getting the getInterface method of the base Asset
+        /// </summary>
+        /// <typeparam name="T">Generic type parameter.</typeparam>
+        /// <returns>Corresponding Interface</returns>
+        internal T getInterfaceFromAsset<T>()
+        {
+            return this.getInterface<T>();
+        }
+
+        #endregion internal Methods
+        #region TestMethods
+
+        public DataModel getDataModel()
+        {
+            return CompetenceComponentFunctionality.loadDefaultDataModel();
+        }
+
+        #endregion
     }
 }

@@ -9,3 +9,4 @@ C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent\bin\Debug\CompetenceC
 C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent\bin\Debug\CompetenceComponent.pdb
 C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent\obj\Debug\CompetenceComponent.dll
 C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent\obj\Debug\CompetenceComponent.pdb
+C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent\obj\Debug\CompetenceComponent.csprojResolveAssemblyReference.cache

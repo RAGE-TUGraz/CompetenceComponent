@@ -38,6 +38,9 @@
     <Compile Include="..\CompetenceComponent\CompetenceComponent.cs">
       <Link>CompetenceComponent.cs</Link>
     </Compile>
+    <Compile Include="..\CompetenceComponent\CompetenceComponentFunctionality.cs">
+      <Link>CompetenceComponentFunctionality.cs</Link>
+    </Compile>
     <Compile Include="..\CompetenceComponent\CompetenceComponentSettings.cs">
       <Link>CompetenceComponentSettings.cs</Link>
     </Compile>

@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GameStorageClientAsset">
+      <HintPath>..\..\ClientSideGameStorageAsset\GameStorageClientAsset\bin\Debug\GameStorageClientAsset.dll</HintPath>
+    </Reference>
     <Reference Include="RageAssetManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\git\AssetManager\RageAssetManager\bin\Debug\RageAssetManager.dll</HintPath>
@@ -40,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompetenceComponent.cs" />
+    <Compile Include="CompetenceComponentFunctionality.cs" />
     <Compile Include="CompetenceComponentSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

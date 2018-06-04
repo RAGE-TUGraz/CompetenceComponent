@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompetenceComponent", "Comp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompetenceComponent_Portable", "CompetenceComponent_Portable\CompetenceComponent_Portable.csproj", "{A441FEE9-482A-418E-B046-795B2233B910}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCompetenceComponent", "TestCompetenceComponent\TestCompetenceComponent.csproj", "{D5D57501-875A-431B-803F-6F03EF1C37D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A441FEE9-482A-418E-B046-795B2233B910}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A441FEE9-482A-418E-B046-795B2233B910}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A441FEE9-482A-418E-B046-795B2233B910}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5D57501-875A-431B-803F-6F03EF1C37D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5D57501-875A-431B-803F-6F03EF1C37D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5D57501-875A-431B-803F-6F03EF1C37D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5D57501-875A-431B-803F-6F03EF1C37D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
