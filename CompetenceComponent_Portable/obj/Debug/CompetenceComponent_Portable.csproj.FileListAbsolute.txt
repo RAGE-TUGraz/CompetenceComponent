@@ -6,3 +6,11 @@ c:\users\mojaw\documents\visual studio 2017\Projects\CompetenceComponent\Compete
 c:\users\mojaw\documents\visual studio 2017\Projects\CompetenceComponent\CompetenceComponent_Portable\bin\Debug\RageAssetManager_Portable.xml
 c:\users\mojaw\documents\visual studio 2017\Projects\CompetenceComponent\CompetenceComponent_Portable\obj\Debug\MyFirstAsset_Portable_Portable.dll
 c:\users\mojaw\documents\visual studio 2017\Projects\CompetenceComponent\CompetenceComponent_Portable\obj\Debug\MyFirstAsset_Portable_Portable.pdb
+C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent_Portable\obj\Debug\CompetenceComponent_Portable.csprojResolveAssemblyReference.cache
+C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent_Portable\obj\Debug\MyFirstAsset_Portable_Portable.dll
+C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent_Portable\obj\Debug\MyFirstAsset_Portable_Portable.pdb
+C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent_Portable\bin\Debug\MyFirstAsset_Portable_Portable.dll
+C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent_Portable\bin\Debug\MyFirstAsset_Portable_Portable.pdb
+C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent_Portable\bin\Debug\RageAssetManager_Portable.dll
+C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent_Portable\bin\Debug\RageAssetManager_Portable.pdb
+C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent_Portable\bin\Debug\RageAssetManager_Portable.xml
