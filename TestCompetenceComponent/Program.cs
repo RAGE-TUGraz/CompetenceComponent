@@ -51,10 +51,42 @@ namespace TestCompetenceComponent
             //test loading/storing assessment object 
             //cc.Initialize();
             //cc.getAssessmentObject().printToConsole();
-            cc.Update("C2",true);
+            //cc.Update("C2",true);
             //cc.getAssessmentObject().printToConsole();
+            //cc.ResetCompetenceState();
+            //cc.getAssessmentObject().printToConsole();
+
             cc.ResetCompetenceState();
-            //cc.getAssessmentObject().printToConsole();
+            cc.getAssessmentObject().printToConsole();
+
+            bool doLoop = true;
+            while (doLoop)
+            {
+                string competence = cc.GetCompetenceRecommendation();
+                Console.WriteLine("Presented Competence: '"+ competence+"'");
+                Console.WriteLine("[e]...Exit   [p]...positive evidence   [n]...negative evidence");
+                ConsoleKeyInfo input = Console.ReadKey();
+                Console.WriteLine("");
+                if (input.KeyChar.Equals('e'))
+                {
+                    doLoop = false;
+                }
+                else
+                {
+                    switch (input.KeyChar)
+                    {
+                        case 'p':
+                            cc.Update(competence, true);
+                            break;
+                        case 'n':
+                            cc.Update(competence, false);
+                            break;
+                        default:
+                            continue;
+                    }
+                    cc.getAssessmentObject().printToConsole();
+                }
+            }
 
 
 
