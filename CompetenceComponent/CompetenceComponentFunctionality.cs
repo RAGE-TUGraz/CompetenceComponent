@@ -57,7 +57,7 @@ namespace CompetenceComponentNamespace
         /// Object dealing with assessment related matters
         /// </summary>
         private static CompetenceAssessmentObject assessmentObject;
-
+        
         #endregion
         #region TestMethods
 
@@ -80,6 +80,9 @@ namespace CompetenceComponentNamespace
         {
             //load current assessment state if there is one 
             assessmentObject = new CompetenceAssessmentObject();
+            assessmentObject.loadAssessmentState();
+
+            assessmentObject.updateDueToTimeGap();
         }
 
         /// <summary>
@@ -89,7 +92,7 @@ namespace CompetenceComponentNamespace
         /// <param name="success">true if the competence is upgraded, false if it is downgraded</param>
         internal static void Update(string competence, bool success)
         {
-            throw new NotImplementedException();
+            assessmentObject.update(competence,success);
         }
 
         internal static CompetenceComponentSettings getSettings()
@@ -103,7 +106,8 @@ namespace CompetenceComponentNamespace
         /// <returns> the string id of the competence to train/test</returns>
         public static string GetCompetenceRecommendation()
         {
-            throw new NotImplementedException();
+            AssessmentCompetence nextCompetence = CompetenceRecommendationObject.getCompetenceRecommendation(assessmentObject.competences);
+            return nextCompetence.id;
         }
 
         /// <summary>
@@ -153,6 +157,15 @@ namespace CompetenceComponentNamespace
             return gameStorage;
         }
 
+        internal static CompetenceAssessmentObject getAssessmentObject()
+        {
+            return assessmentObject;
+        }
+
+        internal static void resetCompetenceState()
+        {
+            assessmentObject.resetCompetenceState();
+        }
 
         #endregion
     }
@@ -261,7 +274,7 @@ namespace CompetenceComponentNamespace
     #endregion
     #region Assessment
 
-    internal class CompetenceAssessmentObject
+    public class CompetenceAssessmentObject
     {
         #region Fields 
         public List<AssessmentCompetence> competences;
@@ -269,15 +282,7 @@ namespace CompetenceComponentNamespace
         #region Constructor
         public CompetenceAssessmentObject()
         {
-            DataModel dataModel = CompetenceComponentFunctionality.loadDefaultDataModel();
-            competences = new List<AssessmentCompetence>();
-            CompetenceComponentSettings settings = CompetenceComponentFunctionality.getSettings();
-            float initialValue = (1.0f/(float)settings.NumberOfLevels)/2.0f;
-
-            foreach (Competence competence in dataModel.elements.competenceList)
-            {
-                competences.Add(new AssessmentCompetence(competence.id, initialValue));
-            }
+            createInitialValues();
         }
         #endregion
         #region Methods 
@@ -349,10 +354,72 @@ namespace CompetenceComponentNamespace
             gameStorage.SaveData(model, storageLocation, SerializingFormat.Xml);
         }
 
+        public void update(string competenceId, bool success)
+        {
+            AssessmentCompetence ac = getAssessmentCompetenceById(competenceId);
+            if (ac == null)
+            {
+                CompetenceComponentFunctionality.loggingCC("Cannot update competence '"+competenceId+"' - not existent in data model.");
+                return;
+            }
+
+            float updateValue = 1.0f / (float) CompetenceComponentFunctionality.getSettings().NumberOfLevels;
+            ac.value = success ? ac.value + updateValue : ac.value - updateValue;
+            ac.value = Math.Max(Math.Min(1, ac.value), 0);
+            ac.setTimestamp();
+            storeAssessmentState();
+        }
+
+        public void resetCompetenceState()
+        {
+            createInitialValues();
+            storeAssessmentState();
+        }
+
+        public void createInitialValues()
+        {
+            DataModel dataModel = CompetenceComponentFunctionality.loadDefaultDataModel();
+            competences = new List<AssessmentCompetence>();
+            CompetenceComponentSettings settings = CompetenceComponentFunctionality.getSettings();
+            float initialValue = (1.0f / (float)settings.NumberOfLevels) / 2.0f;
+
+            foreach (Competence competence in dataModel.elements.competenceList)
+            {
+                competences.Add(new AssessmentCompetence(competence.id, initialValue));
+            }
+        }
+
+        public void updateDueToTimeGap()
+        {
+            float linearDecreasion = CompetenceComponentFunctionality.getSettings().LinearDecreasionOfCompetenceValuePerDay;
+            foreach (AssessmentCompetence competence in competences)
+            {
+                TimeSpan deltaTime = competence.timestamp - DateTime.Now;
+                competence.value -= (float)deltaTime.TotalDays * linearDecreasion;
+                competence.value = Math.Max(competence.value,0f);
+                competence.setTimestamp();
+            }
+        }
+
+        #endregion
+        #region Testmethods
+
+        public void printToConsole()
+        {
+            CompetenceComponentFunctionality.loggingCC("Printing evaluation state:");
+            CompetenceComponentFunctionality.loggingCC("==========================");
+            CompetenceComponentFunctionality.loggingCC("Elements:");
+            foreach (AssessmentCompetence competence in competences)
+            {
+                CompetenceComponentFunctionality.loggingCC("         -" + competence.id + "::"+Math.Round(competence.value,2)+"::"+competence.timestamp.ToString());
+            }
+
+        }
+
         #endregion
     }
 
-    internal class AssessmentCompetence
+    public class AssessmentCompetence
     {
         #region Fields
         public string id;
@@ -372,6 +439,71 @@ namespace CompetenceComponentNamespace
             this.timestamp = DateTime.Now;
             this.value = value;
         }
+        #endregion
+    }
+
+    #endregion
+    #region Recommendation
+
+    public class CompetenceRecommendationObject
+    {
+        #region Fields
+        #endregion
+        #region Methods
+
+        public static AssessmentCompetence getCompetenceRecommendation(List<AssessmentCompetence> competences)
+        { 
+            //assign levels to competences according to number of levels
+            float levelWidth = 1.0f/(float)CompetenceComponentFunctionality.getSettings().NumberOfLevels;
+            Dictionary<AssessmentCompetence, int> competenceLevels = new Dictionary<AssessmentCompetence, int>();
+            foreach (AssessmentCompetence competence in competences)
+            {
+                int level = (int) Math.Floor(competence.value / levelWidth);
+                competenceLevels[competence] = level;
+            }
+
+            //get competences with lowest levels
+            List<AssessmentCompetence> minLevelCompetences = null;
+            int minLevel = int.MaxValue;
+            foreach (AssessmentCompetence competence in competences)
+            {
+                int competenceLevel = competenceLevels[competence];
+                if (competenceLevel < minLevel)
+                {
+                    minLevelCompetences = new List<AssessmentCompetence>();
+                    minLevel = competenceLevel;
+                }
+                if (minLevel == competenceLevel)
+                {
+                    minLevelCompetences.Add(competence);
+                }
+            }
+
+            //get competence with oldest timestamp
+            List<AssessmentCompetence> minLevelOldestTimestampCompetence = new List<AssessmentCompetence>();
+            DateTime oldestTimeStamp = DateTime.Now;
+            foreach (AssessmentCompetence competence in minLevelCompetences)
+            {
+                DateTime dateTime = competence.timestamp;
+                if (dateTime.CompareTo(oldestTimeStamp)<0)
+                {
+                    minLevelOldestTimestampCompetence = new List<AssessmentCompetence>();
+                    oldestTimeStamp = dateTime;
+                }
+                if (oldestTimeStamp.CompareTo(dateTime)==0)
+                {
+                    minLevelOldestTimestampCompetence.Add(competence);
+                }
+            }
+
+            //select random competence from min level oldest timestamp competences
+            Random rnd = new Random();
+            int r = rnd.Next(minLevelOldestTimestampCompetence.Count);
+            AssessmentCompetence selectedCompetence = minLevelOldestTimestampCompetence[r];
+
+            return selectedCompetence;
+        }
+
         #endregion
     }
 

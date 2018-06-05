@@ -11,3 +11,6 @@ C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\RageAss
 C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\RageAssetManager.xml
 C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\obj\Debug\TestCompetenceComponent.exe
 C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\obj\Debug\TestCompetenceComponent.pdb
+C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\GameStorageClientAsset.dll
+C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\GameStorageClientAsset.pdb
+C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\GameStorageClientAsset.dll.config

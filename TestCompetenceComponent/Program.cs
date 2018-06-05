@@ -47,8 +47,16 @@ namespace TestCompetenceComponent
             ccs.LinearDecreasionOfCompetenceValuePerDay = 0.1f;
             ccs.SourceFile = "dataModel.xml";
             cc.Settings = ccs;
-            
+
             //test loading/storing assessment object 
+            //cc.Initialize();
+            //cc.getAssessmentObject().printToConsole();
+            cc.Update("C2",true);
+            //cc.getAssessmentObject().printToConsole();
+            cc.ResetCompetenceState();
+            //cc.getAssessmentObject().printToConsole();
+
+
 
             Console.WriteLine("Press enter to exit....");
             Console.ReadLine();

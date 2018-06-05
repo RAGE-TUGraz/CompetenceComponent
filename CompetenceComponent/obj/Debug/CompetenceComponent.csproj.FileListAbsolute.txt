@@ -10,3 +10,6 @@ C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent\bin\Debug\CompetenceC
 C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent\obj\Debug\CompetenceComponent.dll
 C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent\obj\Debug\CompetenceComponent.pdb
 C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent\obj\Debug\CompetenceComponent.csprojResolveAssemblyReference.cache
+C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent\bin\Debug\GameStorageClientAsset.dll
+C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent\bin\Debug\GameStorageClientAsset.pdb
+C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent\bin\Debug\GameStorageClientAsset.dll.config

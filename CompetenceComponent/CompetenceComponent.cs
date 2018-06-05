@@ -53,6 +53,8 @@ namespace CompetenceComponentNamespace
         /// </summary>
         static readonly CompetenceComponent instance = new CompetenceComponent();
 
+        private bool isInitialized=false;
+
         #endregion Fields
 
         #region Constructors
@@ -119,6 +121,9 @@ namespace CompetenceComponentNamespace
         /// <param name="success">true if the competence is upgraded, false if it is downgraded</param>
         public void Update(string competence, bool success)
         {
+            if (!isInitialized)
+                Initialize();
+
             CompetenceComponentFunctionality.Update(competence, success);
         }
 
@@ -128,10 +133,28 @@ namespace CompetenceComponentNamespace
         /// <returns> the string id of the competence to train/test</returns>
         public string GetCompetenceRecommendation()
         {
+            if (!isInitialized)
+                Initialize();
+
             return CompetenceComponentFunctionality.GetCompetenceRecommendation();
+        }
+        
+        public void Initialize()
+        {
+            CompetenceComponentFunctionality.Initialize();
+            isInitialized = true;
+        }
+
+        public void ResetCompetenceState()
+        {
+            if (!isInitialized)
+                Initialize();
+
+            CompetenceComponentFunctionality.resetCompetenceState();
         }
 
         #endregion Methods
+
         #region internal Methods
 
         /// <summary>
@@ -145,11 +168,17 @@ namespace CompetenceComponentNamespace
         }
 
         #endregion internal Methods
+
         #region TestMethods
 
         public DataModel getDataModel()
         {
             return CompetenceComponentFunctionality.loadDefaultDataModel();
+        }
+
+        public CompetenceAssessmentObject getAssessmentObject()
+        {
+            return CompetenceComponentFunctionality.getAssessmentObject();
         }
 
         #endregion
