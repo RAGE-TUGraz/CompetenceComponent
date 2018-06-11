@@ -153,6 +153,17 @@ namespace CompetenceComponentNamespace
             CompetenceComponentFunctionality.resetCompetenceState();
         }
 
+        public Dictionary<string,int> getCompetenceLevels()
+        {
+            return CompetenceComponentFunctionality.getCompetencelevels();
+        }
+
+        public int getCompetenceLevel(string competenceId)
+        {
+            int level = getCompetenceLevels()[competenceId];
+            return level;
+        }
+
         #endregion Methods
 
         #region internal Methods

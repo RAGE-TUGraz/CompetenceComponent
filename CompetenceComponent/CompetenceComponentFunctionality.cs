@@ -167,6 +167,11 @@ namespace CompetenceComponentNamespace
             assessmentObject.resetCompetenceState();
         }
 
+        public static Dictionary<string,int> getCompetencelevels()
+        {
+            return assessmentObject.getCompetenceLevels();
+        }
+
         #endregion
     }
 
@@ -399,6 +404,20 @@ namespace CompetenceComponentNamespace
                 competence.value = Math.Max(competence.value,0f);
                 competence.setTimestamp();
             }
+        }
+
+        public Dictionary<string,int> getCompetenceLevels()
+        {
+            //assign levels to competences according to number of levels
+            float levelWidth = 1.0f / (float)CompetenceComponentFunctionality.getSettings().NumberOfLevels;
+            Dictionary<string, int> competenceLevels = new Dictionary<string, int>();
+            foreach (AssessmentCompetence competence in competences)
+            {
+                int level = (int)Math.Floor(competence.value / levelWidth);
+                competenceLevels[competence.id] = level;
+            }
+
+            return competenceLevels;
         }
 
         #endregion
