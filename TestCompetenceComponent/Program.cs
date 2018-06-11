@@ -49,15 +49,17 @@ namespace TestCompetenceComponent
             cc.Settings = ccs;
 
             //test loading/storing assessment object 
-            //cc.Initialize();
-            //cc.getAssessmentObject().printToConsole();
-            //cc.Update("C2",true);
-            //cc.getAssessmentObject().printToConsole();
-            //cc.ResetCompetenceState();
-            //cc.getAssessmentObject().printToConsole();
+            /*
+            cc.Initialize();
+            cc.getAssessmentObject().printToConsole();
+            cc.Update("C2",true);
+            Console.WriteLine(cc.getCompetenceLevel("C2"));
+            */
 
+            
             cc.ResetCompetenceState();
             cc.getAssessmentObject().printToConsole();
+
 
             bool doLoop = true;
             while (doLoop)
@@ -87,6 +89,7 @@ namespace TestCompetenceComponent
                     cc.getAssessmentObject().printToConsole();
                 }
             }
+            
 
 
 

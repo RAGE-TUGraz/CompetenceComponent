@@ -414,6 +414,7 @@ namespace CompetenceComponentNamespace
             foreach (AssessmentCompetence competence in competences)
             {
                 int level = (int)Math.Floor(competence.value / levelWidth);
+                level = Math.Min(level, CompetenceComponentFunctionality.getSettings().NumberOfLevels-1);
                 competenceLevels[competence.id] = level;
             }
 
