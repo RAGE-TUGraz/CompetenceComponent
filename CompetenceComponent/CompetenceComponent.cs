@@ -124,6 +124,10 @@ namespace CompetenceComponentNamespace
             if (!isInitialized)
                 Initialize();
 
+
+            if (!isInitialized)
+                return;
+
             CompetenceComponentFunctionality.Update(competence, success);
         }
 
@@ -135,31 +139,58 @@ namespace CompetenceComponentNamespace
         {
             if (!isInitialized)
                 Initialize();
+            
+            if (!isInitialized)
+                return null;
 
             return CompetenceComponentFunctionality.GetCompetenceRecommendation();
         }
         
         public void Initialize()
         {
-            CompetenceComponentFunctionality.Initialize();
-            isInitialized = true;
+            try
+            {
+                CompetenceComponentFunctionality.Initialize();
+                isInitialized = true;
+            }
+            catch (DataModelNotFoundException e)
+            {
+                CompetenceComponentFunctionality.loggingCC("Can't proceed - data model can not be loaded. File can not be found!");
+            }
         }
 
         public void ResetCompetenceState()
         {
             if (!isInitialized)
                 Initialize();
+            
+            if (!isInitialized)
+                return;
 
             CompetenceComponentFunctionality.resetCompetenceState();
         }
 
         public Dictionary<string,int> getCompetenceLevels()
         {
+
+            if (!isInitialized)
+                Initialize();
+
+            if (!isInitialized)
+                return null;
+
             return CompetenceComponentFunctionality.getCompetencelevels();
         }
 
         public int getCompetenceLevel(string competenceId)
         {
+
+            if (!isInitialized)
+                Initialize();
+
+            if (!isInitialized)
+                return -1;
+
             int level = getCompetenceLevels()[competenceId];
             return level;
         }

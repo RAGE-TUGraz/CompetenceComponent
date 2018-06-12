@@ -37,7 +37,8 @@ namespace TestCompetenceComponent
 {
     public class Bridge : IBridge, ILog, IDataStorage, IWebServiceRequest//, ISerializer
     {
-        string IDataStoragePath = @"C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\bin\";//"./";
+        //string IDataStoragePath = @"C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\bin\";//"./";
+        string IDataStoragePath = @"C:\Users\mojo\git\CompetenceComponent\TestCompetenceComponent\bin\";
 
         #region IDataStorage
 
@@ -49,7 +50,10 @@ namespace TestCompetenceComponent
         public bool Exists(string fileId)
         {
             string filePath = IDataStoragePath + fileId;
-            return (File.Exists(filePath));
+            bool exists = File.Exists(filePath);
+            if (!exists)
+                Log(Severity.Information,"Can't find file: "+filePath);
+            return (exists);
         }
 
         public string[] Files()

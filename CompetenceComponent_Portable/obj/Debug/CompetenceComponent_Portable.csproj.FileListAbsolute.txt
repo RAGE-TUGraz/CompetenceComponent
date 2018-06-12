@@ -14,3 +14,6 @@ C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent_Portable\bin\Debug\My
 C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent_Portable\bin\Debug\RageAssetManager_Portable.dll
 C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent_Portable\bin\Debug\RageAssetManager_Portable.pdb
 C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent_Portable\bin\Debug\RageAssetManager_Portable.xml
+C:\Users\mojo\git\CompetenceComponent\CompetenceComponent_Portable\obj\Debug\CompetenceComponent_Portable.csprojResolveAssemblyReference.cache
+C:\Users\mojo\git\CompetenceComponent\CompetenceComponent_Portable\obj\Debug\MyFirstAsset_Portable_Portable.dll
+C:\Users\mojo\git\CompetenceComponent\CompetenceComponent_Portable\obj\Debug\MyFirstAsset_Portable_Portable.pdb

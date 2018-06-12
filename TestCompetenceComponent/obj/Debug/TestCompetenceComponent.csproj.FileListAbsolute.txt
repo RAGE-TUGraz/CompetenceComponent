@@ -14,3 +14,14 @@ C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\obj\Debug\TestCom
 C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\GameStorageClientAsset.dll
 C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\GameStorageClientAsset.pdb
 C:\Users\mojaW\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\GameStorageClientAsset.dll.config
+C:\Users\mojo\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\TestCompetenceComponent.exe.config
+C:\Users\mojo\git\CompetenceComponent\TestCompetenceComponent\obj\Debug\TestCompetenceComponent.exe
+C:\Users\mojo\git\CompetenceComponent\TestCompetenceComponent\obj\Debug\TestCompetenceComponent.pdb
+C:\Users\mojo\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\TestCompetenceComponent.exe
+C:\Users\mojo\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\TestCompetenceComponent.pdb
+C:\Users\mojo\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\CompetenceComponent.dll
+C:\Users\mojo\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mojo\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\GameStorageClientAsset.dll
+C:\Users\mojo\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\CompetenceComponent.pdb
+C:\Users\mojo\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mojo\git\CompetenceComponent\TestCompetenceComponent\obj\Debug\TestCompetenceComponent.csprojResolveAssemblyReference.cache

@@ -29,6 +29,7 @@
 using System;
 using CompetenceComponentNamespace;
 using AssetManagerPackage;
+using System.Collections.Generic;
 
 namespace TestCompetenceComponent
 {
@@ -58,7 +59,7 @@ namespace TestCompetenceComponent
 
             
             cc.ResetCompetenceState();
-            cc.getAssessmentObject().printToConsole();
+            printCompetenceLevels(cc.getCompetenceLevels());
 
 
             bool doLoop = true;
@@ -86,7 +87,7 @@ namespace TestCompetenceComponent
                         default:
                             continue;
                     }
-                    cc.getAssessmentObject().printToConsole();
+                    printCompetenceLevels(cc.getCompetenceLevels());
                 }
             }
             
@@ -95,6 +96,15 @@ namespace TestCompetenceComponent
 
             Console.WriteLine("Press enter to exit....");
             Console.ReadLine();
+        }
+
+
+        public static void printCompetenceLevels(Dictionary<string, int> levels)
+        {
+            foreach (string competence in levels.Keys)
+            {
+                Console.WriteLine(competence+":  "+levels[competence] +"/"+ (((CompetenceComponentSettings)CompetenceComponent.Instance.Settings).NumberOfLevels-1).ToString());
+            }
         }
     }
 }

@@ -12,3 +12,7 @@ C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent\obj\Debug\CompetenceC
 C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent\bin\Debug\GameStorageClientAsset.dll
 C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent\bin\Debug\GameStorageClientAsset.pdb
 C:\Users\mojaW\git\CompetenceComponent\CompetenceComponent\bin\Debug\GameStorageClientAsset.dll.config
+C:\Users\mojo\git\CompetenceComponent\CompetenceComponent\bin\Debug\CompetenceComponent.dll
+C:\Users\mojo\git\CompetenceComponent\CompetenceComponent\bin\Debug\CompetenceComponent.pdb
+C:\Users\mojo\git\CompetenceComponent\CompetenceComponent\obj\Debug\CompetenceComponent.dll
+C:\Users\mojo\git\CompetenceComponent\CompetenceComponent\obj\Debug\CompetenceComponent.pdb

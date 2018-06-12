@@ -120,13 +120,13 @@ namespace CompetenceComponentNamespace
             CompetenceComponentSettings ccs = getSettings();
             
             IDataStorage ids = CompetenceComponent.Instance.getInterfaceFromAsset<IDataStorage>();
+            
             if (ids != null)
             {
                 if (!ids.Exists(ccs.SourceFile))
                 {
                     loggingCC("File " + ccs.SourceFile + " not found for loading data model.", Severity.Error);
-                    //throw new Exception("EXCEPTION: File "+ dmas.Source + " not found for loading Domain model.") ;
-                    return null;
+                    throw new DataModelNotFoundException("EXCEPTION: File "+ ccs.SourceFile + " not found for loading Domain model.") ;
                 }
 
                 loggingCC("Loading data model from File.");
@@ -527,5 +527,23 @@ namespace CompetenceComponentNamespace
         #endregion
     }
 
+    #endregion
+    #region Exceptions
+    public class DataModelNotFoundException : Exception
+    {
+        public DataModelNotFoundException()
+        {
+        }
+
+        public DataModelNotFoundException(string message)
+            : base(message)
+        {
+        }
+
+        public DataModelNotFoundException(string message, Exception inner)
+            : base(message, inner)
+        {
+        }
+    }
     #endregion
 }
