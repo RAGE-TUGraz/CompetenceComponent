@@ -57,41 +57,78 @@ namespace TestCompetenceComponent
             Console.WriteLine(cc.getCompetenceLevel("C2"));
             */
 
+            cc.getDataModel().printToCommandline();
             
             cc.ResetCompetenceState();
             printCompetenceLevels(cc.getCompetenceLevels());
 
+            bool doGamesituations = true;
 
             bool doLoop = true;
-            while (doLoop)
+            if (doGamesituations)
             {
-                string competence = cc.GetCompetenceRecommendation();
-                Console.WriteLine("Presented Competence: '"+ competence+"'");
-                Console.WriteLine("[e]...Exit   [p]...positive evidence   [n]...negative evidence");
-                ConsoleKeyInfo input = Console.ReadKey();
-                Console.WriteLine("");
-                if (input.KeyChar.Equals('e'))
+                //update according to gamesituations
+                while (doLoop)
                 {
-                    doLoop = false;
-                }
-                else
-                {
-                    switch (input.KeyChar)
+                    string gamesituation = cc.GetGamesituationRecommendation();
+                    Console.WriteLine("Presented Gamesituation: '" + gamesituation + "'");
+                    Console.WriteLine("[e]...Exit   [p]...positive evidence   [n]...negative evidence");
+                    ConsoleKeyInfo input = Console.ReadKey();
+                    Console.WriteLine("");
+                    if (input.KeyChar.Equals('e'))
                     {
-                        case 'p':
-                            cc.Update(competence, true);
-                            break;
-                        case 'n':
-                            cc.Update(competence, false);
-                            break;
-                        default:
-                            continue;
+                        doLoop = false;
                     }
-                    printCompetenceLevels(cc.getCompetenceLevels());
+                    else
+                    {
+                        switch (input.KeyChar)
+                        {
+                            case 'p':
+                                cc.UpdateGamesituation(gamesituation, true);
+                                break;
+                            case 'n':
+                                cc.UpdateGamesituation(gamesituation, false);
+                                break;
+                            default:
+                                continue;
+                        }
+                        printCompetenceLevels(cc.getCompetenceLevels());
+                    }
                 }
-            }
-            
 
+            }
+            else
+            {
+                // update according to competencies
+                while (doLoop)
+                {
+                    string competence = cc.GetCompetenceRecommendation();
+                    Console.WriteLine("Presented Competence: '" + competence + "'");
+                    Console.WriteLine("[e]...Exit   [p]...positive evidence   [n]...negative evidence");
+                    ConsoleKeyInfo input = Console.ReadKey();
+                    Console.WriteLine("");
+                    if (input.KeyChar.Equals('e'))
+                    {
+                        doLoop = false;
+                    }
+                    else
+                    {
+                        switch (input.KeyChar)
+                        {
+                            case 'p':
+                                cc.UpdateCompetence(competence, true);
+                                break;
+                            case 'n':
+                                cc.UpdateCompetence(competence, false);
+                                break;
+                            default:
+                                continue;
+                        }
+                        printCompetenceLevels(cc.getCompetenceLevels());
+                    }
+                }
+
+            }
 
 
             Console.WriteLine("Press enter to exit....");

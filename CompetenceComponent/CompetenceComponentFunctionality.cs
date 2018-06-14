@@ -90,9 +90,14 @@ namespace CompetenceComponentNamespace
         /// </summary>
         /// <param name="competence">string id of the competence for the update</param>
         /// <param name="success">true if the competence is upgraded, false if it is downgraded</param>
-        internal static void Update(string competence, bool success)
+        internal static void UpdateCompetence(string competence, bool success)
         {
-            assessmentObject.update(competence,success);
+            assessmentObject.updateCompetence(competence,success);
+        }
+
+        internal static void UpdateGamesituation(string gamesituation, bool success)
+        {
+            assessmentObject.updateGamesituation(gamesituation,success);
         }
 
         internal static CompetenceComponentSettings getSettings()
@@ -108,6 +113,11 @@ namespace CompetenceComponentNamespace
         {
             AssessmentCompetence nextCompetence = CompetenceRecommendationObject.getCompetenceRecommendation(assessmentObject.competences);
             return nextCompetence.id;
+        }
+
+        public static string GetGamesituationRecommendation()
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -213,10 +223,19 @@ namespace CompetenceComponentNamespace
         {
             CompetenceComponentFunctionality.loggingCC("Printing data model:");
             CompetenceComponentFunctionality.loggingCC("====================");
-            CompetenceComponentFunctionality.loggingCC("Elements:");
-            foreach (Competence competence in elements.competenceList)
+            CompetenceComponentFunctionality.loggingCC("Competencies:");
+            foreach (Competence competence in elements.competenceList.competences)
             {
-                CompetenceComponentFunctionality.loggingCC("         -"+competence.id);
+                CompetenceComponentFunctionality.loggingCC("             -" + competence.id);
+            }
+            CompetenceComponentFunctionality.loggingCC("Gamesituations:");
+            foreach (Gamesituation situation in elements.gamesituationList.gamesituations)
+            {
+                CompetenceComponentFunctionality.loggingCC("             -" + situation.id+"("+situation.difficulty+")");
+                foreach (GamesituationCompetence competence in situation.competences)
+                {
+                    CompetenceComponentFunctionality.loggingCC("                 -" + competence.id +"("+competence.weight+")");
+                }
             }
 
         }
@@ -225,10 +244,10 @@ namespace CompetenceComponentNamespace
         {
             DataModel dm = new DataModel();
             dm.elements = new Elements();
-            dm.elements.competenceList = new List<Competence>();
+            dm.elements.competenceList.competences = new List<Competence>();
             for (int i=0;i<numberOfCompetences;i++)
             {
-                dm.elements.competenceList.Add(new Competence("C"+(i+1).ToString()));
+                dm.elements.competenceList.competences.Add(new Competence("C"+(i+1).ToString()));
             }
             return dm;
         }
@@ -249,10 +268,24 @@ namespace CompetenceComponentNamespace
     {
         #region Properties
 
-        [XmlElement("competence")]
-        public List<Competence> competenceList { get; set; }
+
+        [XmlElement("competences")]
+        public CompetenceList competenceList { get; set; }
+
+        [XmlElement("gamesituations")]
+        public GamesituationList gamesituationList { get; set; }
 
         #endregion Properties
+    }
+
+    public class CompetenceList
+    {
+        #region Properties
+
+        [XmlElement("competence")]
+        public List<Competence> competences { get; set; }
+
+        #endregion
     }
 
     public class Competence
@@ -276,6 +309,47 @@ namespace CompetenceComponentNamespace
         #endregion
     }
 
+    public class GamesituationList
+    {
+        #region Properties
+
+        [XmlElement("gamesituation")]
+        public List<Gamesituation> gamesituations { get; set; }
+        
+        #endregion
+    }
+
+    public class Gamesituation
+    {
+        #region Properties
+
+        [XmlAttribute("id")]
+        public string id { get; set; }
+
+
+        [XmlAttribute("difficulty")]
+        public float difficulty { get; set; }
+
+
+        [XmlElement("competence")]
+        public List<GamesituationCompetence> competences { get; set; }
+
+        #endregion
+    }
+
+    public class GamesituationCompetence
+    {
+        #region Properties
+
+        [XmlAttribute("id")]
+        public string id { get; set; }
+
+        [XmlAttribute("weight")]
+        public float weight { get; set; }
+
+        #endregion
+    }
+
     #endregion
     #region Assessment
 
@@ -283,6 +357,7 @@ namespace CompetenceComponentNamespace
     {
         #region Fields 
         public List<AssessmentCompetence> competences;
+        public List<AssessmentGamesituation> gamesituations;
         #endregion
         #region Constructor
         public CompetenceAssessmentObject()
@@ -297,6 +372,14 @@ namespace CompetenceComponentNamespace
             foreach (AssessmentCompetence competence in competences)
                 if (competence.id.Equals(id))
                     return competence;
+            return null;
+        }
+
+        public AssessmentGamesituation getAssessmentGamesituationById(string id)
+        {
+            foreach (AssessmentGamesituation gamesituation in gamesituations)
+                if (gamesituation.id.Equals(id))
+                    return gamesituation;
             return null;
         }
 
@@ -359,7 +442,7 @@ namespace CompetenceComponentNamespace
             gameStorage.SaveData(model, storageLocation, SerializingFormat.Xml);
         }
 
-        public void update(string competenceId, bool success)
+        public void updateCompetence(string competenceId, bool success, float factor=1.0f)
         {
             AssessmentCompetence ac = getAssessmentCompetenceById(competenceId);
             if (ac == null)
@@ -367,12 +450,30 @@ namespace CompetenceComponentNamespace
                 CompetenceComponentFunctionality.loggingCC("Cannot update competence '"+competenceId+"' - not existent in data model.");
                 return;
             }
+            CompetenceComponentFunctionality.loggingCC("Update competence '" + competenceId + "' with factor "+factor);
 
             float updateValue = 1.0f / (float) CompetenceComponentFunctionality.getSettings().NumberOfLevels;
+            updateValue *= factor;
             ac.value = success ? ac.value + updateValue : ac.value - updateValue;
             ac.value = Math.Max(Math.Min(1, ac.value), 0);
             ac.setTimestamp();
             storeAssessmentState();
+        }
+
+        public void updateGamesituation(string gamesituationId, bool success)
+        {
+            AssessmentGamesituation situation = getAssessmentGamesituationById(gamesituationId);
+            if (situation == null)
+            {
+                CompetenceComponentFunctionality.loggingCC("Can't update: GS '"+gamesituationId+"' not found");
+                return;
+            }
+
+            CompetenceComponentFunctionality.loggingCC("Update according to GS '" + gamesituationId + "'");
+            foreach (AssessmentGamesituationCompetence competence in situation.competences)
+            {
+                updateCompetence(competence.id,success,situation.difficulty*competence.weight);
+            }
         }
 
         public void resetCompetenceState()
@@ -388,9 +489,15 @@ namespace CompetenceComponentNamespace
             CompetenceComponentSettings settings = CompetenceComponentFunctionality.getSettings();
             float initialValue = (1.0f / (float)settings.NumberOfLevels) / 2.0f;
 
-            foreach (Competence competence in dataModel.elements.competenceList)
+            foreach (Competence competence in dataModel.elements.competenceList.competences)
             {
                 competences.Add(new AssessmentCompetence(competence.id, initialValue));
+            }
+
+            gamesituations = new List<AssessmentGamesituation>();
+            foreach (Gamesituation situation in dataModel.elements.gamesituationList.gamesituations)
+            {
+                gamesituations.Add(new AssessmentGamesituation(situation));
             }
         }
 
@@ -458,6 +565,41 @@ namespace CompetenceComponentNamespace
             this.id = id;
             this.timestamp = DateTime.Now;
             this.value = value;
+        }
+        #endregion
+    }
+
+    public class AssessmentGamesituation
+    {
+        #region Fields
+        public string id;
+        public float difficulty;
+        public List<AssessmentGamesituationCompetence> competences = new List<AssessmentGamesituationCompetence>();
+        #endregion
+        #region Constructors
+        public AssessmentGamesituation(Gamesituation gamesituation)
+        {
+            id = gamesituation.id;
+            difficulty = gamesituation.difficulty;
+            foreach (GamesituationCompetence competence in gamesituation.competences)
+            {
+                competences.Add(new AssessmentGamesituationCompetence(competence));
+            }
+        }
+        #endregion
+    }
+
+    public class AssessmentGamesituationCompetence
+    {
+        #region Fields
+        public string id;
+        public float weight;
+        #endregion
+        #region Constructors
+        public AssessmentGamesituationCompetence(GamesituationCompetence competence)
+        {
+            id = competence.id;
+            weight = competence.weight;
         }
         #endregion
     }

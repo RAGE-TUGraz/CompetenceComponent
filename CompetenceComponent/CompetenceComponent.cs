@@ -119,7 +119,7 @@ namespace CompetenceComponentNamespace
         /// </summary>
         /// <param name="competence">string id of the competence for the update</param>
         /// <param name="success">true if the competence is upgraded, false if it is downgraded</param>
-        public void Update(string competence, bool success)
+        public void UpdateCompetence(string competence, bool success)
         {
             if (!isInitialized)
                 Initialize();
@@ -128,7 +128,24 @@ namespace CompetenceComponentNamespace
             if (!isInitialized)
                 return;
 
-            CompetenceComponentFunctionality.Update(competence, success);
+            CompetenceComponentFunctionality.UpdateCompetence(competence, success);
+        }
+
+        /// <summary>
+        /// Method for updating a single game situation
+        /// </summary>
+        /// <param name="gamesituation">string id of the gamesituation for the update</param>
+        /// <param name="success">true if the competence is upgraded, false if it is downgraded</param>
+        public void UpdateGamesituation(string gamesituation, bool success)
+        {
+            if (!isInitialized)
+                Initialize();
+
+
+            if (!isInitialized)
+                return;
+
+            CompetenceComponentFunctionality.UpdateGamesituation(gamesituation, success);
         }
 
         /// <summary>
@@ -145,7 +162,23 @@ namespace CompetenceComponentNamespace
 
             return CompetenceComponentFunctionality.GetCompetenceRecommendation();
         }
-        
+
+
+        /// <summary>
+        /// Request the string id of the next gamesituation to test/train
+        /// </summary>
+        /// <returns> the string id of the gamesituation to train/test</returns>
+        public string GetGamesituationRecommendation()
+        {
+            if (!isInitialized)
+                Initialize();
+
+            if (!isInitialized)
+                return null;
+
+            return CompetenceComponentFunctionality.GetGamesituationRecommendation();
+        }
+
         public void Initialize()
         {
             try
