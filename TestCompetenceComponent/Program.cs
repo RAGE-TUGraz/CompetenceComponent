@@ -59,10 +59,12 @@ namespace TestCompetenceComponent
 
             cc.getDataModel().printToCommandline();
             
+
+            //*
             cc.ResetCompetenceState();
             printCompetenceLevels(cc.getCompetenceLevels());
 
-            bool doGamesituations = true;
+            bool doGamesituations = false;
 
             bool doLoop = true;
             if (doGamesituations)
@@ -116,10 +118,10 @@ namespace TestCompetenceComponent
                         switch (input.KeyChar)
                         {
                             case 'p':
-                                cc.UpdateCompetence(competence, true);
+                                cc.UpdateCompetence(competence, true, UpdateType.ASSESSMENT);
                                 break;
                             case 'n':
-                                cc.UpdateCompetence(competence, false);
+                                cc.UpdateCompetence(competence, false, UpdateType.ASSESSMENT);
                                 break;
                             default:
                                 continue;
@@ -129,7 +131,7 @@ namespace TestCompetenceComponent
                 }
 
             }
-
+            //*/
 
             Console.WriteLine("Press enter to exit....");
             Console.ReadLine();

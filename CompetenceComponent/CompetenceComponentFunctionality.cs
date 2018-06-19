@@ -90,9 +90,9 @@ namespace CompetenceComponentNamespace
         /// </summary>
         /// <param name="competence">string id of the competence for the update</param>
         /// <param name="success">true if the competence is upgraded, false if it is downgraded</param>
-        internal static void UpdateCompetence(string competence, bool success)
+        internal static void UpdateCompetence(string competence, bool success, UpdateType type)
         {
-            assessmentObject.updateCompetence(competence,success);
+            assessmentObject.updateCompetence(competence,success,type);
         }
 
         internal static void UpdateGamesituation(string gamesituation, bool success)
@@ -231,7 +231,7 @@ namespace CompetenceComponentNamespace
             CompetenceComponentFunctionality.loggingCC("Gamesituations:");
             foreach (Gamesituation situation in elements.gamesituationList.gamesituations)
             {
-                CompetenceComponentFunctionality.loggingCC("             -" + situation.id+"("+situation.difficulty+")");
+                CompetenceComponentFunctionality.loggingCC("             -" + situation.id+"(D:"+situation.difficulty+",L:"+situation.isLearning+",A:"+situation.isAssessment+")");
                 foreach (GamesituationCompetence competence in situation.competences)
                 {
                     CompetenceComponentFunctionality.loggingCC("                 -" + competence.id +"("+competence.weight+")");
@@ -331,6 +331,13 @@ namespace CompetenceComponentNamespace
         public float difficulty { get; set; }
 
 
+        [XmlAttribute("assessment")]
+        public bool isAssessment { get; set; }
+
+
+        [XmlAttribute("learning")]
+        public bool isLearning { get; set; }
+
         [XmlElement("competence")]
         public List<GamesituationCompetence> competences { get; set; }
 
@@ -352,6 +359,8 @@ namespace CompetenceComponentNamespace
 
     #endregion
     #region Assessment
+
+    public enum UpdateType {ASSESSMENT, LEARNING};
 
     public class CompetenceAssessmentObject
     {
@@ -404,13 +413,15 @@ namespace CompetenceComponentNamespace
                     string loadedValue = (string)node.Value;
                     string id = node.Name;
                     string[] competenceValues = loadedValue.Split('&');
-                    float value = float.Parse(competenceValues[0]);
-                    DateTime timeStamp = DateTime.Parse(competenceValues[1]);
+                    float valueAssessment = float.Parse(competenceValues[0]);
+                    float valueLearning = float.Parse(competenceValues[1]);
+                    DateTime timeStamp = DateTime.Parse(competenceValues[2]);
 
                     AssessmentCompetence competence = getAssessmentCompetenceById(node.Name);
                     competence.timestamp = timeStamp;
                     //change value after loading here
-                    competence.value = value;
+                    competence.valueAssessment = valueAssessment;
+                    competence.valueLearning = valueLearning;
                 }
 
 
@@ -420,7 +431,7 @@ namespace CompetenceComponentNamespace
             {
                 CompetenceComponentFunctionality.loggingCC("Assessment state structure could not be restored from local file - creating new one.");
                 foreach (AssessmentCompetence comp in competences)
-                    gameStorage[model].AddChild(comp.id, storageLocation).Value = comp.value.ToString()+"&"+comp.timestamp;
+                    gameStorage[model].AddChild(comp.id, storageLocation).Value = comp.valueAssessment.ToString()+"&"+comp.valueLearning.ToString()+"&"+comp.timestamp;
 
                 gameStorage.SaveStructure(model, storageLocation, SerializingFormat.Xml);
                 gameStorage.SaveData(model, storageLocation, SerializingFormat.Xml);
@@ -436,13 +447,13 @@ namespace CompetenceComponentNamespace
             //gameStorage.AddModel(model);
 
             foreach (AssessmentCompetence comp in competences)
-                gameStorage[model].AddChild(comp.id, storageLocation).Value = comp.value.ToString() + "&" + comp.timestamp;
+                gameStorage[model].AddChild(comp.id, storageLocation).Value = comp.valueAssessment.ToString() + "&" +  comp.valueLearning.ToString() + "&" + comp.timestamp;
 
             //gameStorage.SaveStructure(model, storageLocation, SerializingFormat.Xml);
             gameStorage.SaveData(model, storageLocation, SerializingFormat.Xml);
         }
 
-        public void updateCompetence(string competenceId, bool success, float factor=1.0f)
+        public void updateCompetence(string competenceId, bool success, UpdateType type, float factor=1.0f)
         {
             AssessmentCompetence ac = getAssessmentCompetenceById(competenceId);
             if (ac == null)
@@ -450,12 +461,21 @@ namespace CompetenceComponentNamespace
                 CompetenceComponentFunctionality.loggingCC("Cannot update competence '"+competenceId+"' - not existent in data model.");
                 return;
             }
-            CompetenceComponentFunctionality.loggingCC("Update competence '" + competenceId + "' with factor "+factor);
+            CompetenceComponentFunctionality.loggingCC("Update competence '" + competenceId + "' with type '"+((type==UpdateType.ASSESSMENT) ? "Assessment" : "Learning" )+"' and with factor "+factor);
 
             float updateValue = 1.0f / (float) CompetenceComponentFunctionality.getSettings().NumberOfLevels;
             updateValue *= factor;
-            ac.value = success ? ac.value + updateValue : ac.value - updateValue;
-            ac.value = Math.Max(Math.Min(1, ac.value), 0);
+            if (type.Equals(UpdateType.ASSESSMENT))
+            {
+                ac.valueAssessment = success ? ac.valueAssessment + updateValue : ac.valueAssessment - updateValue;
+                ac.valueAssessment = Math.Max(Math.Min(1, ac.valueAssessment), 0);
+                ac.valueLearning = Math.Max(ac.valueAssessment, ac.valueLearning);
+            }
+            else if (type.Equals(UpdateType.LEARNING))
+            {
+                ac.valueLearning = success ? ac.valueLearning + updateValue : ac.valueLearning - updateValue;
+                ac.valueLearning = Math.Max(Math.Min(1, ac.valueLearning), 0);
+            }
             ac.setTimestamp();
             storeAssessmentState();
         }
@@ -472,7 +492,10 @@ namespace CompetenceComponentNamespace
             CompetenceComponentFunctionality.loggingCC("Update according to GS '" + gamesituationId + "'");
             foreach (AssessmentGamesituationCompetence competence in situation.competences)
             {
-                updateCompetence(competence.id,success,situation.difficulty*competence.weight);
+                if(situation.isLearning)
+                    updateCompetence(competence.id,success,UpdateType.LEARNING,situation.difficulty*competence.weight);
+                if(situation.isAssessment)
+                    updateCompetence(competence.id, success, UpdateType.ASSESSMENT, situation.difficulty * competence.weight);
             }
         }
 
@@ -507,8 +530,8 @@ namespace CompetenceComponentNamespace
             foreach (AssessmentCompetence competence in competences)
             {
                 TimeSpan deltaTime = competence.timestamp - DateTime.Now;
-                competence.value -= (float)deltaTime.TotalDays * linearDecreasion;
-                competence.value = Math.Max(competence.value,0f);
+                competence.valueAssessment -= (float)deltaTime.TotalDays * linearDecreasion;
+                competence.valueAssessment = Math.Max(competence.valueAssessment, 0f);
                 competence.setTimestamp();
             }
         }
@@ -520,7 +543,7 @@ namespace CompetenceComponentNamespace
             Dictionary<string, int> competenceLevels = new Dictionary<string, int>();
             foreach (AssessmentCompetence competence in competences)
             {
-                int level = (int)Math.Floor(competence.value / levelWidth);
+                int level = (int)Math.Floor(competence.valueAssessment / levelWidth);
                 level = Math.Min(level, CompetenceComponentFunctionality.getSettings().NumberOfLevels-1);
                 competenceLevels[competence.id] = level;
             }
@@ -538,7 +561,7 @@ namespace CompetenceComponentNamespace
             CompetenceComponentFunctionality.loggingCC("Elements:");
             foreach (AssessmentCompetence competence in competences)
             {
-                CompetenceComponentFunctionality.loggingCC("         -" + competence.id + "::"+Math.Round(competence.value,2)+"::"+competence.timestamp.ToString());
+                CompetenceComponentFunctionality.loggingCC("         -" + competence.id + "::"+Math.Round(competence.valueAssessment, 2)+"::"+competence.timestamp.ToString());
             }
 
         }
@@ -551,7 +574,8 @@ namespace CompetenceComponentNamespace
         #region Fields
         public string id;
         public DateTime timestamp;
-        public float value;
+        public float valueAssessment;
+        public float valueLearning;
         #endregion
         #region Methods
         public void setTimestamp()
@@ -564,7 +588,8 @@ namespace CompetenceComponentNamespace
         {
             this.id = id;
             this.timestamp = DateTime.Now;
-            this.value = value;
+            this.valueAssessment = value;
+            this.valueLearning = value;
         }
         #endregion
     }
@@ -574,6 +599,8 @@ namespace CompetenceComponentNamespace
         #region Fields
         public string id;
         public float difficulty;
+        public bool isLearning;
+        public bool isAssessment;
         public List<AssessmentGamesituationCompetence> competences = new List<AssessmentGamesituationCompetence>();
         #endregion
         #region Constructors
@@ -585,6 +612,8 @@ namespace CompetenceComponentNamespace
             {
                 competences.Add(new AssessmentGamesituationCompetence(competence));
             }
+            isLearning = gamesituation.isLearning;
+            isAssessment = gamesituation.isAssessment;
         }
         #endregion
     }
@@ -620,7 +649,7 @@ namespace CompetenceComponentNamespace
             Dictionary<AssessmentCompetence, int> competenceLevels = new Dictionary<AssessmentCompetence, int>();
             foreach (AssessmentCompetence competence in competences)
             {
-                int level = (int) Math.Floor(competence.value / levelWidth);
+                int level = (int) Math.Floor(competence.valueAssessment / levelWidth);
                 competenceLevels[competence] = level;
             }
 

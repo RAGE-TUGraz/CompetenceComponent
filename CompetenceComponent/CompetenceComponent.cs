@@ -119,7 +119,7 @@ namespace CompetenceComponentNamespace
         /// </summary>
         /// <param name="competence">string id of the competence for the update</param>
         /// <param name="success">true if the competence is upgraded, false if it is downgraded</param>
-        public void UpdateCompetence(string competence, bool success)
+        public void UpdateCompetence(string competence, bool success, UpdateType type)
         {
             if (!isInitialized)
                 Initialize();
@@ -128,7 +128,7 @@ namespace CompetenceComponentNamespace
             if (!isInitialized)
                 return;
 
-            CompetenceComponentFunctionality.UpdateCompetence(competence, success);
+            CompetenceComponentFunctionality.UpdateCompetence(competence, success, type);
         }
 
         /// <summary>
