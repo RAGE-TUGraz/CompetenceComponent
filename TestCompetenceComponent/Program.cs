@@ -47,6 +47,7 @@ namespace TestCompetenceComponent
             ccs.NumberOfLevels = 3;
             ccs.LinearDecreasionOfCompetenceValuePerDay = 0.1f;
             ccs.SourceFile = "dataModel.xml";
+            ccs.CompetencePauseTimeInSeconds = 5;
             cc.Settings = ccs;
 
             //test loading/storing assessment object 
@@ -73,28 +74,36 @@ namespace TestCompetenceComponent
                 while (doLoop)
                 {
                     string gamesituation = cc.GetGamesituationRecommendation();
-                    Console.WriteLine("Presented Gamesituation: '" + gamesituation + "'");
-                    Console.WriteLine("[e]...Exit   [p]...positive evidence   [n]...negative evidence");
-                    ConsoleKeyInfo input = Console.ReadKey();
-                    Console.WriteLine("");
-                    if (input.KeyChar.Equals('e'))
+                    if (gamesituation == null)
                     {
-                        doLoop = false;
+                        Console.WriteLine("There is no gamesituation to present. Try again after some time with Enter.");
+                        Console.ReadLine();
                     }
                     else
                     {
-                        switch (input.KeyChar)
+                        Console.WriteLine("Presented Gamesituation: '" + gamesituation + "'");
+                        Console.WriteLine("[e]...Exit   [p]...positive evidence   [n]...negative evidence");
+                        ConsoleKeyInfo input = Console.ReadKey();
+                        Console.WriteLine("");
+                        if (input.KeyChar.Equals('e'))
                         {
-                            case 'p':
-                                cc.UpdateGamesituation(gamesituation, true);
-                                break;
-                            case 'n':
-                                cc.UpdateGamesituation(gamesituation, false);
-                                break;
-                            default:
-                                continue;
+                            doLoop = false;
                         }
-                        printCompetenceLevels(cc.getCompetenceLevels());
+                        else
+                        {
+                            switch (input.KeyChar)
+                            {
+                                case 'p':
+                                    cc.UpdateGamesituation(gamesituation, true);
+                                    break;
+                                case 'n':
+                                    cc.UpdateGamesituation(gamesituation, false);
+                                    break;
+                                default:
+                                    continue;
+                            }
+                            printCompetenceLevels(cc.getCompetenceLevels());
+                        }
                     }
                 }
 
@@ -105,28 +114,36 @@ namespace TestCompetenceComponent
                 while (doLoop)
                 {
                     string competence = cc.GetCompetenceRecommendation();
-                    Console.WriteLine("Presented Competence: '" + competence + "'");
-                    Console.WriteLine("[e]...Exit   [p]...positive evidence   [n]...negative evidence");
-                    ConsoleKeyInfo input = Console.ReadKey();
-                    Console.WriteLine("");
-                    if (input.KeyChar.Equals('e'))
+                    if (competence == null)
                     {
-                        doLoop = false;
+                        Console.WriteLine("There is no competence to present. Try again after some time with Enter.");
+                        Console.ReadLine();
                     }
                     else
                     {
-                        switch (input.KeyChar)
+                        Console.WriteLine("Presented Competence: '" + competence + "'");
+                        Console.WriteLine("[e]...Exit   [p]...positive evidence   [n]...negative evidence");
+                        ConsoleKeyInfo input = Console.ReadKey();
+                        Console.WriteLine("");
+                        if (input.KeyChar.Equals('e'))
                         {
-                            case 'p':
-                                cc.UpdateCompetence(competence, true, UpdateType.ASSESSMENT);
-                                break;
-                            case 'n':
-                                cc.UpdateCompetence(competence, false, UpdateType.ASSESSMENT);
-                                break;
-                            default:
-                                continue;
+                            doLoop = false;
                         }
-                        printCompetenceLevels(cc.getCompetenceLevels());
+                        else
+                        {
+                            switch (input.KeyChar)
+                            {
+                                case 'p':
+                                    cc.UpdateCompetence(competence, true, UpdateType.ASSESSMENT);
+                                    break;
+                                case 'n':
+                                    cc.UpdateCompetence(competence, false, UpdateType.ASSESSMENT);
+                                    break;
+                                default:
+                                    continue;
+                            }
+                            printCompetenceLevels(cc.getCompetenceLevels());
+                        }
                     }
                 }
 

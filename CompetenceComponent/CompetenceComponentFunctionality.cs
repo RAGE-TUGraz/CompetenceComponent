@@ -111,13 +111,18 @@ namespace CompetenceComponentNamespace
         /// <returns> the string id of the competence to train/test</returns>
         public static string GetCompetenceRecommendation()
         {
-            AssessmentCompetence nextCompetence = CompetenceRecommendationObject.getCompetenceRecommendation(assessmentObject.competences);
+            AssessmentCompetence nextCompetence = RecommendationObject.getCompetenceRecommendation(assessmentObject.competences);
+            if (nextCompetence == null)
+                return null;
             return nextCompetence.id;
         }
 
         public static string GetGamesituationRecommendation()
         {
-            throw new NotImplementedException();
+            AssessmentGamesituation nextGamesituation = RecommendationObject.getGamesituationRecommendation(assessmentObject.gamesituations);
+            if (nextGamesituation == null)
+                return null;
+            return nextGamesituation.id;
         }
 
         /// <summary>
@@ -532,7 +537,7 @@ namespace CompetenceComponentNamespace
                 TimeSpan deltaTime = competence.timestamp - DateTime.Now;
                 competence.valueAssessment -= (float)deltaTime.TotalDays * linearDecreasion;
                 competence.valueAssessment = Math.Max(competence.valueAssessment, 0f);
-                competence.setTimestamp();
+                //competence.setTimestamp();
             }
         }
 
@@ -582,12 +587,35 @@ namespace CompetenceComponentNamespace
         {
             timestamp = DateTime.Now;
         }
+
+        public int getCompetenceLevel()
+        {
+            float levelWidth = 1.0f / (float)CompetenceComponentFunctionality.getSettings().NumberOfLevels;
+            
+            int level = (int)Math.Floor(valueAssessment / levelWidth);
+            level = Math.Min(level, CompetenceComponentFunctionality.getSettings().NumberOfLevels - 1);
+
+            return level;
+        }
+
+        public bool isPauseTimeOver()
+        {
+            int level = getCompetenceLevel();
+            int basePauseTime = CompetenceComponentFunctionality.getSettings().CompetencePauseTimeInSeconds;
+            DateTime overTime = timestamp.AddSeconds(basePauseTime*(level+1));
+            if (overTime>DateTime.Now)
+            {
+                return false;
+            }
+            return true;
+        }
+
         #endregion
         #region Constructors
         public AssessmentCompetence(string id, float value)
         {
             this.id = id;
-            this.timestamp = DateTime.Now;
+            this.timestamp = DateTime.Now.AddYears(-1);
             this.valueAssessment = value;
             this.valueLearning = value;
         }
@@ -636,7 +664,7 @@ namespace CompetenceComponentNamespace
     #endregion
     #region Recommendation
 
-    public class CompetenceRecommendationObject
+    public class RecommendationObject
     {
         #region Fields
         #endregion
@@ -653,20 +681,23 @@ namespace CompetenceComponentNamespace
                 competenceLevels[competence] = level;
             }
 
-            //get competences with lowest levels
-            List<AssessmentCompetence> minLevelCompetences = null;
+            //get competences with lowest levels and pause time over
+            List<AssessmentCompetence> minLevelCompetences = new List<AssessmentCompetence>();
             int minLevel = int.MaxValue;
             foreach (AssessmentCompetence competence in competences)
             {
-                int competenceLevel = competenceLevels[competence];
-                if (competenceLevel < minLevel)
+                if (competence.isPauseTimeOver())
                 {
-                    minLevelCompetences = new List<AssessmentCompetence>();
-                    minLevel = competenceLevel;
-                }
-                if (minLevel == competenceLevel)
-                {
-                    minLevelCompetences.Add(competence);
+                    int competenceLevel = competenceLevels[competence];
+                    if (competenceLevel < minLevel)
+                    {
+                        minLevelCompetences = new List<AssessmentCompetence>();
+                        minLevel = competenceLevel;
+                    }
+                    if (minLevel == competenceLevel)
+                    {
+                        minLevelCompetences.Add(competence);
+                    }
                 }
             }
 
@@ -687,7 +718,9 @@ namespace CompetenceComponentNamespace
                 }
             }
 
-            //select random competence from min level oldest timestamp competences
+            //select random competence from min level oldest timestamp competences if there is one
+            if (minLevelOldestTimestampCompetence.Count == 0)
+                return null;
             Random rnd = new Random();
             int r = rnd.Next(minLevelOldestTimestampCompetence.Count);
             AssessmentCompetence selectedCompetence = minLevelOldestTimestampCompetence[r];
@@ -695,6 +728,10 @@ namespace CompetenceComponentNamespace
             return selectedCompetence;
         }
 
+        public static AssessmentGamesituation getGamesituationRecommendation(List<AssessmentGamesituation> gamesituations)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 

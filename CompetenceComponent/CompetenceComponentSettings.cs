@@ -72,6 +72,19 @@ namespace CompetenceComponentNamespace
             set;
         }
 
+        /// Describes the pause time until a competence on level 0 is tested/learned again, on higher a multiple of it is taken
+        /// </summary>
+        ///
+        /// <value>
+        /// integer >= 1
+        /// </value>
+        [XmlElement()]
+        public int CompetencePauseTimeInSeconds
+        {
+            get;
+            set;
+        }
+
         /// <summary>
         /// Specifies how strong the competence value is decreased within 24 hours, linear
         /// </summary>
