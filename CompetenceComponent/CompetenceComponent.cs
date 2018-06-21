@@ -179,6 +179,9 @@ namespace CompetenceComponentNamespace
             return CompetenceComponentFunctionality.GetGamesituationRecommendation();
         }
 
+        /// <summary>
+        /// Is loading the dataModel and preparing the component's functionality
+        /// </summary>
         public void Initialize()
         {
             try

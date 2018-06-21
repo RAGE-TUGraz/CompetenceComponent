@@ -48,6 +48,7 @@ namespace TestCompetenceComponent
             ccs.LinearDecreasionOfCompetenceValuePerDay = 0.1f;
             ccs.SourceFile = "dataModel.xml";
             ccs.CompetencePauseTimeInSeconds = 5;
+            ccs.Phase = CompetenceComponentPhase.ASSESSMENT;
             cc.Settings = ccs;
 
             //test loading/storing assessment object 

@@ -33,6 +33,8 @@ namespace CompetenceComponentNamespace
     using System.Xml.Serialization;
     using AssetPackage;
 
+    public enum CompetenceComponentPhase {ASSESSMENT, DEFAULT};
+
     /// <summary>
     /// An asset settings.
     /// 
@@ -52,6 +54,8 @@ namespace CompetenceComponentNamespace
             NumberOfLevels = 3;
             LinearDecreasionOfCompetenceValuePerDay = 0.1f;
             SourceFile = "dataModel.xml";
+            Phase = CompetenceComponentPhase.DEFAULT;
+            CompetencePauseTimeInSeconds = 60*24;
         }
 
         #endregion Constructors
@@ -67,6 +71,20 @@ namespace CompetenceComponentNamespace
         /// </value>
         [XmlElement()]
         public int NumberOfLevels
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Number of levels within a competence
+        /// </summary>
+        ///
+        /// <value>
+        /// integer >= 1
+        /// </value>
+        [XmlElement()]
+        public CompetenceComponentPhase Phase
         {
             get;
             set;
