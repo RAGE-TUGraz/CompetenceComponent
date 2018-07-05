@@ -152,7 +152,7 @@ namespace CompetenceComponentNamespace
         /// Request the string id of the next competence to test/train
         /// </summary>
         /// <returns> the string id of the competence to train/test</returns>
-        public string GetCompetenceRecommendation()
+        public string GetCompetenceRecommendation(UpdateType type)
         {
             if (!isInitialized)
                 Initialize();
@@ -160,7 +160,7 @@ namespace CompetenceComponentNamespace
             if (!isInitialized)
                 return null;
 
-            return CompetenceComponentFunctionality.GetCompetenceRecommendation();
+            return CompetenceComponentFunctionality.GetCompetenceRecommendation(type);
         }
 
 

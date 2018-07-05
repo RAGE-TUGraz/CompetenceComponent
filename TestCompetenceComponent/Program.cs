@@ -114,7 +114,7 @@ namespace TestCompetenceComponent
                 // update according to competencies
                 while (doLoop)
                 {
-                    string competence = cc.GetCompetenceRecommendation();
+                    string competence = cc.GetCompetenceRecommendation(UpdateType.ASSESSMENT);
                     if (competence == null)
                     {
                         Console.WriteLine("There is no competence to present. Try again after some time with Enter.");

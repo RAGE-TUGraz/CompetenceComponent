@@ -109,9 +109,9 @@ namespace CompetenceComponentNamespace
         /// Request the string id of the next competence to test/train
         /// </summary>
         /// <returns> the string id of the competence to train/test</returns>
-        public static string GetCompetenceRecommendation()
+        public static string GetCompetenceRecommendation(UpdateType type)
         {
-            AssessmentCompetence nextCompetence = RecommendationObject.getCompetenceRecommendation(assessmentObject.competences);
+            AssessmentCompetence nextCompetence = RecommendationObject.getCompetenceRecommendation(assessmentObject.competences, type);
             if (nextCompetence == null)
                 return null;
             return nextCompetence.id;
@@ -367,6 +367,8 @@ namespace CompetenceComponentNamespace
 
     public enum UpdateType {ASSESSMENT, LEARNING};
 
+    public enum Timestamp { ASSESSMENT, LEARNING, FORGETTING };
+
     public class CompetenceAssessmentObject
     {
         #region Fields 
@@ -420,10 +422,14 @@ namespace CompetenceComponentNamespace
                     string[] competenceValues = loadedValue.Split('&');
                     float valueAssessment = float.Parse(competenceValues[0]);
                     float valueLearning = float.Parse(competenceValues[1]);
-                    DateTime timeStamp = DateTime.Parse(competenceValues[2]);
+                    DateTime timeStamp1 = DateTime.Parse(competenceValues[2]);
+                    DateTime timeStamp2 = DateTime.Parse(competenceValues[3]);
+                    DateTime timeStamp3 = DateTime.Parse(competenceValues[4]);
 
                     AssessmentCompetence competence = getAssessmentCompetenceById(node.Name);
-                    competence.timestamp = timeStamp;
+                    competence.timestampAssessment = timeStamp1;
+                    competence.timestampLearning = timeStamp2;
+                    competence.timestampForgetting = timeStamp3;
                     //change value after loading here
                     competence.valueAssessment = valueAssessment;
                     competence.valueLearning = valueLearning;
@@ -436,7 +442,8 @@ namespace CompetenceComponentNamespace
             {
                 CompetenceComponentFunctionality.loggingCC("Assessment state structure could not be restored from local file - creating new one.");
                 foreach (AssessmentCompetence comp in competences)
-                    gameStorage[model].AddChild(comp.id, storageLocation).Value = comp.valueAssessment.ToString()+"&"+comp.valueLearning.ToString()+"&"+comp.timestamp;
+                    gameStorage[model].AddChild(comp.id, storageLocation).Value = comp.valueAssessment.ToString()+"&"+comp.valueLearning.ToString()
+                        + "&" + comp.timestampAssessment + "&" + comp.timestampLearning + "&" + comp.timestampForgetting;
 
                 gameStorage.SaveStructure(model, storageLocation, SerializingFormat.Xml);
                 gameStorage.SaveData(model, storageLocation, SerializingFormat.Xml);
@@ -452,7 +459,8 @@ namespace CompetenceComponentNamespace
             //gameStorage.AddModel(model);
 
             foreach (AssessmentCompetence comp in competences)
-                gameStorage[model].AddChild(comp.id, storageLocation).Value = comp.valueAssessment.ToString() + "&" +  comp.valueLearning.ToString() + "&" + comp.timestamp;
+                gameStorage[model].AddChild(comp.id, storageLocation).Value = comp.valueAssessment.ToString() + "&" +  comp.valueLearning.ToString() 
+                    + "&" + comp.timestampAssessment + "&" + comp.timestampLearning + "&" + comp.timestampForgetting;
 
             //gameStorage.SaveStructure(model, storageLocation, SerializingFormat.Xml);
             gameStorage.SaveData(model, storageLocation, SerializingFormat.Xml);
@@ -481,7 +489,8 @@ namespace CompetenceComponentNamespace
                 ac.valueLearning = success ? ac.valueLearning + updateValue : ac.valueLearning - updateValue;
                 ac.valueLearning = Math.Max(Math.Min(1, ac.valueLearning), 0);
             }
-            ac.setTimestamp();
+            Timestamp stamp = type.Equals(UpdateType.ASSESSMENT) ? Timestamp.ASSESSMENT : Timestamp.LEARNING;
+            ac.setTimestamp(stamp);
             storeAssessmentState();
         }
 
@@ -534,10 +543,17 @@ namespace CompetenceComponentNamespace
             float linearDecreasion = CompetenceComponentFunctionality.getSettings().LinearDecreasionOfCompetenceValuePerDay;
             foreach (AssessmentCompetence competence in competences)
             {
-                TimeSpan deltaTime = competence.timestamp - DateTime.Now;
-                competence.valueAssessment -= (float)deltaTime.TotalDays * linearDecreasion;
+                DateTime baseTimeAssessment = (competence.timestampAssessment > competence.timestampForgetting ? competence.timestampAssessment : competence.timestampForgetting);
+                TimeSpan deltaTimeAssessment = baseTimeAssessment - DateTime.Now;
+                competence.valueAssessment -= (float)deltaTimeAssessment.TotalDays * linearDecreasion;
                 competence.valueAssessment = Math.Max(competence.valueAssessment, 0f);
-                //competence.setTimestamp();
+
+                DateTime baseTimeLearning = (competence.timestampLearning > competence.timestampForgetting ? competence.timestampLearning : competence.timestampForgetting);
+                TimeSpan deltaTimeLearning = baseTimeLearning - DateTime.Now;
+                competence.valueLearning -= (float)deltaTimeLearning.TotalDays * linearDecreasion;
+                competence.valueLearning = Math.Max(competence.valueLearning, 0f);
+
+                competence.setTimestamp(Timestamp.FORGETTING);
             }
         }
 
@@ -566,7 +582,7 @@ namespace CompetenceComponentNamespace
             CompetenceComponentFunctionality.loggingCC("Elements:");
             foreach (AssessmentCompetence competence in competences)
             {
-                CompetenceComponentFunctionality.loggingCC("         -" + competence.id + "::"+Math.Round(competence.valueAssessment, 2)+"::"+competence.timestamp.ToString());
+                CompetenceComponentFunctionality.loggingCC("         -" + competence.id + "::"+Math.Round(competence.valueAssessment, 2)+"::"+competence.timestampAssessment.ToString());
             }
 
         }
@@ -578,31 +594,52 @@ namespace CompetenceComponentNamespace
     {
         #region Fields
         public string id;
-        public DateTime timestamp;
+        public DateTime timestampAssessment;
+        public DateTime timestampLearning;
+        public DateTime timestampForgetting;
         public float valueAssessment;
         public float valueLearning;
         #endregion
         #region Methods
-        public void setTimestamp()
+        public void setTimestamp(Timestamp stamp)
         {
-            timestamp = DateTime.Now;
+            switch(stamp)
+            {
+                case Timestamp.ASSESSMENT:
+                    timestampAssessment = DateTime.Now;
+                    break;
+                case Timestamp.LEARNING:
+                    timestampLearning = DateTime.Now;
+                    break;
+                case Timestamp.FORGETTING:
+                    timestampForgetting = DateTime.Now;
+                    break;
+            }
         }
 
-        public int getCompetenceLevel()
+        public int getCompetenceLevel(UpdateType type)
         {
-            float levelWidth = 1.0f / (float)CompetenceComponentFunctionality.getSettings().NumberOfLevels;
-            
-            int level = (int)Math.Floor(valueAssessment / levelWidth);
-            level = Math.Min(level, CompetenceComponentFunctionality.getSettings().NumberOfLevels - 1);
+            return getCompetenceLevel(type, CompetenceComponentFunctionality.getSettings().NumberOfLevels);
+        }
+
+        public int getCompetenceLevel(UpdateType type, int numberOfLevels)
+        {
+            float levelWidth = 1.0f / (float)numberOfLevels;
+
+            float baseValue = (type.Equals(UpdateType.ASSESSMENT)) ? valueAssessment : valueLearning;
+            int level = (int)Math.Floor(baseValue / levelWidth);
+            level = Math.Min(level, numberOfLevels - 1);
 
             return level;
         }
 
-        public bool isPauseTimeOver()
+        public bool isPauseTimeOver(UpdateType type)
         {
-            int level = getCompetenceLevel();
+            int level = getCompetenceLevel(type);
             int basePauseTime = CompetenceComponentFunctionality.getSettings().CompetencePauseTimeInSeconds;
-            DateTime overTime = timestamp.AddSeconds(basePauseTime*(level+1));
+            Timestamp stamp = (type.Equals(UpdateType.ASSESSMENT)) ? Timestamp.ASSESSMENT : Timestamp.LEARNING;
+            DateTime baseTime = (stamp.Equals(Timestamp.ASSESSMENT)) ? timestampAssessment : timestampLearning;
+            DateTime overTime = baseTime.AddSeconds(basePauseTime*(level+1));
             if (overTime>DateTime.Now)
             {
                 return false;
@@ -615,7 +652,10 @@ namespace CompetenceComponentNamespace
         public AssessmentCompetence(string id, float value)
         {
             this.id = id;
-            this.timestamp = DateTime.Now.AddYears(-1);
+            int pauseTimeSeconds = CompetenceComponentFunctionality.getSettings().CompetencePauseTimeInSeconds;
+            this.timestampAssessment = DateTime.Now.AddSeconds(-1-pauseTimeSeconds);
+            this.timestampLearning = this.timestampAssessment;
+            this.timestampForgetting = this.timestampAssessment;
             this.valueAssessment = value;
             this.valueLearning = value;
         }
@@ -670,14 +710,13 @@ namespace CompetenceComponentNamespace
         #endregion
         #region Methods
 
-        public static AssessmentCompetence getCompetenceRecommendation(List<AssessmentCompetence> competences)
+        public static AssessmentCompetence getCompetenceRecommendation(List<AssessmentCompetence> competences, UpdateType type)
         { 
             //assign levels to competences according to number of levels
-            float levelWidth = 1.0f/(float)CompetenceComponentFunctionality.getSettings().NumberOfLevels;
             Dictionary<AssessmentCompetence, int> competenceLevels = new Dictionary<AssessmentCompetence, int>();
             foreach (AssessmentCompetence competence in competences)
             {
-                int level = (int) Math.Floor(competence.valueAssessment / levelWidth);
+                int level = competence.getCompetenceLevel(type);
                 competenceLevels[competence] = level;
             }
 
@@ -686,7 +725,7 @@ namespace CompetenceComponentNamespace
             int minLevel = int.MaxValue;
             foreach (AssessmentCompetence competence in competences)
             {
-                if (competence.isPauseTimeOver())
+                if (competence.isPauseTimeOver(type))
                 {
                     int competenceLevel = competenceLevels[competence];
                     if (competenceLevel < minLevel)
@@ -706,7 +745,7 @@ namespace CompetenceComponentNamespace
             DateTime oldestTimeStamp = DateTime.Now;
             foreach (AssessmentCompetence competence in minLevelCompetences)
             {
-                DateTime dateTime = competence.timestamp;
+                DateTime dateTime = (type.Equals(UpdateType.ASSESSMENT)) ? competence.timestampAssessment : competence.timestampLearning;
                 if (dateTime.CompareTo(oldestTimeStamp)<0)
                 {
                     minLevelOldestTimestampCompetence = new List<AssessmentCompetence>();
