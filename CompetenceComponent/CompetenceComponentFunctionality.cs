@@ -199,6 +199,9 @@ namespace CompetenceComponentNamespace
         [XmlElement("elements")]
         public Elements elements { get; set; }
 
+        [XmlElement("mappings")]
+        public Mappings mappings { get; set; }
+
         #endregion
         #region Methods
 
@@ -242,6 +245,11 @@ namespace CompetenceComponentNamespace
                     CompetenceComponentFunctionality.loggingCC("                 -" + competence.id +"("+competence.weight+")");
                 }
             }
+            CompetenceComponentFunctionality.loggingCC("Difficulties:");
+            foreach (Difficulty difficulty in mappings.difficulties.difficultyList)
+            {
+                CompetenceComponentFunctionality.loggingCC("             -" + difficulty.id +":"+ difficulty.weigth);
+            }
 
         }
 
@@ -267,6 +275,48 @@ namespace CompetenceComponentNamespace
             }
         }
         #endregion Methods
+    }
+
+    public class Mappings
+    {
+        #region Properties
+        [XmlElement("difficulties")]
+        public Difficulties difficulties { get; set; }
+        #endregion
+    }
+
+    public class Difficulties
+    {
+        #region Properties
+        [XmlElement("difficulty")]
+        public List<Difficulty> difficultyList { get; set; }
+        #endregion
+        #region Methods
+
+        public float getDifficulty(string id)
+        {
+            foreach (Difficulty difficulty in difficultyList)
+            {
+                if (id.Equals(difficulty.id))
+                {
+                    return difficulty.weigth;
+                }
+            }
+            return -1;
+        }
+        #endregion
+    }
+
+    public class Difficulty
+    {
+        #region Properties
+        [XmlAttribute("id")]
+        public string id { get; set; }
+
+        [XmlAttribute("weight")]
+        public float weigth { get; set; }
+
+        #endregion
     }
 
     public class Elements
@@ -333,7 +383,7 @@ namespace CompetenceComponentNamespace
 
 
         [XmlAttribute("difficulty")]
-        public float difficulty { get; set; }
+        public string difficulty { get; set; }
 
 
         [XmlAttribute("assessment")]
@@ -374,6 +424,7 @@ namespace CompetenceComponentNamespace
         #region Fields 
         public List<AssessmentCompetence> competences;
         public List<AssessmentGamesituation> gamesituations;
+        public Difficulties difficulties;
         #endregion
         #region Constructor
         public CompetenceAssessmentObject()
@@ -522,6 +573,7 @@ namespace CompetenceComponentNamespace
         public void createInitialValues()
         {
             DataModel dataModel = CompetenceComponentFunctionality.loadDefaultDataModel();
+            difficulties = dataModel.mappings.difficulties;
             competences = new List<AssessmentCompetence>();
             CompetenceComponentSettings settings = CompetenceComponentFunctionality.getSettings();
             float initialValue = (1.0f / (float)settings.NumberOfLevels) / 2.0f;
@@ -534,7 +586,7 @@ namespace CompetenceComponentNamespace
             gamesituations = new List<AssessmentGamesituation>();
             foreach (Gamesituation situation in dataModel.elements.gamesituationList.gamesituations)
             {
-                gamesituations.Add(new AssessmentGamesituation(situation));
+                gamesituations.Add(new AssessmentGamesituation(situation,difficulties));
             }
         }
 
@@ -672,10 +724,14 @@ namespace CompetenceComponentNamespace
         public List<AssessmentGamesituationCompetence> competences = new List<AssessmentGamesituationCompetence>();
         #endregion
         #region Constructors
-        public AssessmentGamesituation(Gamesituation gamesituation)
+        public AssessmentGamesituation(Gamesituation gamesituation, Difficulties difficulties)
         {
             id = gamesituation.id;
-            difficulty = gamesituation.difficulty;
+            difficulty = difficulties.getDifficulty(gamesituation.difficulty);
+            if (difficulty < 0)
+            {
+                throw new Exception("Can't find difficulty '"+ gamesituation.difficulty + "' in data model, section datamodel-mappings-difficulties-difficulty-id.");
+            }
             foreach (GamesituationCompetence competence in gamesituation.competences)
             {
                 competences.Add(new AssessmentGamesituationCompetence(competence));
