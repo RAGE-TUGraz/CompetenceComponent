@@ -56,6 +56,7 @@ namespace CompetenceComponentNamespace
             SourceFile = "dataModel.xml";
             Phase = CompetenceComponentPhase.DEFAULT;
             CompetencePauseTimeInSeconds = 60*24;
+            ThreasholdRecommendationSelection = 24;
         }
 
         #endregion Constructors
@@ -126,6 +127,21 @@ namespace CompetenceComponentNamespace
         /// </value>
         [XmlElement()]
         public string SourceFile
+        {
+            get;
+            set;
+        }
+
+
+        /// <summary>
+        /// Specifies which value need to be reached by competencies to be select an assessment game situation
+        /// </summary>
+        ///
+        /// <value>
+        /// float 0<=value
+        /// </value>
+        [XmlElement()]
+        public float ThreasholdRecommendationSelection
         {
             get;
             set;
