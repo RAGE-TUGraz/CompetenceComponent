@@ -795,11 +795,13 @@ namespace CompetenceComponentNamespace
 
         public float getDifficultyCompetenceLevelFactor(AssessmentCompetence competence, UpdateType type)
         {
-            //returns two interger: possessed difficulty >=1, and max difficulty
+            //returns two interger: possessed difficulty >=1, and <= max difficulty
             int[] difficultyRating = CompetenceComponentFunctionality.assessmentObject.getDifficultyRating(difficulty);
-            //get recommendation level: >=0 AND < max difficulty 
-            competence.getCompetenceLevel(type, difficultyRating[1]);
-            return 1f;
+            //get recommendation level: >=1 AND <= max difficulty 
+            int level = 1+ competence.getCompetenceLevel(type, difficultyRating[1]);
+            float returnValue = 0.5f + ((float)Math.Abs(level - difficultyRating[0]))/((float)difficultyRating[1]);
+
+            return returnValue;
         }
 
         #endregion
