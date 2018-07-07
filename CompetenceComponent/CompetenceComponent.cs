@@ -206,7 +206,14 @@ namespace CompetenceComponentNamespace
             CompetenceComponentFunctionality.resetCompetenceState();
         }
 
-        public Dictionary<string,int> getCompetenceLevels()
+        /// <summary>
+        /// Returns the currently possessed competence levels
+        /// </summary>
+        /// <returns>
+        /// return[0]...assessment
+        /// return[1]...learning
+        /// </returns>
+        public Dictionary<string,int[]> getCompetenceLevels()
         {
 
             if (!isInitialized)
@@ -218,7 +225,7 @@ namespace CompetenceComponentNamespace
             return CompetenceComponentFunctionality.getCompetencelevels();
         }
 
-        public int getCompetenceLevel(string competenceId)
+        public int getCompetenceLevel(string competenceId, UpdateType type)
         {
 
             if (!isInitialized)
@@ -227,7 +234,9 @@ namespace CompetenceComponentNamespace
             if (!isInitialized)
                 return -1;
 
-            int level = getCompetenceLevels()[competenceId];
+            int pos = type.Equals(UpdateType.ASSESSMENT) ? 0 : 1;
+
+            int level = getCompetenceLevels()[competenceId][pos];
             return level;
         }
 

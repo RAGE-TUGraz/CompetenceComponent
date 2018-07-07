@@ -46,9 +46,10 @@ namespace TestCompetenceComponent
             CompetenceComponentSettings ccs = new CompetenceComponentSettings();
             ccs.NumberOfLevels = 3;
             ccs.LinearDecreasionOfCompetenceValuePerDay = 0.1f;
-            ccs.SourceFile = "dataModel.xml";
+            ccs.SourceFile = "dataModel2.xml";
             ccs.CompetencePauseTimeInSeconds = 5;
-            ccs.Phase = CompetenceComponentPhase.ASSESSMENT;
+            ccs.Phase = CompetenceComponentPhase.DEFAULT;
+            ccs.ThreasholdRecommendationSelection = 1 / (60*60);
             cc.Settings = ccs;
 
             //test loading/storing assessment object 
@@ -66,7 +67,7 @@ namespace TestCompetenceComponent
             cc.ResetCompetenceState();
             printCompetenceLevels(cc.getCompetenceLevels());
 
-            bool doGamesituations = false;
+            bool doGamesituations = true;
 
             bool doLoop = true;
             if (doGamesituations)
@@ -156,11 +157,11 @@ namespace TestCompetenceComponent
         }
 
 
-        public static void printCompetenceLevels(Dictionary<string, int> levels)
+        public static void printCompetenceLevels(Dictionary<string, int[]> levels)
         {
             foreach (string competence in levels.Keys)
             {
-                Console.WriteLine(competence+":  "+levels[competence] +"/"+ (((CompetenceComponentSettings)CompetenceComponent.Instance.Settings).NumberOfLevels-1).ToString());
+                Console.WriteLine(competence+":  A:"+levels[competence][0] + "_L:" + levels[competence][1] + "/"+ (((CompetenceComponentSettings)CompetenceComponent.Instance.Settings).NumberOfLevels-1).ToString());
             }
         }
     }

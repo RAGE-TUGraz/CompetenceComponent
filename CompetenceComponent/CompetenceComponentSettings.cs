@@ -56,7 +56,7 @@ namespace CompetenceComponentNamespace
             SourceFile = "dataModel.xml";
             Phase = CompetenceComponentPhase.DEFAULT;
             CompetencePauseTimeInSeconds = 60*24;
-            ThreasholdRecommendationSelection = 24;
+            ThreasholdRecommendationSelection = 24/(24*60*2); //half minute
         }
 
         #endregion Constructors

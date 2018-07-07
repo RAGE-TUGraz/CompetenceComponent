@@ -182,7 +182,7 @@ namespace CompetenceComponentNamespace
             assessmentObject.resetCompetenceState();
         }
 
-        public static Dictionary<string,int> getCompetencelevels()
+        public static Dictionary<string,int[]> getCompetencelevels()
         {
             return assessmentObject.getCompetenceLevels();
         }
@@ -609,15 +609,16 @@ namespace CompetenceComponentNamespace
             }
         }
 
-        public Dictionary<string,int> getCompetenceLevels()
+        public Dictionary<string,int[]> getCompetenceLevels()
         {
             //assign levels to competences according to number of levels
             float levelWidth = 1.0f / (float)CompetenceComponentFunctionality.getSettings().NumberOfLevels;
-            Dictionary<string, int> competenceLevels = new Dictionary<string, int>();
+            Dictionary<string, int[]> competenceLevels = new Dictionary<string, int[]>();
             foreach (AssessmentCompetence competence in competences)
             {
-                int level = (int)Math.Floor(competence.valueAssessment / levelWidth);
-                level = Math.Min(level, CompetenceComponentFunctionality.getSettings().NumberOfLevels-1);
+                int[] level = new int[2];
+                level[0] = competence.getCompetenceLevel(UpdateType.ASSESSMENT);
+                level[1] = competence.getCompetenceLevel(UpdateType.LEARNING);
                 competenceLevels[competence.id] = level;
             }
 
@@ -728,7 +729,14 @@ namespace CompetenceComponentNamespace
 
             if (type.Equals(UpdateType.ASSESSMENT))
             {
-                returnValue =  (valueLearning-valueAssessment)*maxLevels* inactiveTimeInDays * pauseTimeOver;
+                if (CompetenceComponentFunctionality.getSettings().Phase.Equals(CompetenceComponentPhase.ASSESSMENT))
+                {
+                    returnValue =  inactiveTimeInDays * pauseTimeOver;
+                }
+                else
+                {
+                    returnValue = (valueLearning - valueAssessment) * maxLevels * inactiveTimeInDays * pauseTimeOver;
+                }
             }
             else if (type.Equals(UpdateType.LEARNING))
             {
@@ -788,7 +796,9 @@ namespace CompetenceComponentNamespace
             {
                 AssessmentCompetence assCompetence = CompetenceComponentFunctionality.assessmentObject.getAssessmentCompetenceById(competence.id);
                 returnValue += competence.weight * assCompetence.getRecommendationValue(type) * getDifficultyCompetenceLevelFactor(assCompetence, type);
+                print(returnValue.ToString() + "[" + getDifficultyCompetenceLevelFactor(assCompetence, type).ToString() + "]");
             }
+
 
             return returnValue;
         }
@@ -799,11 +809,20 @@ namespace CompetenceComponentNamespace
             int[] difficultyRating = CompetenceComponentFunctionality.assessmentObject.getDifficultyRating(difficulty);
             //get recommendation level: >=1 AND <= max difficulty 
             int level = 1+ competence.getCompetenceLevel(type, difficultyRating[1]);
-            float returnValue = 0.5f + ((float)Math.Abs(level - difficultyRating[0]))/((float)difficultyRating[1]);
+            float returnValue = 1.5f - ((float)Math.Abs(level - difficultyRating[0]))/((float)difficultyRating[1]-1f);
 
             return returnValue;
         }
 
+        #endregion
+        #region Helpermethods
+        public void print(string additionalInformation = null)
+        {
+            string txt = "GS: '" + id + "' ";
+            if (additionalInformation != null)
+                txt += "("+additionalInformation+")";
+            CompetenceComponentFunctionality.loggingCC(txt);
+        }
         #endregion
     }
 
@@ -902,25 +921,28 @@ namespace CompetenceComponentNamespace
 
         public static AssessmentGamesituation getGamesituationRecommendation(List<AssessmentCompetence> competences, List<AssessmentGamesituation> gamesituations)
         {
+            //CompetenceComponentFunctionality.loggingCC("Getting GS recommendation");
             //check: do assessment - when in assessment phase OR when assessment value of one competence is high enought
             bool doAssessment = CompetenceComponentFunctionality.getSettings().Phase.Equals(CompetenceComponentPhase.ASSESSMENT) || getCompetenceRecommendation(competences, UpdateType.ASSESSMENT).getRecommendationValue(UpdateType.ASSESSMENT) >= CompetenceComponentFunctionality.getSettings().ThreasholdRecommendationSelection;
             AssessmentGamesituation selectGamesituation = null;
             float selectedGamesituationValue = 0;
             float currentGamesituationValue = 0;
+
             foreach (AssessmentGamesituation situation in gamesituations)
             {
                 if ((doAssessment && situation.isAssessment)|| (!doAssessment && situation.isLearning))  //do assessment || do learning
                 {
                     currentGamesituationValue = situation.getRecommendationValue(doAssessment ? UpdateType.ASSESSMENT : UpdateType.LEARNING);
-                    if (selectGamesituation==null || selectedGamesituationValue<= currentGamesituationValue)
+                    if (selectGamesituation==null || selectedGamesituationValue <= currentGamesituationValue)
                     {
                         selectedGamesituationValue = currentGamesituationValue;
                         selectGamesituation = situation;
                     }
+                    //situation.print(currentGamesituationValue.ToString());
                 }
             }
 
-            return selectGamesituation;
+            return selectedGamesituationValue == 0 ? null : selectGamesituation;
         }
         
         #endregion
