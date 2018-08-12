@@ -81,8 +81,11 @@ namespace CompetenceComponentNamespace
             //load current assessment state if there is one 
             assessmentObject = new CompetenceAssessmentObject();
             assessmentObject.loadAssessmentState();
+        }
 
-            assessmentObject.updateDueToTimeGap();
+        internal static void updateDueToForgetting()
+        {
+            assessmentObject.updateDueToForgetting();
         }
 
         /// <summary>
@@ -590,8 +593,9 @@ namespace CompetenceComponentNamespace
             }
         }
 
-        public void updateDueToTimeGap()
+        public void updateDueToForgetting()
         {
+            /*
             float linearDecreasion = CompetenceComponentFunctionality.getSettings().LinearDecreasionOfCompetenceValuePerDay;
             foreach (AssessmentCompetence competence in competences)
             {
@@ -607,6 +611,56 @@ namespace CompetenceComponentNamespace
 
                 competence.setTimestamp(Timestamp.FORGETTING);
             }
+            */
+
+            float linearDecreasion = CompetenceComponentFunctionality.getSettings().LinearDecreasionOfCompetenceValuePerDay;
+            DateTime now = DateTime.Now;
+            foreach (AssessmentCompetence competence in competences)
+            {
+                //Learning Value
+                //add value for past forgetting
+                DateTime pastTimeLastActionL = competence.timestampLearning;
+                DateTime pastTimeLastForgettingUpdate = competence.timestampForgetting;
+                competence.valueLearning += getAddValueBasedOnForgetting(competence.valueLearning, pastTimeLastActionL, pastTimeLastForgettingUpdate);
+                //substract bigger value for current forgetting
+                competence.valueLearning -= getSubstractValueBasedOnForgetting(competence.valueLearning, pastTimeLastActionL, now);
+                competence.valueLearning = Math.Max(competence.valueLearning, 0f);
+
+
+                //Assessment Value
+                //add value for past forgetting
+                DateTime pastTimeLastActionA = competence.timestampAssessment;
+                competence.valueAssessment += getAddValueBasedOnForgetting(competence.valueAssessment, pastTimeLastActionA, pastTimeLastForgettingUpdate);
+                //substract bigger value for current forgetting
+                competence.valueAssessment -= getSubstractValueBasedOnForgetting(competence.valueAssessment, pastTimeLastActionA, now);
+                competence.valueAssessment = Math.Max(competence.valueAssessment, 0f);
+
+                competence.timestampForgetting=now;
+            }
+        }
+
+        public float getSubstractValueBasedOnForgetting(float initialValue, DateTime pastTimeLastAction, DateTime presentTime)
+        {
+            float returnValue = 0f;
+
+            float linearDecreasion = CompetenceComponentFunctionality.getSettings().LinearDecreasionOfCompetenceValuePerDay;
+            TimeSpan deltaTimeAssessment = presentTime - pastTimeLastAction;
+            returnValue = (float)deltaTimeAssessment.TotalDays * linearDecreasion;
+
+            return returnValue;
+        }
+
+        public float getAddValueBasedOnForgetting(float initialValue, DateTime pastTimeLastAction, DateTime pastTimeLastForgettingUpdate)
+        {
+            float returnValue = 0f;
+            if (pastTimeLastAction >= pastTimeLastForgettingUpdate)
+                return returnValue;
+
+            float linearDecreasion = CompetenceComponentFunctionality.getSettings().LinearDecreasionOfCompetenceValuePerDay;
+            TimeSpan deltaTimeAssessment = pastTimeLastForgettingUpdate - pastTimeLastAction;
+            returnValue = (float)deltaTimeAssessment.TotalDays * linearDecreasion;
+
+            return returnValue;
         }
 
         public Dictionary<string,int[]> getCompetenceLevels()
@@ -796,7 +850,7 @@ namespace CompetenceComponentNamespace
             {
                 AssessmentCompetence assCompetence = CompetenceComponentFunctionality.assessmentObject.getAssessmentCompetenceById(competence.id);
                 returnValue += competence.weight * assCompetence.getRecommendationValue(type) * getDifficultyCompetenceLevelFactor(assCompetence, type);
-                print(returnValue.ToString() + "[" + getDifficultyCompetenceLevelFactor(assCompetence, type).ToString() + "]");
+                //print(returnValue.ToString() + "[" + getDifficultyCompetenceLevelFactor(assCompetence, type).ToString() + "]");
             }
 
 

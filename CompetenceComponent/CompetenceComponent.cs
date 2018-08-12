@@ -128,6 +128,7 @@ namespace CompetenceComponentNamespace
             if (!isInitialized)
                 return;
 
+            CompetenceComponentFunctionality.updateDueToForgetting();
             CompetenceComponentFunctionality.UpdateCompetence(competence, success, type);
         }
 
@@ -145,6 +146,7 @@ namespace CompetenceComponentNamespace
             if (!isInitialized)
                 return;
 
+            CompetenceComponentFunctionality.updateDueToForgetting();
             CompetenceComponentFunctionality.UpdateGamesituation(gamesituation, success);
         }
 
@@ -160,6 +162,7 @@ namespace CompetenceComponentNamespace
             if (!isInitialized)
                 return null;
 
+            CompetenceComponentFunctionality.updateDueToForgetting();
             return CompetenceComponentFunctionality.GetCompetenceRecommendation(type);
         }
 
@@ -176,6 +179,7 @@ namespace CompetenceComponentNamespace
             if (!isInitialized)
                 return null;
 
+            CompetenceComponentFunctionality.updateDueToForgetting();
             return CompetenceComponentFunctionality.GetGamesituationRecommendation();
         }
 
@@ -222,6 +226,7 @@ namespace CompetenceComponentNamespace
             if (!isInitialized)
                 return null;
 
+            CompetenceComponentFunctionality.updateDueToForgetting();
             return CompetenceComponentFunctionality.getCompetencelevels();
         }
 

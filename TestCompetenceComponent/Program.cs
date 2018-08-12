@@ -49,7 +49,7 @@ namespace TestCompetenceComponent
             ccs.SourceFile = "dataModel2.xml";
             ccs.CompetencePauseTimeInSeconds = 5;
             ccs.Phase = CompetenceComponentPhase.DEFAULT;
-            ccs.ThreasholdRecommendationSelection = 1 / (60*60);
+            ccs.ThreasholdRecommendationSelection = 1f/(60f*60f);
             cc.Settings = ccs;
 
             //test loading/storing assessment object 
