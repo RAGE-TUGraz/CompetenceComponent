@@ -46,7 +46,7 @@ namespace TestCompetenceComponent
             CompetenceComponentSettings ccs = new CompetenceComponentSettings();
             ccs.NumberOfLevels = 3;
             ccs.LinearDecreasionOfCompetenceValuePerDay = 0.1f;
-            ccs.SourceFile = "dataModel.xml";
+            ccs.SourceFile = "dataModel2.xml";
             ccs.CompetencePauseTimeInSeconds = 5;
             ccs.Phase = CompetenceComponentPhase.DEFAULT;
             ccs.ThreasholdRecommendationSelection = 1f/(60f*60f);
