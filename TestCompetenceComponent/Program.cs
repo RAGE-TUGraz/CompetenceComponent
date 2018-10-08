@@ -63,7 +63,7 @@ namespace TestCompetenceComponent
             cc.getDataModel().printToCommandline();
             
 
-            /*
+            //*
             cc.ResetCompetenceState();
             printCompetenceLevels(cc.getCompetenceLevels());
 

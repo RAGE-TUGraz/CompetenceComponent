@@ -591,6 +591,8 @@ namespace CompetenceComponentNamespace
             {
                 ac.valueLearning = success ? ac.valueLearning + updateValue : ac.valueLearning - updateValue;
                 ac.valueLearning = Math.Max(Math.Min(1, ac.valueLearning), 0);
+                //learning value of a competence can not rise over prerequisite value
+                ac.valueLearning = Math.Min(ac.valueLearning, ac.getMinimumPrerequisiteValueOrOneIfThereAreNoPrerequisites(UpdateType.LEARNING));
             }
             Timestamp stamp = type.Equals(UpdateType.ASSESSMENT) ? Timestamp.ASSESSMENT : Timestamp.LEARNING;
             ac.setTimestamp(stamp);
@@ -609,6 +611,7 @@ namespace CompetenceComponentNamespace
             CompetenceComponentFunctionality.loggingCC("Update according to GS '" + gamesituationId + "'");
             foreach (AssessmentGamesituationCompetence competence in situation.competences)
             {
+                //order of update - low competences should be updated first
                 if (situation.isLearning)
                     updateCompetence(competence.id, success, UpdateType.LEARNING, situation.difficulty * competence.weight);
                 if (situation.isAssessment)
@@ -633,6 +636,15 @@ namespace CompetenceComponentNamespace
             foreach (Competence competence in dataModel.elements.competenceList.competences)
             {
                 competences.Add(new AssessmentCompetence(competence.id, initialValue));
+            }
+
+            foreach (PrerequisiteCompetence comp in dataModel.relations.competenceprerequisites.competenceList)
+            {
+                AssessmentCompetence competence = getAssessmentCompetenceById(comp.id);
+                foreach (Prerequisite prerequisite in comp.prerequisites)
+                {
+                    competence.prerequisites.Add(getAssessmentCompetenceById(prerequisite.id));
+                }
             }
 
             gamesituations = new List<AssessmentGamesituation>();
@@ -773,8 +785,27 @@ namespace CompetenceComponentNamespace
         public DateTime timestampForgetting;
         public float valueAssessment;
         public float valueLearning;
+        public List<AssessmentCompetence> prerequisites = new List<AssessmentCompetence>();
         #endregion
         #region Methods
+
+        public float getMinimumPrerequisiteValueOrOneIfThereAreNoPrerequisites(UpdateType type)
+        {
+            float retVal = 1f;
+            foreach (AssessmentCompetence asscomp in prerequisites)
+            {
+                if(type.Equals(UpdateType.ASSESSMENT) && retVal > asscomp.valueAssessment)
+                {
+                    retVal = asscomp.valueAssessment;
+                }else if (type.Equals(UpdateType.LEARNING) && retVal > asscomp.valueLearning)
+                {
+                    retVal = asscomp.valueLearning;
+                }
+            }
+
+            return retVal;
+        }
+
         public void setTimestamp(Timestamp stamp)
         {
             switch (stamp)
@@ -843,7 +874,9 @@ namespace CompetenceComponentNamespace
             }
             else if (type.Equals(UpdateType.LEARNING))
             {
-                returnValue = ((maxLevels - (float)getCompetenceLevel(UpdateType.LEARNING)) / maxLevels) * inactiveTimeInDays * pauseTimeOver;
+                float minPrereqValue = getMinimumPrerequisiteValueOrOneIfThereAreNoPrerequisites(UpdateType.LEARNING);
+                float prereqMinValueSmallerFactor  = (minPrereqValue > valueLearning) ? 1f : 0f;
+                returnValue = ((maxLevels - (float)getCompetenceLevel(UpdateType.LEARNING)) / maxLevels) * inactiveTimeInDays * pauseTimeOver * prereqMinValueSmallerFactor;
             }
 
             return returnValue;
