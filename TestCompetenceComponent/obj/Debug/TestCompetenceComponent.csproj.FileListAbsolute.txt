@@ -24,5 +24,7 @@ C:\Users\mojo\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\Newtonso
 C:\Users\mojo\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\GameStorageClientAsset.dll
 C:\Users\mojo\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\CompetenceComponent.pdb
 C:\Users\mojo\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\Newtonsoft.Json.xml
-C:\Users\mojo\git\CompetenceComponent\TestCompetenceComponent\obj\Debug\TestCompetenceComponent.csprojResolveAssemblyReference.cache
 C:\Users\mojo\git\CompetenceComponent\TestCompetenceComponent\bin\Debug\GameStorageClientAsset.dll.config
+C:\Users\mojo\git\CompetenceComponent\TestCompetenceComponent\obj\Debug\TestCompetenceComponent.csprojAssemblyReference.cache
+C:\Users\mojo\git\CompetenceComponent\TestCompetenceComponent\obj\Debug\TestCompetenceComponent.csproj.CoreCompileInputs.cache
+C:\Users\mojo\git\CompetenceComponent\TestCompetenceComponent\obj\Debug\TestCompetenceComponent.csproj.CopyComplete

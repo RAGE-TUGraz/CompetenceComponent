@@ -16,5 +16,7 @@ C:\Users\mojo\git\CompetenceComponent\CompetenceComponent\bin\Debug\CompetenceCo
 C:\Users\mojo\git\CompetenceComponent\CompetenceComponent\bin\Debug\CompetenceComponent.pdb
 C:\Users\mojo\git\CompetenceComponent\CompetenceComponent\obj\Debug\CompetenceComponent.dll
 C:\Users\mojo\git\CompetenceComponent\CompetenceComponent\obj\Debug\CompetenceComponent.pdb
-C:\Users\mojo\git\CompetenceComponent\CompetenceComponent\obj\Debug\CompetenceComponent.csprojResolveAssemblyReference.cache
 C:\Users\mojo\git\CompetenceComponent\CompetenceComponent\bin\Debug\GameStorageClientAsset.dll.config
+C:\Users\mojo\git\CompetenceComponent\CompetenceComponent\obj\Debug\CompetenceComponent.csprojAssemblyReference.cache
+C:\Users\mojo\git\CompetenceComponent\CompetenceComponent\obj\Debug\CompetenceComponent.csproj.CoreCompileInputs.cache
+C:\Users\mojo\git\CompetenceComponent\CompetenceComponent\obj\Debug\CompetenceComponent.csproj.CopyComplete
