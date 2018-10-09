@@ -61,7 +61,7 @@ namespace TestCompetenceComponent
             */
 
             cc.getDataModel().printToCommandline();
-            
+            cc.getDataModel().storeToFile("ttesti.xml");
 
             //*
             cc.ResetCompetenceState();

@@ -128,6 +128,25 @@ namespace CompetenceComponentNamespace
             return nextGamesituation.id;
         }
 
+        internal static void storeDataModel(DataModel dataModel, string filepath)
+        {
+            loggingCC("Storing data model: "+filepath);
+            CompetenceComponentSettings ccs = getSettings();
+            string dataModelString = dataModel.toXmlString();
+
+            IDataStorage ids = CompetenceComponent.Instance.getInterfaceFromAsset<IDataStorage>();
+            if (ids != null)
+            {
+                ids.Save(filepath, dataModelString);
+                loggingCC("Storing data model - done ");
+            }
+            else
+            {
+                loggingCC("IDataStorage bridge absent for requested local storing method of the data model.", Severity.Error);
+                //throw new Exception("EXCEPTION: IDataStorage bridge absent for requested local loading method of the Domain model.");
+            }
+        }
+
         /// <summary>
         /// Method loading domain model - location specified by settings.
         /// </summary>
@@ -231,6 +250,11 @@ namespace CompetenceComponentNamespace
                 CompetenceComponentFunctionality.loggingCC("An error occured while loading data model.");
                 return null;
             }
+        }
+
+        public void storeToFile(string filePath)
+        {
+            CompetenceComponentFunctionality.storeDataModel(this,filePath);
         }
 
         public void printToCommandline()
