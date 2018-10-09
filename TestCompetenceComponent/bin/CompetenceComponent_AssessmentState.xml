@@ -2,811 +2,6 @@
 <Model>
 <Nodes>
 <Node>
-  <Value>&lt;string&gt;0,1666667&amp;amp;0,1666667&amp;amp;08.10.2018 20:24:35&amp;amp;08.10.2018 20:24:35&amp;amp;08.10.2018 20:24:35&lt;/string&gt;</Value>
-  <Path>C1</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666667&amp;amp;0,1666667&amp;amp;08.10.2018 20:24:35&amp;amp;08.10.2018 20:24:35&amp;amp;08.10.2018 20:24:35&lt;/string&gt;</Value>
-  <Path>C2</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666667&amp;amp;0,1666667&amp;amp;08.10.2018 20:24:35&amp;amp;08.10.2018 20:24:35&amp;amp;08.10.2018 20:24:35&lt;/string&gt;</Value>
-  <Path>C3</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666667&amp;amp;0,1666667&amp;amp;08.10.2018 20:24:35&amp;amp;08.10.2018 20:24:35&amp;amp;08.10.2018 20:24:35&lt;/string&gt;</Value>
-  <Path>C4</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666667&amp;amp;0,1666667&amp;amp;08.10.2018 20:24:35&amp;amp;08.10.2018 20:24:35&amp;amp;08.10.2018 20:24:35&lt;/string&gt;</Value>
-  <Path>C5</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666667&amp;amp;0,1666667&amp;amp;08.10.2018 20:24:35&amp;amp;08.10.2018 20:24:35&amp;amp;08.10.2018 20:24:35&lt;/string&gt;</Value>
-  <Path>C6</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666667&amp;amp;0,1666667&amp;amp;08.10.2018 20:24:35&amp;amp;08.10.2018 20:24:35&amp;amp;08.10.2018 20:24:35&lt;/string&gt;</Value>
-  <Path>C7</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666667&amp;amp;0,1666667&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&lt;/string&gt;</Value>
-  <Path>C1</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666667&amp;amp;0,1666667&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&lt;/string&gt;</Value>
-  <Path>C2</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666667&amp;amp;0,1666667&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&lt;/string&gt;</Value>
-  <Path>C3</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666667&amp;amp;0,1666667&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&lt;/string&gt;</Value>
-  <Path>C4</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666667&amp;amp;0,1666667&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&lt;/string&gt;</Value>
-  <Path>C5</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666667&amp;amp;0,1666667&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&lt;/string&gt;</Value>
-  <Path>C6</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666667&amp;amp;0,1666667&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&lt;/string&gt;</Value>
-  <Path>C7</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666367&amp;amp;0,1666367&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:54&lt;/string&gt;</Value>
-  <Path>C1</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666367&amp;amp;0,1666367&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:54&lt;/string&gt;</Value>
-  <Path>C2</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666367&amp;amp;0,1666367&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:54&lt;/string&gt;</Value>
-  <Path>C3</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666367&amp;amp;0,1666367&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:54&lt;/string&gt;</Value>
-  <Path>C4</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666367&amp;amp;0,3333034&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:54&amp;amp;08.10.2018 20:25:54&lt;/string&gt;</Value>
-  <Path>C5</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666367&amp;amp;0,1666367&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:54&lt;/string&gt;</Value>
-  <Path>C6</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666367&amp;amp;0,1666367&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:54&lt;/string&gt;</Value>
-  <Path>C7</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666287&amp;amp;0,1666287&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:01&lt;/string&gt;</Value>
-  <Path>C1</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666287&amp;amp;0,1666287&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:01&lt;/string&gt;</Value>
-  <Path>C2</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666287&amp;amp;0,1666287&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:01&lt;/string&gt;</Value>
-  <Path>C3</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666287&amp;amp;0,3332953&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:01&amp;amp;08.10.2018 20:26:01&lt;/string&gt;</Value>
-  <Path>C4</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666287&amp;amp;0,3332953&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:54&amp;amp;08.10.2018 20:26:01&lt;/string&gt;</Value>
-  <Path>C5</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666287&amp;amp;0,1666287&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:01&lt;/string&gt;</Value>
-  <Path>C6</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666287&amp;amp;0,1666287&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:01&lt;/string&gt;</Value>
-  <Path>C7</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666196&amp;amp;0,1666196&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:09&lt;/string&gt;</Value>
-  <Path>C1</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666196&amp;amp;0,1666196&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:09&lt;/string&gt;</Value>
-  <Path>C2</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666196&amp;amp;0,1666196&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:09&lt;/string&gt;</Value>
-  <Path>C3</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666196&amp;amp;0,3332863&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:01&amp;amp;08.10.2018 20:26:09&lt;/string&gt;</Value>
-  <Path>C4</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666196&amp;amp;0,3332863&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:54&amp;amp;08.10.2018 20:26:09&lt;/string&gt;</Value>
-  <Path>C5</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666196&amp;amp;0,3332862&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:09&amp;amp;08.10.2018 20:26:09&lt;/string&gt;</Value>
-  <Path>C6</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666196&amp;amp;0,1666196&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:09&lt;/string&gt;</Value>
-  <Path>C7</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666182&amp;amp;0,1666182&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:10&lt;/string&gt;</Value>
-  <Path>C1</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666182&amp;amp;0,3332848&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:10&amp;amp;08.10.2018 20:26:10&lt;/string&gt;</Value>
-  <Path>C2</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666182&amp;amp;0,1666182&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:10&lt;/string&gt;</Value>
-  <Path>C3</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666182&amp;amp;0,3332849&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:01&amp;amp;08.10.2018 20:26:10&lt;/string&gt;</Value>
-  <Path>C4</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666182&amp;amp;0,3332849&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:54&amp;amp;08.10.2018 20:26:10&lt;/string&gt;</Value>
-  <Path>C5</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666182&amp;amp;0,3332848&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:09&amp;amp;08.10.2018 20:26:10&lt;/string&gt;</Value>
-  <Path>C6</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666182&amp;amp;0,1666182&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:10&lt;/string&gt;</Value>
-  <Path>C7</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666171&amp;amp;0,3332838&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:11&amp;amp;08.10.2018 20:26:11&lt;/string&gt;</Value>
-  <Path>C1</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666171&amp;amp;0,3332838&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:10&amp;amp;08.10.2018 20:26:11&lt;/string&gt;</Value>
-  <Path>C2</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666171&amp;amp;0,1666171&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:11&lt;/string&gt;</Value>
-  <Path>C3</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666171&amp;amp;0,3332838&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:01&amp;amp;08.10.2018 20:26:11&lt;/string&gt;</Value>
-  <Path>C4</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666171&amp;amp;0,3332838&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:54&amp;amp;08.10.2018 20:26:11&lt;/string&gt;</Value>
-  <Path>C5</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666171&amp;amp;0,3332837&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:09&amp;amp;08.10.2018 20:26:11&lt;/string&gt;</Value>
-  <Path>C6</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666171&amp;amp;0,1666171&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:11&lt;/string&gt;</Value>
-  <Path>C7</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,166615&amp;amp;0,3332817&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:11&amp;amp;08.10.2018 20:26:13&lt;/string&gt;</Value>
-  <Path>C1</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,166615&amp;amp;0,3332817&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:10&amp;amp;08.10.2018 20:26:13&lt;/string&gt;</Value>
-  <Path>C2</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,166615&amp;amp;0,3332817&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:13&amp;amp;08.10.2018 20:26:13&lt;/string&gt;</Value>
-  <Path>C3</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,166615&amp;amp;0,3332817&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:01&amp;amp;08.10.2018 20:26:13&lt;/string&gt;</Value>
-  <Path>C4</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,166615&amp;amp;0,3332817&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:54&amp;amp;08.10.2018 20:26:13&lt;/string&gt;</Value>
-  <Path>C5</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,166615&amp;amp;0,3332817&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:09&amp;amp;08.10.2018 20:26:13&lt;/string&gt;</Value>
-  <Path>C6</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,166615&amp;amp;0,166615&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:13&lt;/string&gt;</Value>
-  <Path>C7</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,166613&amp;amp;0,3332797&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:11&amp;amp;08.10.2018 20:26:14&lt;/string&gt;</Value>
-  <Path>C1</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,166613&amp;amp;0,3332797&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:10&amp;amp;08.10.2018 20:26:14&lt;/string&gt;</Value>
-  <Path>C2</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,166613&amp;amp;0,3332797&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:13&amp;amp;08.10.2018 20:26:14&lt;/string&gt;</Value>
-  <Path>C3</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,166613&amp;amp;0,3332797&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:01&amp;amp;08.10.2018 20:26:14&lt;/string&gt;</Value>
-  <Path>C4</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,166613&amp;amp;0,3332797&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:25:54&amp;amp;08.10.2018 20:26:14&lt;/string&gt;</Value>
-  <Path>C5</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,166613&amp;amp;0,3332797&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:09&amp;amp;08.10.2018 20:26:14&lt;/string&gt;</Value>
-  <Path>C6</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,166613&amp;amp;0,3332797&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:14&amp;amp;08.10.2018 20:26:14&lt;/string&gt;</Value>
-  <Path>C7</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666061&amp;amp;0,3332728&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:11&amp;amp;08.10.2018 20:26:20&lt;/string&gt;</Value>
-  <Path>C1</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666061&amp;amp;0,3332728&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:10&amp;amp;08.10.2018 20:26:20&lt;/string&gt;</Value>
-  <Path>C2</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666061&amp;amp;0,3332728&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:13&amp;amp;08.10.2018 20:26:20&lt;/string&gt;</Value>
-  <Path>C3</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666061&amp;amp;0,3332728&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:01&amp;amp;08.10.2018 20:26:20&lt;/string&gt;</Value>
-  <Path>C4</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666061&amp;amp;0,4999394&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:20&amp;amp;08.10.2018 20:26:20&lt;/string&gt;</Value>
-  <Path>C5</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666061&amp;amp;0,3332727&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:09&amp;amp;08.10.2018 20:26:20&lt;/string&gt;</Value>
-  <Path>C6</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1666061&amp;amp;0,3332727&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:14&amp;amp;08.10.2018 20:26:20&lt;/string&gt;</Value>
-  <Path>C7</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1665967&amp;amp;0,3332634&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:11&amp;amp;08.10.2018 20:26:29&lt;/string&gt;</Value>
-  <Path>C1</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1665967&amp;amp;0,3332634&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:10&amp;amp;08.10.2018 20:26:29&lt;/string&gt;</Value>
-  <Path>C2</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1665967&amp;amp;0,3332634&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:13&amp;amp;08.10.2018 20:26:29&lt;/string&gt;</Value>
-  <Path>C3</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1665967&amp;amp;0,3332634&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:01&amp;amp;08.10.2018 20:26:29&lt;/string&gt;</Value>
-  <Path>C4</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332634&amp;amp;0,4999301&amp;amp;08.10.2018 20:26:29&amp;amp;08.10.2018 20:26:20&amp;amp;08.10.2018 20:26:29&lt;/string&gt;</Value>
-  <Path>C5</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1665967&amp;amp;0,3332634&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:09&amp;amp;08.10.2018 20:26:29&lt;/string&gt;</Value>
-  <Path>C6</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1665967&amp;amp;0,3332634&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:14&amp;amp;08.10.2018 20:26:29&lt;/string&gt;</Value>
-  <Path>C7</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1665948&amp;amp;0,3332615&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:11&amp;amp;08.10.2018 20:26:30&lt;/string&gt;</Value>
-  <Path>C1</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1665948&amp;amp;0,3332615&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:10&amp;amp;08.10.2018 20:26:30&lt;/string&gt;</Value>
-  <Path>C2</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1665948&amp;amp;0,3332615&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:13&amp;amp;08.10.2018 20:26:30&lt;/string&gt;</Value>
-  <Path>C3</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332615&amp;amp;0,3332615&amp;amp;08.10.2018 20:26:30&amp;amp;08.10.2018 20:26:01&amp;amp;08.10.2018 20:26:30&lt;/string&gt;</Value>
-  <Path>C4</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332615&amp;amp;0,4999282&amp;amp;08.10.2018 20:26:29&amp;amp;08.10.2018 20:26:20&amp;amp;08.10.2018 20:26:30&lt;/string&gt;</Value>
-  <Path>C5</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1665948&amp;amp;0,3332615&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:09&amp;amp;08.10.2018 20:26:30&lt;/string&gt;</Value>
-  <Path>C6</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1665948&amp;amp;0,3332615&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:14&amp;amp;08.10.2018 20:26:30&lt;/string&gt;</Value>
-  <Path>C7</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1665943&amp;amp;0,333261&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:11&amp;amp;08.10.2018 20:26:31&lt;/string&gt;</Value>
-  <Path>C1</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1665943&amp;amp;0,333261&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:10&amp;amp;08.10.2018 20:26:31&lt;/string&gt;</Value>
-  <Path>C2</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,333261&amp;amp;0,333261&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:13&amp;amp;08.10.2018 20:26:31&lt;/string&gt;</Value>
-  <Path>C3</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,333261&amp;amp;0,333261&amp;amp;08.10.2018 20:26:30&amp;amp;08.10.2018 20:26:01&amp;amp;08.10.2018 20:26:31&lt;/string&gt;</Value>
-  <Path>C4</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,333261&amp;amp;0,4999277&amp;amp;08.10.2018 20:26:29&amp;amp;08.10.2018 20:26:20&amp;amp;08.10.2018 20:26:31&lt;/string&gt;</Value>
-  <Path>C5</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1665943&amp;amp;0,333261&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:09&amp;amp;08.10.2018 20:26:31&lt;/string&gt;</Value>
-  <Path>C6</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1665943&amp;amp;0,333261&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:14&amp;amp;08.10.2018 20:26:31&lt;/string&gt;</Value>
-  <Path>C7</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332606&amp;amp;0,3332606&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:11&amp;amp;08.10.2018 20:26:31&lt;/string&gt;</Value>
-  <Path>C1</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1665939&amp;amp;0,3332606&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:10&amp;amp;08.10.2018 20:26:31&lt;/string&gt;</Value>
-  <Path>C2</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332606&amp;amp;0,3332606&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:13&amp;amp;08.10.2018 20:26:31&lt;/string&gt;</Value>
-  <Path>C3</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332606&amp;amp;0,3332606&amp;amp;08.10.2018 20:26:30&amp;amp;08.10.2018 20:26:01&amp;amp;08.10.2018 20:26:31&lt;/string&gt;</Value>
-  <Path>C4</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332606&amp;amp;0,4999273&amp;amp;08.10.2018 20:26:29&amp;amp;08.10.2018 20:26:20&amp;amp;08.10.2018 20:26:31&lt;/string&gt;</Value>
-  <Path>C5</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1665939&amp;amp;0,3332606&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:09&amp;amp;08.10.2018 20:26:31&lt;/string&gt;</Value>
-  <Path>C6</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1665939&amp;amp;0,3332606&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:14&amp;amp;08.10.2018 20:26:31&lt;/string&gt;</Value>
-  <Path>C7</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332602&amp;amp;0,3332602&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:11&amp;amp;08.10.2018 20:26:31&lt;/string&gt;</Value>
-  <Path>C1</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1665936&amp;amp;0,3332602&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:10&amp;amp;08.10.2018 20:26:31&lt;/string&gt;</Value>
-  <Path>C2</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332602&amp;amp;0,3332602&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:13&amp;amp;08.10.2018 20:26:31&lt;/string&gt;</Value>
-  <Path>C3</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332602&amp;amp;0,3332602&amp;amp;08.10.2018 20:26:30&amp;amp;08.10.2018 20:26:01&amp;amp;08.10.2018 20:26:31&lt;/string&gt;</Value>
-  <Path>C4</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332602&amp;amp;0,4999269&amp;amp;08.10.2018 20:26:29&amp;amp;08.10.2018 20:26:20&amp;amp;08.10.2018 20:26:31&lt;/string&gt;</Value>
-  <Path>C5</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1665936&amp;amp;0,3332602&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:09&amp;amp;08.10.2018 20:26:31&lt;/string&gt;</Value>
-  <Path>C6</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332602&amp;amp;0,3332602&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:14&amp;amp;08.10.2018 20:26:31&lt;/string&gt;</Value>
-  <Path>C7</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332599&amp;amp;0,3332599&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:11&amp;amp;08.10.2018 20:26:32&lt;/string&gt;</Value>
-  <Path>C1</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332599&amp;amp;0,3332599&amp;amp;08.10.2018 20:26:32&amp;amp;08.10.2018 20:26:10&amp;amp;08.10.2018 20:26:32&lt;/string&gt;</Value>
-  <Path>C2</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332599&amp;amp;0,3332599&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:13&amp;amp;08.10.2018 20:26:32&lt;/string&gt;</Value>
-  <Path>C3</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332599&amp;amp;0,3332599&amp;amp;08.10.2018 20:26:30&amp;amp;08.10.2018 20:26:01&amp;amp;08.10.2018 20:26:32&lt;/string&gt;</Value>
-  <Path>C4</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332599&amp;amp;0,4999265&amp;amp;08.10.2018 20:26:29&amp;amp;08.10.2018 20:26:20&amp;amp;08.10.2018 20:26:32&lt;/string&gt;</Value>
-  <Path>C5</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,1665932&amp;amp;0,3332599&amp;amp;08.10.2018 20:25:28&amp;amp;08.10.2018 20:26:09&amp;amp;08.10.2018 20:26:32&lt;/string&gt;</Value>
-  <Path>C6</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332599&amp;amp;0,3332599&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:14&amp;amp;08.10.2018 20:26:32&lt;/string&gt;</Value>
-  <Path>C7</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332595&amp;amp;0,3332595&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:11&amp;amp;08.10.2018 20:26:32&lt;/string&gt;</Value>
-  <Path>C1</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332595&amp;amp;0,3332595&amp;amp;08.10.2018 20:26:32&amp;amp;08.10.2018 20:26:10&amp;amp;08.10.2018 20:26:32&lt;/string&gt;</Value>
-  <Path>C2</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332595&amp;amp;0,3332595&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:13&amp;amp;08.10.2018 20:26:32&lt;/string&gt;</Value>
-  <Path>C3</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332595&amp;amp;0,3332595&amp;amp;08.10.2018 20:26:30&amp;amp;08.10.2018 20:26:01&amp;amp;08.10.2018 20:26:32&lt;/string&gt;</Value>
-  <Path>C4</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332595&amp;amp;0,4999262&amp;amp;08.10.2018 20:26:29&amp;amp;08.10.2018 20:26:20&amp;amp;08.10.2018 20:26:32&lt;/string&gt;</Value>
-  <Path>C5</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332595&amp;amp;0,3332595&amp;amp;08.10.2018 20:26:32&amp;amp;08.10.2018 20:26:09&amp;amp;08.10.2018 20:26:32&lt;/string&gt;</Value>
-  <Path>C6</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332595&amp;amp;0,3332595&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:14&amp;amp;08.10.2018 20:26:32&lt;/string&gt;</Value>
-  <Path>C7</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332591&amp;amp;0,3332591&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:11&amp;amp;08.10.2018 20:26:32&lt;/string&gt;</Value>
-  <Path>C1</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332592&amp;amp;0,3332592&amp;amp;08.10.2018 20:26:32&amp;amp;08.10.2018 20:26:10&amp;amp;08.10.2018 20:26:32&lt;/string&gt;</Value>
-  <Path>C2</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332591&amp;amp;0,3332591&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:13&amp;amp;08.10.2018 20:26:32&lt;/string&gt;</Value>
-  <Path>C3</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332591&amp;amp;0,4999258&amp;amp;08.10.2018 20:26:30&amp;amp;08.10.2018 20:26:32&amp;amp;08.10.2018 20:26:32&lt;/string&gt;</Value>
-  <Path>C4</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332591&amp;amp;0,4999258&amp;amp;08.10.2018 20:26:29&amp;amp;08.10.2018 20:26:20&amp;amp;08.10.2018 20:26:32&lt;/string&gt;</Value>
-  <Path>C5</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332591&amp;amp;0,3332591&amp;amp;08.10.2018 20:26:32&amp;amp;08.10.2018 20:26:09&amp;amp;08.10.2018 20:26:32&lt;/string&gt;</Value>
-  <Path>C6</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332591&amp;amp;0,3332592&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:14&amp;amp;08.10.2018 20:26:32&lt;/string&gt;</Value>
-  <Path>C7</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332587&amp;amp;0,3332587&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:11&amp;amp;08.10.2018 20:26:33&lt;/string&gt;</Value>
-  <Path>C1</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332588&amp;amp;0,3332588&amp;amp;08.10.2018 20:26:32&amp;amp;08.10.2018 20:26:10&amp;amp;08.10.2018 20:26:33&lt;/string&gt;</Value>
-  <Path>C2</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332587&amp;amp;0,3332587&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:13&amp;amp;08.10.2018 20:26:33&lt;/string&gt;</Value>
-  <Path>C3</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332587&amp;amp;0,4999254&amp;amp;08.10.2018 20:26:30&amp;amp;08.10.2018 20:26:32&amp;amp;08.10.2018 20:26:33&lt;/string&gt;</Value>
-  <Path>C4</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332587&amp;amp;0,4999254&amp;amp;08.10.2018 20:26:29&amp;amp;08.10.2018 20:26:20&amp;amp;08.10.2018 20:26:33&lt;/string&gt;</Value>
-  <Path>C5</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332587&amp;amp;0,4999254&amp;amp;08.10.2018 20:26:32&amp;amp;08.10.2018 20:26:33&amp;amp;08.10.2018 20:26:33&lt;/string&gt;</Value>
-  <Path>C6</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332588&amp;amp;0,3332588&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:14&amp;amp;08.10.2018 20:26:33&lt;/string&gt;</Value>
-  <Path>C7</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332583&amp;amp;0,3332584&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:11&amp;amp;08.10.2018 20:26:33&lt;/string&gt;</Value>
-  <Path>C1</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332584&amp;amp;0,499925&amp;amp;08.10.2018 20:26:32&amp;amp;08.10.2018 20:26:33&amp;amp;08.10.2018 20:26:33&lt;/string&gt;</Value>
-  <Path>C2</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332583&amp;amp;0,3332584&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:13&amp;amp;08.10.2018 20:26:33&lt;/string&gt;</Value>
-  <Path>C3</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332584&amp;amp;0,499925&amp;amp;08.10.2018 20:26:30&amp;amp;08.10.2018 20:26:32&amp;amp;08.10.2018 20:26:33&lt;/string&gt;</Value>
-  <Path>C4</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332583&amp;amp;0,499925&amp;amp;08.10.2018 20:26:29&amp;amp;08.10.2018 20:26:20&amp;amp;08.10.2018 20:26:33&lt;/string&gt;</Value>
-  <Path>C5</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332583&amp;amp;0,499925&amp;amp;08.10.2018 20:26:32&amp;amp;08.10.2018 20:26:33&amp;amp;08.10.2018 20:26:33&lt;/string&gt;</Value>
-  <Path>C6</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332584&amp;amp;0,3332584&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:14&amp;amp;08.10.2018 20:26:33&lt;/string&gt;</Value>
-  <Path>C7</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332579&amp;amp;0,4999246&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:33&amp;amp;08.10.2018 20:26:33&lt;/string&gt;</Value>
-  <Path>C1</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,333258&amp;amp;0,4999246&amp;amp;08.10.2018 20:26:32&amp;amp;08.10.2018 20:26:33&amp;amp;08.10.2018 20:26:33&lt;/string&gt;</Value>
-  <Path>C2</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332579&amp;amp;0,3332579&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:13&amp;amp;08.10.2018 20:26:33&lt;/string&gt;</Value>
-  <Path>C3</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332579&amp;amp;0,4999246&amp;amp;08.10.2018 20:26:30&amp;amp;08.10.2018 20:26:32&amp;amp;08.10.2018 20:26:33&lt;/string&gt;</Value>
-  <Path>C4</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332579&amp;amp;0,4999246&amp;amp;08.10.2018 20:26:29&amp;amp;08.10.2018 20:26:20&amp;amp;08.10.2018 20:26:33&lt;/string&gt;</Value>
-  <Path>C5</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332579&amp;amp;0,4999246&amp;amp;08.10.2018 20:26:32&amp;amp;08.10.2018 20:26:33&amp;amp;08.10.2018 20:26:33&lt;/string&gt;</Value>
-  <Path>C6</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,333258&amp;amp;0,333258&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:14&amp;amp;08.10.2018 20:26:33&lt;/string&gt;</Value>
-  <Path>C7</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332576&amp;amp;0,4999243&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:33&amp;amp;08.10.2018 20:26:34&lt;/string&gt;</Value>
-  <Path>C1</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332577&amp;amp;0,4999243&amp;amp;08.10.2018 20:26:32&amp;amp;08.10.2018 20:26:33&amp;amp;08.10.2018 20:26:34&lt;/string&gt;</Value>
-  <Path>C2</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332576&amp;amp;0,4999243&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:34&amp;amp;08.10.2018 20:26:34&lt;/string&gt;</Value>
-  <Path>C3</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332577&amp;amp;0,4999243&amp;amp;08.10.2018 20:26:30&amp;amp;08.10.2018 20:26:32&amp;amp;08.10.2018 20:26:34&lt;/string&gt;</Value>
-  <Path>C4</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332576&amp;amp;0,4999243&amp;amp;08.10.2018 20:26:29&amp;amp;08.10.2018 20:26:20&amp;amp;08.10.2018 20:26:34&lt;/string&gt;</Value>
-  <Path>C5</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332576&amp;amp;0,4999243&amp;amp;08.10.2018 20:26:32&amp;amp;08.10.2018 20:26:33&amp;amp;08.10.2018 20:26:34&lt;/string&gt;</Value>
-  <Path>C6</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332577&amp;amp;0,3332577&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:14&amp;amp;08.10.2018 20:26:34&lt;/string&gt;</Value>
-  <Path>C7</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332573&amp;amp;0,499924&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:33&amp;amp;08.10.2018 20:26:34&lt;/string&gt;</Value>
-  <Path>C1</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332573&amp;amp;0,499924&amp;amp;08.10.2018 20:26:32&amp;amp;08.10.2018 20:26:33&amp;amp;08.10.2018 20:26:34&lt;/string&gt;</Value>
-  <Path>C2</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332573&amp;amp;0,499924&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:34&amp;amp;08.10.2018 20:26:34&lt;/string&gt;</Value>
-  <Path>C3</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332573&amp;amp;0,499924&amp;amp;08.10.2018 20:26:30&amp;amp;08.10.2018 20:26:32&amp;amp;08.10.2018 20:26:34&lt;/string&gt;</Value>
-  <Path>C4</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332573&amp;amp;0,499924&amp;amp;08.10.2018 20:26:29&amp;amp;08.10.2018 20:26:20&amp;amp;08.10.2018 20:26:34&lt;/string&gt;</Value>
-  <Path>C5</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332573&amp;amp;0,499924&amp;amp;08.10.2018 20:26:32&amp;amp;08.10.2018 20:26:33&amp;amp;08.10.2018 20:26:34&lt;/string&gt;</Value>
-  <Path>C6</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
-  <Value>&lt;string&gt;0,3332573&amp;amp;0,499924&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:34&amp;amp;08.10.2018 20:26:34&lt;/string&gt;</Value>
-  <Path>C7</Path>
-  <ValueType>System.String</ValueType>
-</Node>
-<Node>
   <Value>&lt;string&gt;0,333257&amp;amp;0,4999236&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:33&amp;amp;08.10.2018 20:26:34&lt;/string&gt;</Value>
   <Path>C1</Path>
   <ValueType>System.String</ValueType>
@@ -838,6 +33,566 @@
 </Node>
 <Node>
   <Value>&lt;string&gt;0,333257&amp;amp;0,4999236&amp;amp;08.10.2018 20:26:31&amp;amp;08.10.2018 20:26:34&amp;amp;08.10.2018 20:26:34&lt;/string&gt;</Value>
+  <Path>C7</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666667&amp;amp;0,1666667&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&lt;/string&gt;</Value>
+  <Path>C1</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666667&amp;amp;0,1666667&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&lt;/string&gt;</Value>
+  <Path>C2</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666667&amp;amp;0,1666667&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&lt;/string&gt;</Value>
+  <Path>C3</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666667&amp;amp;0,1666667&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&lt;/string&gt;</Value>
+  <Path>C4</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666667&amp;amp;0,1666667&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&lt;/string&gt;</Value>
+  <Path>C5</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666667&amp;amp;0,1666667&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&lt;/string&gt;</Value>
+  <Path>C6</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666667&amp;amp;0,1666667&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&lt;/string&gt;</Value>
+  <Path>C7</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666549&amp;amp;0,1666549&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:59&lt;/string&gt;</Value>
+  <Path>C1</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666549&amp;amp;0,1666549&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:59&lt;/string&gt;</Value>
+  <Path>C2</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666549&amp;amp;0,1666549&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:59&lt;/string&gt;</Value>
+  <Path>C3</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666549&amp;amp;0,1666549&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:59&lt;/string&gt;</Value>
+  <Path>C4</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666549&amp;amp;0,3333215&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:59&amp;amp;09.10.2018 08:12:59&lt;/string&gt;</Value>
+  <Path>C5</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666549&amp;amp;0,1666549&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:59&lt;/string&gt;</Value>
+  <Path>C6</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666549&amp;amp;0,1666549&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:59&lt;/string&gt;</Value>
+  <Path>C7</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666308&amp;amp;0,1666308&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:19&lt;/string&gt;</Value>
+  <Path>C1</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666308&amp;amp;0,1666308&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:19&lt;/string&gt;</Value>
+  <Path>C2</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666308&amp;amp;0,1666308&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:19&lt;/string&gt;</Value>
+  <Path>C3</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666308&amp;amp;0,3332974&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:19&amp;amp;09.10.2018 08:13:19&lt;/string&gt;</Value>
+  <Path>C4</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666308&amp;amp;0,3332974&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:59&amp;amp;09.10.2018 08:13:19&lt;/string&gt;</Value>
+  <Path>C5</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666308&amp;amp;0,1666308&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:19&lt;/string&gt;</Value>
+  <Path>C6</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666308&amp;amp;0,1666308&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:19&lt;/string&gt;</Value>
+  <Path>C7</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666277&amp;amp;0,1666277&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:22&lt;/string&gt;</Value>
+  <Path>C1</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666277&amp;amp;0,1666277&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:22&lt;/string&gt;</Value>
+  <Path>C2</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666277&amp;amp;0,1666277&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:22&lt;/string&gt;</Value>
+  <Path>C3</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666277&amp;amp;0,3332944&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:19&amp;amp;09.10.2018 08:13:22&lt;/string&gt;</Value>
+  <Path>C4</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666277&amp;amp;0,3332944&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:59&amp;amp;09.10.2018 08:13:22&lt;/string&gt;</Value>
+  <Path>C5</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666277&amp;amp;0,3332944&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:22&amp;amp;09.10.2018 08:13:22&lt;/string&gt;</Value>
+  <Path>C6</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666277&amp;amp;0,1666277&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:22&lt;/string&gt;</Value>
+  <Path>C7</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666258&amp;amp;0,1666258&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:24&lt;/string&gt;</Value>
+  <Path>C1</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666258&amp;amp;0,3332925&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:24&amp;amp;09.10.2018 08:13:24&lt;/string&gt;</Value>
+  <Path>C2</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666258&amp;amp;0,1666258&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:24&lt;/string&gt;</Value>
+  <Path>C3</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666258&amp;amp;0,3332925&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:19&amp;amp;09.10.2018 08:13:24&lt;/string&gt;</Value>
+  <Path>C4</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666258&amp;amp;0,3332925&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:59&amp;amp;09.10.2018 08:13:24&lt;/string&gt;</Value>
+  <Path>C5</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666258&amp;amp;0,3332925&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:22&amp;amp;09.10.2018 08:13:24&lt;/string&gt;</Value>
+  <Path>C6</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666258&amp;amp;0,1666258&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:24&lt;/string&gt;</Value>
+  <Path>C7</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666212&amp;amp;0,3332879&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:28&amp;amp;09.10.2018 08:13:28&lt;/string&gt;</Value>
+  <Path>C1</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666212&amp;amp;0,3332879&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:24&amp;amp;09.10.2018 08:13:28&lt;/string&gt;</Value>
+  <Path>C2</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666212&amp;amp;0,1666212&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:28&lt;/string&gt;</Value>
+  <Path>C3</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666212&amp;amp;0,3332879&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:19&amp;amp;09.10.2018 08:13:28&lt;/string&gt;</Value>
+  <Path>C4</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666212&amp;amp;0,3332879&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:59&amp;amp;09.10.2018 08:13:28&lt;/string&gt;</Value>
+  <Path>C5</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666212&amp;amp;0,3332879&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:22&amp;amp;09.10.2018 08:13:28&lt;/string&gt;</Value>
+  <Path>C6</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666212&amp;amp;0,1666212&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:28&lt;/string&gt;</Value>
+  <Path>C7</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666071&amp;amp;0,3332738&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:28&amp;amp;09.10.2018 08:13:40&lt;/string&gt;</Value>
+  <Path>C1</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666071&amp;amp;0,3332738&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:24&amp;amp;09.10.2018 08:13:40&lt;/string&gt;</Value>
+  <Path>C2</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666071&amp;amp;0,3332738&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:40&amp;amp;09.10.2018 08:13:40&lt;/string&gt;</Value>
+  <Path>C3</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666071&amp;amp;0,3332738&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:19&amp;amp;09.10.2018 08:13:40&lt;/string&gt;</Value>
+  <Path>C4</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666071&amp;amp;0,3332738&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:59&amp;amp;09.10.2018 08:13:40&lt;/string&gt;</Value>
+  <Path>C5</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666071&amp;amp;0,3332738&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:22&amp;amp;09.10.2018 08:13:40&lt;/string&gt;</Value>
+  <Path>C6</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1666071&amp;amp;0,1666071&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:40&lt;/string&gt;</Value>
+  <Path>C7</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1665437&amp;amp;0,3332104&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:28&amp;amp;09.10.2018 08:14:35&lt;/string&gt;</Value>
+  <Path>C1</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332104&amp;amp;0,3332104&amp;amp;09.10.2018 08:14:35&amp;amp;09.10.2018 08:13:24&amp;amp;09.10.2018 08:14:35&lt;/string&gt;</Value>
+  <Path>C2</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1665437&amp;amp;0,3332104&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:40&amp;amp;09.10.2018 08:14:35&lt;/string&gt;</Value>
+  <Path>C3</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1665437&amp;amp;0,3332104&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:19&amp;amp;09.10.2018 08:14:35&lt;/string&gt;</Value>
+  <Path>C4</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1665437&amp;amp;0,3332104&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:59&amp;amp;09.10.2018 08:14:35&lt;/string&gt;</Value>
+  <Path>C5</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1665437&amp;amp;0,3332104&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:22&amp;amp;09.10.2018 08:14:35&lt;/string&gt;</Value>
+  <Path>C6</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1665437&amp;amp;0,1665437&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:14:35&lt;/string&gt;</Value>
+  <Path>C7</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332072&amp;amp;0,3332072&amp;amp;09.10.2018 08:14:37&amp;amp;09.10.2018 08:13:28&amp;amp;09.10.2018 08:14:37&lt;/string&gt;</Value>
+  <Path>C1</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332072&amp;amp;0,3332072&amp;amp;09.10.2018 08:14:35&amp;amp;09.10.2018 08:13:24&amp;amp;09.10.2018 08:14:37&lt;/string&gt;</Value>
+  <Path>C2</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1665405&amp;amp;0,3332072&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:40&amp;amp;09.10.2018 08:14:37&lt;/string&gt;</Value>
+  <Path>C3</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1665405&amp;amp;0,3332072&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:19&amp;amp;09.10.2018 08:14:37&lt;/string&gt;</Value>
+  <Path>C4</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1665405&amp;amp;0,3332072&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:59&amp;amp;09.10.2018 08:14:37&lt;/string&gt;</Value>
+  <Path>C5</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1665405&amp;amp;0,3332072&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:22&amp;amp;09.10.2018 08:14:37&lt;/string&gt;</Value>
+  <Path>C6</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1665405&amp;amp;0,1665405&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:14:37&lt;/string&gt;</Value>
+  <Path>C7</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,333206&amp;amp;0,333206&amp;amp;09.10.2018 08:14:37&amp;amp;09.10.2018 08:13:28&amp;amp;09.10.2018 08:14:38&lt;/string&gt;</Value>
+  <Path>C1</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,333206&amp;amp;0,333206&amp;amp;09.10.2018 08:14:35&amp;amp;09.10.2018 08:13:24&amp;amp;09.10.2018 08:14:38&lt;/string&gt;</Value>
+  <Path>C2</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1665393&amp;amp;0,3332059&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:40&amp;amp;09.10.2018 08:14:38&lt;/string&gt;</Value>
+  <Path>C3</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1665393&amp;amp;0,3332059&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:19&amp;amp;09.10.2018 08:14:38&lt;/string&gt;</Value>
+  <Path>C4</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1665393&amp;amp;0,3332059&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:59&amp;amp;09.10.2018 08:14:38&lt;/string&gt;</Value>
+  <Path>C5</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332059&amp;amp;0,3332059&amp;amp;09.10.2018 08:14:38&amp;amp;09.10.2018 08:13:22&amp;amp;09.10.2018 08:14:38&lt;/string&gt;</Value>
+  <Path>C6</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1665393&amp;amp;0,1665393&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:14:38&lt;/string&gt;</Value>
+  <Path>C7</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332052&amp;amp;0,3332052&amp;amp;09.10.2018 08:14:37&amp;amp;09.10.2018 08:13:28&amp;amp;09.10.2018 08:14:39&lt;/string&gt;</Value>
+  <Path>C1</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332052&amp;amp;0,3332052&amp;amp;09.10.2018 08:14:35&amp;amp;09.10.2018 08:13:24&amp;amp;09.10.2018 08:14:39&lt;/string&gt;</Value>
+  <Path>C2</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332052&amp;amp;0,3332052&amp;amp;09.10.2018 08:14:39&amp;amp;09.10.2018 08:13:40&amp;amp;09.10.2018 08:14:39&lt;/string&gt;</Value>
+  <Path>C3</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1665385&amp;amp;0,3332052&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:19&amp;amp;09.10.2018 08:14:39&lt;/string&gt;</Value>
+  <Path>C4</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1665385&amp;amp;0,3332052&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:59&amp;amp;09.10.2018 08:14:39&lt;/string&gt;</Value>
+  <Path>C5</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332052&amp;amp;0,3332052&amp;amp;09.10.2018 08:14:38&amp;amp;09.10.2018 08:13:22&amp;amp;09.10.2018 08:14:39&lt;/string&gt;</Value>
+  <Path>C6</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1665385&amp;amp;0,1665385&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:14:39&lt;/string&gt;</Value>
+  <Path>C7</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332037&amp;amp;0,3332037&amp;amp;09.10.2018 08:14:37&amp;amp;09.10.2018 08:13:28&amp;amp;09.10.2018 08:14:40&lt;/string&gt;</Value>
+  <Path>C1</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332037&amp;amp;0,3332037&amp;amp;09.10.2018 08:14:35&amp;amp;09.10.2018 08:13:24&amp;amp;09.10.2018 08:14:40&lt;/string&gt;</Value>
+  <Path>C2</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332037&amp;amp;0,3332037&amp;amp;09.10.2018 08:14:39&amp;amp;09.10.2018 08:13:40&amp;amp;09.10.2018 08:14:40&lt;/string&gt;</Value>
+  <Path>C3</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,166537&amp;amp;0,3332037&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:13:19&amp;amp;09.10.2018 08:14:40&lt;/string&gt;</Value>
+  <Path>C4</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332037&amp;amp;0,3332037&amp;amp;09.10.2018 08:14:40&amp;amp;09.10.2018 08:12:59&amp;amp;09.10.2018 08:14:40&lt;/string&gt;</Value>
+  <Path>C5</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332037&amp;amp;0,3332037&amp;amp;09.10.2018 08:14:38&amp;amp;09.10.2018 08:13:22&amp;amp;09.10.2018 08:14:40&lt;/string&gt;</Value>
+  <Path>C6</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,166537&amp;amp;0,166537&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:14:40&lt;/string&gt;</Value>
+  <Path>C7</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332029&amp;amp;0,333203&amp;amp;09.10.2018 08:14:37&amp;amp;09.10.2018 08:13:28&amp;amp;09.10.2018 08:14:41&lt;/string&gt;</Value>
+  <Path>C1</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332029&amp;amp;0,333203&amp;amp;09.10.2018 08:14:35&amp;amp;09.10.2018 08:13:24&amp;amp;09.10.2018 08:14:41&lt;/string&gt;</Value>
+  <Path>C2</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332029&amp;amp;0,3332029&amp;amp;09.10.2018 08:14:39&amp;amp;09.10.2018 08:13:40&amp;amp;09.10.2018 08:14:41&lt;/string&gt;</Value>
+  <Path>C3</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332029&amp;amp;0,3332029&amp;amp;09.10.2018 08:14:41&amp;amp;09.10.2018 08:13:19&amp;amp;09.10.2018 08:14:41&lt;/string&gt;</Value>
+  <Path>C4</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332029&amp;amp;0,3332029&amp;amp;09.10.2018 08:14:40&amp;amp;09.10.2018 08:12:59&amp;amp;09.10.2018 08:14:41&lt;/string&gt;</Value>
+  <Path>C5</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332029&amp;amp;0,3332029&amp;amp;09.10.2018 08:14:38&amp;amp;09.10.2018 08:13:22&amp;amp;09.10.2018 08:14:41&lt;/string&gt;</Value>
+  <Path>C6</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1665363&amp;amp;0,1665363&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:14:41&lt;/string&gt;</Value>
+  <Path>C7</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332008&amp;amp;0,3332008&amp;amp;09.10.2018 08:14:37&amp;amp;09.10.2018 08:13:28&amp;amp;09.10.2018 08:14:43&lt;/string&gt;</Value>
+  <Path>C1</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332008&amp;amp;0,3332008&amp;amp;09.10.2018 08:14:35&amp;amp;09.10.2018 08:13:24&amp;amp;09.10.2018 08:14:43&lt;/string&gt;</Value>
+  <Path>C2</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332008&amp;amp;0,3332008&amp;amp;09.10.2018 08:14:39&amp;amp;09.10.2018 08:13:40&amp;amp;09.10.2018 08:14:43&lt;/string&gt;</Value>
+  <Path>C3</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332008&amp;amp;0,3332008&amp;amp;09.10.2018 08:14:41&amp;amp;09.10.2018 08:13:19&amp;amp;09.10.2018 08:14:43&lt;/string&gt;</Value>
+  <Path>C4</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332008&amp;amp;0,3332008&amp;amp;09.10.2018 08:14:40&amp;amp;09.10.2018 08:12:59&amp;amp;09.10.2018 08:14:43&lt;/string&gt;</Value>
+  <Path>C5</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3332008&amp;amp;0,3332008&amp;amp;09.10.2018 08:14:38&amp;amp;09.10.2018 08:13:22&amp;amp;09.10.2018 08:14:43&lt;/string&gt;</Value>
+  <Path>C6</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,1665341&amp;amp;0,3332008&amp;amp;09.10.2018 08:12:48&amp;amp;09.10.2018 08:14:43&amp;amp;09.10.2018 08:14:43&lt;/string&gt;</Value>
+  <Path>C7</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3331977&amp;amp;0,3331977&amp;amp;09.10.2018 08:14:37&amp;amp;09.10.2018 08:13:28&amp;amp;09.10.2018 08:14:46&lt;/string&gt;</Value>
+  <Path>C1</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3331977&amp;amp;0,3331977&amp;amp;09.10.2018 08:14:35&amp;amp;09.10.2018 08:13:24&amp;amp;09.10.2018 08:14:46&lt;/string&gt;</Value>
+  <Path>C2</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3331977&amp;amp;0,3331977&amp;amp;09.10.2018 08:14:39&amp;amp;09.10.2018 08:13:40&amp;amp;09.10.2018 08:14:46&lt;/string&gt;</Value>
+  <Path>C3</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3331977&amp;amp;0,3331977&amp;amp;09.10.2018 08:14:41&amp;amp;09.10.2018 08:13:19&amp;amp;09.10.2018 08:14:46&lt;/string&gt;</Value>
+  <Path>C4</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3331977&amp;amp;0,3331977&amp;amp;09.10.2018 08:14:40&amp;amp;09.10.2018 08:12:59&amp;amp;09.10.2018 08:14:46&lt;/string&gt;</Value>
+  <Path>C5</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3331977&amp;amp;0,3331977&amp;amp;09.10.2018 08:14:38&amp;amp;09.10.2018 08:13:22&amp;amp;09.10.2018 08:14:46&lt;/string&gt;</Value>
+  <Path>C6</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,3331977&amp;amp;0,3331977&amp;amp;09.10.2018 08:14:46&amp;amp;09.10.2018 08:14:43&amp;amp;09.10.2018 08:14:46&lt;/string&gt;</Value>
+  <Path>C7</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,333196&amp;amp;0,333196&amp;amp;09.10.2018 08:14:37&amp;amp;09.10.2018 08:13:28&amp;amp;09.10.2018 08:14:47&lt;/string&gt;</Value>
+  <Path>C1</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,333196&amp;amp;0,333196&amp;amp;09.10.2018 08:14:35&amp;amp;09.10.2018 08:13:24&amp;amp;09.10.2018 08:14:47&lt;/string&gt;</Value>
+  <Path>C2</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,333196&amp;amp;0,333196&amp;amp;09.10.2018 08:14:39&amp;amp;09.10.2018 08:13:40&amp;amp;09.10.2018 08:14:47&lt;/string&gt;</Value>
+  <Path>C3</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,333196&amp;amp;0,333196&amp;amp;09.10.2018 08:14:41&amp;amp;09.10.2018 08:13:19&amp;amp;09.10.2018 08:14:47&lt;/string&gt;</Value>
+  <Path>C4</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,333196&amp;amp;0,4998626&amp;amp;09.10.2018 08:14:40&amp;amp;09.10.2018 08:14:47&amp;amp;09.10.2018 08:14:47&lt;/string&gt;</Value>
+  <Path>C5</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,333196&amp;amp;0,333196&amp;amp;09.10.2018 08:14:38&amp;amp;09.10.2018 08:13:22&amp;amp;09.10.2018 08:14:47&lt;/string&gt;</Value>
+  <Path>C6</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,333196&amp;amp;0,333196&amp;amp;09.10.2018 08:14:46&amp;amp;09.10.2018 08:14:43&amp;amp;09.10.2018 08:14:47&lt;/string&gt;</Value>
   <Path>C7</Path>
   <ValueType>System.String</ValueType>
 </Node>

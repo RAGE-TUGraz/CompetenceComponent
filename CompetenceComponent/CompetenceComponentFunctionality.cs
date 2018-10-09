@@ -581,19 +581,26 @@ namespace CompetenceComponentNamespace
 
             float updateValue = 1.0f / (float)CompetenceComponentFunctionality.getSettings().NumberOfLevels;
             updateValue *= factor;
+            float oldValue=0;
+            float newValue=0;
             if (type.Equals(UpdateType.ASSESSMENT))
             {
+                oldValue = ac.valueAssessment;
                 ac.valueAssessment = success ? ac.valueAssessment + updateValue : ac.valueAssessment - updateValue;
                 ac.valueAssessment = Math.Max(Math.Min(1, ac.valueAssessment), 0);
                 ac.valueLearning = Math.Max(ac.valueAssessment, ac.valueLearning);
+                newValue = ac.valueAssessment;
             }
             else if (type.Equals(UpdateType.LEARNING))
             {
+                oldValue = ac.valueLearning;
                 ac.valueLearning = success ? ac.valueLearning + updateValue : ac.valueLearning - updateValue;
                 ac.valueLearning = Math.Max(Math.Min(1, ac.valueLearning), 0);
                 //learning value of a competence can not rise over prerequisite value
                 ac.valueLearning = Math.Min(ac.valueLearning, ac.getMinimumPrerequisiteValueOrOneIfThereAreNoPrerequisites(UpdateType.LEARNING));
+                newValue = ac.valueLearning;
             }
+            CompetenceComponentFunctionality.loggingCC("Updated Competence ("+ (type.Equals(UpdateType.LEARNING) ? "Learning" : "Assessment") +") '"+ac.id+"' from "+oldValue+" to "+newValue);
             Timestamp stamp = type.Equals(UpdateType.ASSESSMENT) ? Timestamp.ASSESSMENT : Timestamp.LEARNING;
             ac.setTimestamp(stamp);
             storeAssessmentState();
