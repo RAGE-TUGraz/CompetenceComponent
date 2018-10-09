@@ -153,21 +153,26 @@ namespace CompetenceComponentNamespace
         /// <returns>Domain Model for the player.</returns>
         internal static DataModel loadDefaultDataModel()
         {
-            loggingCC("Loading default data model.");
             CompetenceComponentSettings ccs = getSettings();
+            return loadDataModel(ccs.SourceFile);
+        }
 
+        internal static DataModel loadDataModel(string filepath)
+        {
+            loggingCC("Loading data model.");
+            
             IDataStorage ids = CompetenceComponent.Instance.getInterfaceFromAsset<IDataStorage>();
 
             if (ids != null)
             {
-                if (!ids.Exists(ccs.SourceFile))
+                if (!ids.Exists(filepath))
                 {
-                    loggingCC("File " + ccs.SourceFile + " not found for loading data model.", Severity.Error);
-                    throw new DataModelNotFoundException("EXCEPTION: File " + ccs.SourceFile + " not found for loading Domain model.");
+                    loggingCC("File " + filepath + " not found for loading data model.", Severity.Error);
+                    throw new DataModelNotFoundException("EXCEPTION: File " + filepath + " not found for loading Data model.");
                 }
 
                 loggingCC("Loading data model from File.");
-                string xmlDataModel = ids.Load(ccs.SourceFile);
+                string xmlDataModel = ids.Load(filepath);
                 DataModel dataModel = DataModel.getDMFromXmlString(xmlDataModel);
                 return (dataModel);
             }
@@ -177,7 +182,6 @@ namespace CompetenceComponentNamespace
                 //throw new Exception("EXCEPTION: IDataStorage bridge absent for requested local loading method of the Domain model.");
                 return null;
             }
-
         }
 
         /// <summary>
@@ -228,6 +232,18 @@ namespace CompetenceComponentNamespace
         public Mappings mappings { get; set; }
 
         #endregion
+        #region API
+        public void storeToFile(string filePath)
+        {
+            CompetenceComponentFunctionality.storeDataModel(this, filePath);
+        }
+
+        public static DataModel loadFromFile(string filePath)
+        {
+            return CompetenceComponentFunctionality.loadDataModel(filePath);
+        }
+        
+        #endregion
         #region Methods
 
         public String toXmlString()
@@ -251,12 +267,7 @@ namespace CompetenceComponentNamespace
                 return null;
             }
         }
-
-        public void storeToFile(string filePath)
-        {
-            CompetenceComponentFunctionality.storeDataModel(this,filePath);
-        }
-
+        
         public void printToCommandline()
         {
             CompetenceComponentFunctionality.loggingCC("Printing data model:");
@@ -314,6 +325,7 @@ namespace CompetenceComponentNamespace
                 return (result);
             }
         }
+        
         #endregion Methods
     }
 
