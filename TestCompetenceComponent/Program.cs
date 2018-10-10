@@ -60,10 +60,22 @@ namespace TestCompetenceComponent
             Console.WriteLine(cc.getCompetenceLevel("C2"));
             */
 
-            cc.getDataModel().printToCommandline();
-            cc.getDataModel().storeToFile("ttesti.xml");
+            //cc.getDataModel().printToCommandline();
 
-            //*
+            DataModel dm = new DataModel();
+            dm.addCompetence("C1");
+            dm.addCompetence("C2");
+            dm.addCompetence("C3");
+            dm.addPrerequisites("C3",new List<string>(new string[]{ "C2", "C1"}));
+            dm.addDifficulty("easy",0.2f);
+            Dictionary<string, float> competencies = new Dictionary<string, float>();
+            competencies["C1"] = 0.5f;
+            competencies["C2"] = 1.5f;
+            dm.addGamesituation("GS1","easy",true, true, competencies);
+            dm.printToCommandline();
+
+
+            /*
             cc.ResetCompetenceState();
             printCompetenceLevels(cc.getCompetenceLevels());
 

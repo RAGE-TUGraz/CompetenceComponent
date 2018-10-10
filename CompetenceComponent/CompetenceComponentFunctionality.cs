@@ -243,6 +243,171 @@ namespace CompetenceComponentNamespace
             return CompetenceComponentFunctionality.loadDataModel(filePath);
         }
         
+        public void addCompetence(string id)
+        {
+            if (getElementCompetenceById(id) == null)
+            {
+                elements.competenceList.competences.Add(new Competence(id));
+            }
+            else
+            {
+                CompetenceComponentFunctionality.loggingCC("Can't add Competence '" + id + "', this competence already exists.");
+            }
+        }
+
+        public void addPrerequisites(string id, List<string> prerequisites)
+        {
+            //check - are competences available?
+            if (getElementCompetenceById(id) == null)
+            {
+                CompetenceComponentFunctionality.loggingCC("Can't add prerequisites to competence '" + id + "' - it doesn't exist.");
+                return;
+            }
+            foreach (string prereq_id in prerequisites)
+            {
+                if (getElementCompetenceById(prereq_id) == null)
+                {
+                    CompetenceComponentFunctionality.loggingCC("Can't add prerequisites '" + prereq_id + "' - it doesn't exist.");
+                    return;
+                }
+            }
+            //check for created loops
+            ///---------------
+            //add prerequisites - Relation
+            PrerequisiteCompetence prerequisiteCompetence = getRelationPrerequisiteById(id);
+            if (prerequisiteCompetence == null)
+            {
+                prerequisiteCompetence = new PrerequisiteCompetence();
+                prerequisiteCompetence.id = id;
+                relations.competenceprerequisites.competenceList.Add(prerequisiteCompetence);
+            }
+            //add prerequisites
+            foreach (string prereq_id in prerequisites)
+            {
+                if (!prerequisiteCompetence.containsPrerequisiteById(prereq_id))
+                {
+                    prerequisiteCompetence.prerequisites.Add(new Prerequisite(prereq_id));
+                }
+            }
+        }
+
+        public void addGamesituation(string id, string difficulty, bool isLearning, bool isAssessment, Dictionary<string,float> competencies)
+        {
+            //does gamesituation id already exists?
+            if (getElementGamesituationById(id) != null)
+            {
+                CompetenceComponentFunctionality.loggingCC("Can't add Gamesituation '"+id+"', this gamesituation already exists.");
+                return;
+            }
+            //does difficulty exists?
+            if (getDifficultyById(difficulty)==null)
+            {
+                CompetenceComponentFunctionality.loggingCC("Can't add Gamesituation, because difficulty '" + difficulty + "' unknown.");
+                return;
+            }
+            //create object
+            float sumOfWeights = 0;
+            Gamesituation gamesituation = new Gamesituation();
+            gamesituation.id = id;
+            gamesituation.difficulty = difficulty;
+            foreach (string comp_id in competencies.Keys)
+            {
+                if (getElementCompetenceById(comp_id)==null)
+                {
+                    CompetenceComponentFunctionality.loggingCC("Can't add Gamesituation - competence '" + comp_id + "' doesn't exist.");
+                    return;
+                }
+                if (competencies[comp_id] <= 0)
+                {
+                    CompetenceComponentFunctionality.loggingCC("Can't add Gamesituation - competence weights need to be > 0.");
+                    return;
+                }
+                sumOfWeights += competencies[comp_id];
+                GamesituationCompetence competence = new GamesituationCompetence();
+                competence.id = comp_id;
+                competence.weight = competencies[comp_id];
+                gamesituation.competences.Add(competence);
+            }
+            //adjust weights - they need to equal 1 when summed up
+            if (sumOfWeights != 1)
+            {
+                foreach (GamesituationCompetence competence in gamesituation.competences)
+                {
+                    competence.weight /= sumOfWeights;
+                }
+            }
+            //add gamesituation
+            elements.gamesituationList.gamesituations.Add(gamesituation);
+        }
+
+        public void addDifficulty(string id, float weight)
+        {
+            if (getDifficultyById(id) != null)
+            {
+                CompetenceComponentFunctionality.loggingCC("Can't add Difficulty '" + id + "' - this id already exists.");
+                return;
+            }
+            if (weight <=0)
+            {
+                CompetenceComponentFunctionality.loggingCC("Can't add Difficulty '" + id + "' - weight needs to be >0.");
+                return;
+            }
+            Difficulty difficulty = new Difficulty();
+            difficulty.id = id;
+            difficulty.weight = weight;
+
+            mappings.difficulties.difficultyList.Add(difficulty);
+        }
+
+        #endregion
+        #region InternalMethods
+        private PrerequisiteCompetence getRelationPrerequisiteById(string id)
+        {
+            foreach (PrerequisiteCompetence prerequisite in relations.competenceprerequisites.competenceList)
+            {
+                if (prerequisite.id.Equals(id))
+                {
+                    return prerequisite;
+                }
+            }
+            return null;
+        }
+
+        private Competence getElementCompetenceById(string id)
+        {
+            foreach (Competence competence in elements.competenceList.competences)
+            {
+                if (competence.id.Equals(id))
+                {
+                    return competence;
+                }
+            }
+            return null;
+        }
+
+        private Gamesituation getElementGamesituationById(string id)
+        {
+            foreach (Gamesituation gamesituation in elements.gamesituationList.gamesituations)
+            {
+                if (gamesituation.id.Equals(id))
+                {
+                    return gamesituation;
+                }
+            }
+            return null;
+        }
+
+        private Difficulty getDifficultyById(string id)
+        {
+            foreach (Difficulty difficulty in mappings.difficulties.difficultyList)
+            {
+                if (difficulty.id.Equals(id))
+                {
+                    return difficulty;
+                }
+            }
+            return null;
+        }
         #endregion
         #region Methods
 
@@ -299,7 +464,7 @@ namespace CompetenceComponentNamespace
             CompetenceComponentFunctionality.loggingCC("Difficulties:");
             foreach (Difficulty difficulty in mappings.difficulties.difficultyList)
             {
-                CompetenceComponentFunctionality.loggingCC("             -" + difficulty.id + ":" + difficulty.weigth);
+                CompetenceComponentFunctionality.loggingCC("             -" + difficulty.id + ":" + difficulty.weight);
             }
 
         }
@@ -325,8 +490,16 @@ namespace CompetenceComponentNamespace
                 return (result);
             }
         }
-        
+
         #endregion Methods
+        #region Constructor
+        public DataModel()
+        {
+            elements = new Elements();
+            relations = new Relations();
+            mappings = new Mappings();
+        }
+        #endregion
     }
 
     public class Relations
@@ -335,6 +508,12 @@ namespace CompetenceComponentNamespace
 
         public Competenceprerequisites competenceprerequisites;
         #endregion
+        #region Constructor
+        public Relations()
+        {
+            competenceprerequisites = new Competenceprerequisites();
+        }
+        #endregion
     }
 
     public class Competenceprerequisites
@@ -342,6 +521,12 @@ namespace CompetenceComponentNamespace
         #region Properties
         [XmlElement("competence")]
         public List<PrerequisiteCompetence> competenceList { get; set; }
+        #endregion
+        #region Constructor
+        public Competenceprerequisites()
+        {
+            competenceList = new List<PrerequisiteCompetence>();
+        }
         #endregion
     }
 
@@ -354,6 +539,25 @@ namespace CompetenceComponentNamespace
         [XmlElement("prereqcompetence")]
         public List<Prerequisite> prerequisites;
         #endregion
+        #region Constructor
+        public PrerequisiteCompetence()
+        {
+            prerequisites = new List<Prerequisite>();
+        }
+        #endregion
+        #region Methods
+        public bool containsPrerequisiteById(string id)
+        {
+            foreach (Prerequisite prereq in prerequisites)
+            {
+                if (prereq.id.Equals(id))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        #endregion
     }
 
     public class Prerequisite
@@ -363,6 +567,14 @@ namespace CompetenceComponentNamespace
         [XmlAttribute("id")]
         public string id;
         #endregion
+        #region Constructor
+        public Prerequisite() { }
+
+        public Prerequisite(string id)
+        {
+            this.id = id;
+        }
+        #endregion
     }
 
     public class Mappings
@@ -370,6 +582,12 @@ namespace CompetenceComponentNamespace
         #region Properties
         [XmlElement("difficulties")]
         public Difficulties difficulties { get; set; }
+        #endregion
+        #region Constructor
+        public Mappings()
+        {
+            difficulties = new Difficulties();
+        }
         #endregion
     }
 
@@ -387,10 +605,16 @@ namespace CompetenceComponentNamespace
             {
                 if (id.Equals(difficulty.id))
                 {
-                    return difficulty.weigth;
+                    return difficulty.weight;
                 }
             }
             return -1;
+        }
+        #endregion
+        #region Constructor
+        public Difficulties()
+        {
+            difficultyList = new List<Difficulty>();
         }
         #endregion
     }
@@ -402,7 +626,7 @@ namespace CompetenceComponentNamespace
         public string id { get; set; }
 
         [XmlAttribute("weight")]
-        public float weigth { get; set; }
+        public float weight { get; set; }
 
         #endregion
     }
@@ -419,6 +643,13 @@ namespace CompetenceComponentNamespace
         public GamesituationList gamesituationList { get; set; }
 
         #endregion Properties
+        #region Constructor
+        public Elements()
+        {
+            competenceList = new CompetenceList();
+            gamesituationList = new GamesituationList();
+        }
+        #endregion
     }
 
     public class CompetenceList
@@ -428,6 +659,12 @@ namespace CompetenceComponentNamespace
         [XmlElement("competence")]
         public List<Competence> competences { get; set; }
 
+        #endregion
+        #region Constructor
+        public CompetenceList()
+        {
+            competences = new List<Competence>();
+        }
         #endregion
     }
 
@@ -460,6 +697,12 @@ namespace CompetenceComponentNamespace
         public List<Gamesituation> gamesituations { get; set; }
 
         #endregion
+        #region Constructor
+        public GamesituationList()
+        {
+            gamesituations = new List<Gamesituation>();
+        }
+        #endregion
     }
 
     public class Gamesituation
@@ -484,6 +727,12 @@ namespace CompetenceComponentNamespace
         [XmlElement("competence")]
         public List<GamesituationCompetence> competences { get; set; }
 
+        #endregion
+        #region Constructor
+        public Gamesituation()
+        {
+            competences = new List<GamesituationCompetence>();
+        }
         #endregion
     }
 
@@ -791,7 +1040,7 @@ namespace CompetenceComponentNamespace
             int countVariable = 0;
             foreach (Difficulty diff in difficulties.difficultyList)
             {
-                if (diff.weigth <= difficulty)
+                if (diff.weight <= difficulty)
                 {
                     countVariable++;
                 }
