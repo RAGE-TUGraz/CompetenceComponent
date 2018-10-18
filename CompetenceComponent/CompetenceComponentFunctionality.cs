@@ -120,12 +120,23 @@ namespace CompetenceComponentNamespace
             return nextCompetence.id;
         }
 
-        public static string GetGamesituationRecommendation()
+        public static List<string> GetGamesituationRecommendation(int quantity)
         {
-            AssessmentGamesituation nextGamesituation = RecommendationObject.getGamesituationRecommendation(assessmentObject.competences, assessmentObject.gamesituations);
-            if (nextGamesituation == null)
-                return null;
-            return nextGamesituation.id;
+            List<AssessmentGamesituation> nextGamesituations = RecommendationObject.getGamesituationRecommendation(assessmentObject.competences, assessmentObject.gamesituations);
+
+            List<string> nextGSs = new List<string>();
+            foreach (AssessmentGamesituation gs in nextGamesituations)
+            {
+                if (nextGSs.Count==quantity)
+                {
+                    break;
+                }else if(gs != null)
+                {
+                    nextGSs.Add(gs.id);
+                }
+            }
+            
+            return nextGSs;
         }
 
         internal static void storeDataModel(DataModel dataModel, string filepath)
@@ -1347,30 +1358,34 @@ namespace CompetenceComponentNamespace
             return selectedCompetence;
         }
 
-        public static AssessmentGamesituation getGamesituationRecommendation(List<AssessmentCompetence> competences, List<AssessmentGamesituation> gamesituations)
+        public static List<AssessmentGamesituation> getGamesituationRecommendation(List<AssessmentCompetence> competences, List<AssessmentGamesituation> gamesituations)
         {
             //CompetenceComponentFunctionality.loggingCC("Getting GS recommendation");
             //check: do assessment - when in assessment phase OR when assessment value of one competence is high enought
             bool doAssessment = CompetenceComponentFunctionality.getSettings().Phase.Equals(CompetenceComponentPhase.ASSESSMENT) || getCompetenceRecommendation(competences, UpdateType.ASSESSMENT).getRecommendationValue(UpdateType.ASSESSMENT) >= CompetenceComponentFunctionality.getSettings().ThreasholdRecommendationSelection;
-            AssessmentGamesituation selectGamesituation = null;
-            float selectedGamesituationValue = 0;
             float currentGamesituationValue = 0;
+
+            Dictionary<AssessmentGamesituation, float> gameSituationsAndValues = new Dictionary<AssessmentGamesituation, float>();
 
             foreach (AssessmentGamesituation situation in gamesituations)
             {
                 if ((doAssessment && situation.isAssessment) || (!doAssessment && situation.isLearning))  //do assessment || do learning
                 {
                     currentGamesituationValue = situation.getRecommendationValue(doAssessment ? UpdateType.ASSESSMENT : UpdateType.LEARNING);
-                    if (selectGamesituation == null || selectedGamesituationValue <= currentGamesituationValue)
-                    {
-                        selectedGamesituationValue = currentGamesituationValue;
-                        selectGamesituation = situation;
-                    }
-                    //situation.print(currentGamesituationValue.ToString());
+                    gameSituationsAndValues[situation] = currentGamesituationValue;
                 }
             }
 
-            return selectedGamesituationValue == 0 ? null : selectGamesituation;
+            //order game situation based on values
+            List<AssessmentGamesituation> GSs = new List<AssessmentGamesituation>();
+            foreach (KeyValuePair<AssessmentGamesituation, float> item in gameSituationsAndValues.OrderByDescending(key => key.Value))
+            {
+                GSs.Add(item.Key);
+            }
+
+
+
+            return GSs;
         }
 
         #endregion

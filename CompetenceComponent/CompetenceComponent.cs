@@ -165,13 +165,12 @@ namespace CompetenceComponentNamespace
             CompetenceComponentFunctionality.updateDueToForgetting();
             return CompetenceComponentFunctionality.GetCompetenceRecommendation(type);
         }
-
-
+        
         /// <summary>
         /// Request the string id of the next gamesituation to test/train
         /// </summary>
         /// <returns> the string id of the gamesituation to train/test</returns>
-        public string GetGamesituationRecommendation()
+        public List<string> GetGamesituationRecommendation(int quantity=1)
         {
             if (!isInitialized)
                 Initialize();
@@ -180,7 +179,7 @@ namespace CompetenceComponentNamespace
                 return null;
 
             CompetenceComponentFunctionality.updateDueToForgetting();
-            return CompetenceComponentFunctionality.GetGamesituationRecommendation();
+            return CompetenceComponentFunctionality.GetGamesituationRecommendation(quantity);
         }
 
         /// <summary>

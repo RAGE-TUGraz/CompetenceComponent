@@ -75,7 +75,7 @@ namespace TestCompetenceComponent
             dm.printToCommandline();
 
 
-            /*
+            //*
             cc.ResetCompetenceState();
             printCompetenceLevels(cc.getCompetenceLevels());
 
@@ -87,7 +87,7 @@ namespace TestCompetenceComponent
                 //update according to gamesituations
                 while (doLoop)
                 {
-                    string gamesituation = cc.GetGamesituationRecommendation();
+                    string gamesituation = cc.GetGamesituationRecommendation()[0];
                     if (gamesituation == null)
                     {
                         Console.WriteLine("There is no gamesituation to present. Try again after some time with Enter.");
