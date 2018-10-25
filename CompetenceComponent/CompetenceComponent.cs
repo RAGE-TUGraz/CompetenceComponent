@@ -119,10 +119,10 @@ namespace CompetenceComponentNamespace
         /// </summary>
         /// <param name="competence">string id of the competence for the update</param>
         /// <param name="success">true if the competence is upgraded, false if it is downgraded</param>
-        public void UpdateCompetence(string competence, bool success, UpdateType type)
+        private void updateCompetence(string competence, bool success, UpdateType type)
         {
             if (!isInitialized)
-                Initialize();
+                initialize();
 
 
             if (!isInitialized)
@@ -137,10 +137,10 @@ namespace CompetenceComponentNamespace
         /// </summary>
         /// <param name="gamesituation">string id of the gamesituation for the update</param>
         /// <param name="success">true if the competence is upgraded, false if it is downgraded</param>
-        public void UpdateGamesituation(string gamesituation, bool success)
+        public void updateGamesituation(string gamesituation, bool success)
         {
             if (!isInitialized)
-                Initialize();
+                initialize();
 
 
             if (!isInitialized)
@@ -154,10 +154,10 @@ namespace CompetenceComponentNamespace
         /// Request the string id of the next competence to test/train
         /// </summary>
         /// <returns> the string id of the competence to train/test</returns>
-        public string GetCompetenceRecommendation(UpdateType type)
+        private string getCompetenceRecommendation(UpdateType type)
         {
             if (!isInitialized)
-                Initialize();
+                initialize();
             
             if (!isInitialized)
                 return null;
@@ -170,10 +170,10 @@ namespace CompetenceComponentNamespace
         /// Request the string id of the next gamesituation to test/train
         /// </summary>
         /// <returns> the string id of the gamesituation to train/test</returns>
-        public List<string> GetGamesituationRecommendation(int quantity=1)
+        public List<string> getGamesituationRecommendation(int quantity=1)
         {
             if (!isInitialized)
-                Initialize();
+                initialize();
 
             if (!isInitialized)
                 return null;
@@ -185,7 +185,7 @@ namespace CompetenceComponentNamespace
         /// <summary>
         /// Is loading the dataModel and preparing the component's functionality
         /// </summary>
-        public void Initialize()
+        public void initialize()
         {
             try
             {
@@ -198,10 +198,10 @@ namespace CompetenceComponentNamespace
             }
         }
 
-        public void ResetCompetenceState()
+        public void resetCompetenceState()
         {
             if (!isInitialized)
-                Initialize();
+                initialize();
             
             if (!isInitialized)
                 return;
@@ -220,7 +220,7 @@ namespace CompetenceComponentNamespace
         {
 
             if (!isInitialized)
-                Initialize();
+                initialize();
 
             if (!isInitialized)
                 return null;
@@ -233,7 +233,7 @@ namespace CompetenceComponentNamespace
         {
 
             if (!isInitialized)
-                Initialize();
+                initialize();
 
             if (!isInitialized)
                 return -1;

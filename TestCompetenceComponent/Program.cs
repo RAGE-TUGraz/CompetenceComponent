@@ -76,7 +76,7 @@ namespace TestCompetenceComponent
 
 
             //*
-            cc.ResetCompetenceState();
+            cc.resetCompetenceState();
             printCompetenceLevels(cc.getCompetenceLevels());
 
             bool doGamesituations = true;
@@ -87,7 +87,7 @@ namespace TestCompetenceComponent
                 //update according to gamesituations
                 while (doLoop)
                 {
-                    string gamesituation = cc.GetGamesituationRecommendation()[0];
+                    string gamesituation = cc.getGamesituationRecommendation()[0];
                     if (gamesituation == null)
                     {
                         Console.WriteLine("There is no gamesituation to present. Try again after some time with Enter.");
@@ -108,50 +108,10 @@ namespace TestCompetenceComponent
                             switch (input.KeyChar)
                             {
                                 case 'p':
-                                    cc.UpdateGamesituation(gamesituation, true);
+                                    cc.updateGamesituation(gamesituation, true);
                                     break;
                                 case 'n':
-                                    cc.UpdateGamesituation(gamesituation, false);
-                                    break;
-                                default:
-                                    continue;
-                            }
-                            printCompetenceLevels(cc.getCompetenceLevels());
-                        }
-                    }
-                }
-
-            }
-            else
-            {
-                // update according to competencies
-                while (doLoop)
-                {
-                    string competence = cc.GetCompetenceRecommendation(UpdateType.ASSESSMENT);
-                    if (competence == null)
-                    {
-                        Console.WriteLine("There is no competence to present. Try again after some time with Enter.");
-                        Console.ReadLine();
-                    }
-                    else
-                    {
-                        Console.WriteLine("Presented Competence: '" + competence + "'");
-                        Console.WriteLine("[e]...Exit   [p]...positive evidence   [n]...negative evidence");
-                        ConsoleKeyInfo input = Console.ReadKey();
-                        Console.WriteLine("");
-                        if (input.KeyChar.Equals('e'))
-                        {
-                            doLoop = false;
-                        }
-                        else
-                        {
-                            switch (input.KeyChar)
-                            {
-                                case 'p':
-                                    cc.UpdateCompetence(competence, true, UpdateType.ASSESSMENT);
-                                    break;
-                                case 'n':
-                                    cc.UpdateCompetence(competence, false, UpdateType.ASSESSMENT);
+                                    cc.updateGamesituation(gamesituation, false);
                                     break;
                                 default:
                                     continue;
