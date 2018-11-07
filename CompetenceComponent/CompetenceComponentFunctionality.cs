@@ -902,24 +902,44 @@ namespace CompetenceComponentNamespace
             storeAssessmentState();
         }
 
-        public void updateGamesituation(string gamesituationId, bool success)
+        public GamesituationUpdateDescription updateGamesituation(string gamesituationId, bool success)
         {
             AssessmentGamesituation situation = getAssessmentGamesituationById(gamesituationId);
             if (situation == null)
             {
                 CompetenceComponentFunctionality.loggingCC("Can't update: GS '" + gamesituationId + "' not found");
-                return;
+                return null;
             }
 
             CompetenceComponentFunctionality.loggingCC("Update according to GS '" + gamesituationId + "'");
+            GamesituationUpdateDescription updateInfoGs = new GamesituationUpdateDescription();
+            updateInfoGs.gamesituationId = gamesituationId;
             foreach (AssessmentGamesituationCompetence competence in situation.competences)
             {
+                //set update infos 1
+                CompetenceUpdateDescription newCompetenceUpdateInfo = new CompetenceUpdateDescription();
+                AssessmentCompetence aCompetence = getAssessmentCompetenceById(competence.id);
+                newCompetenceUpdateInfo.competenceId = competence.id;
+                newCompetenceUpdateInfo.previousAssessmentValue = aCompetence.valueAssessment;
+                newCompetenceUpdateInfo.previousLearnValue = aCompetence.valueLearning;
+                newCompetenceUpdateInfo.previousLevelLearning = aCompetence.getCompetenceLevel(UpdateType.LEARNING);
+                newCompetenceUpdateInfo.previousLevelAssessment = aCompetence.getCompetenceLevel(UpdateType.ASSESSMENT);
                 //order of update - low competences should be updated first
                 if (situation.isLearning)
                     updateCompetence(competence.id, success, UpdateType.LEARNING, situation.difficulty * competence.weight);
                 if (situation.isAssessment)
                     updateCompetence(competence.id, success, UpdateType.ASSESSMENT, situation.difficulty * competence.weight);
+
+                //set update infos 2
+                newCompetenceUpdateInfo.newAssessmentValue = aCompetence.valueAssessment;
+                newCompetenceUpdateInfo.newLearnValue = aCompetence.valueLearning;
+                newCompetenceUpdateInfo.newLevelLearning = aCompetence.getCompetenceLevel(UpdateType.LEARNING);
+                newCompetenceUpdateInfo.newLevelAssessment = aCompetence.getCompetenceLevel(UpdateType.ASSESSMENT);
+                updateInfoGs.competenceUpdateInformation.Add(newCompetenceUpdateInfo);
             }
+
+            updateInfoGs.printToConsole();
+            return updateInfoGs;
         }
 
         public void resetCompetenceState()
@@ -1391,6 +1411,47 @@ namespace CompetenceComponentNamespace
         #endregion
     }
 
+    #endregion
+    #region ReturnObjects
+    public class GamesituationUpdateDescription
+    {
+        public string gamesituationId;
+        public List<CompetenceUpdateDescription> competenceUpdateInformation = new List<CompetenceUpdateDescription>();
+
+        internal void printToConsole()
+        {
+            CompetenceComponentFunctionality.loggingCC("===============================");
+            CompetenceComponentFunctionality.loggingCC(gamesituationId+":");
+            CompetenceComponentFunctionality.loggingCC("-----------------");
+            foreach (CompetenceUpdateDescription info in competenceUpdateInformation)
+            {
+                info.printToConsole();
+            }
+            CompetenceComponentFunctionality.loggingCC("===============================");
+        }
+    }
+
+    public class CompetenceUpdateDescription
+    {
+        public string competenceId;
+        public float previousLearnValue;
+        public float newLearnValue;
+        public float previousAssessmentValue;
+        public float newAssessmentValue;
+        public int previousLevelLearning;
+        public int newLevelLearning;
+        public int previousLevelAssessment;
+        public int newLevelAssessment;
+
+        internal void printToConsole()
+        {
+            CompetenceComponentFunctionality.loggingCC(competenceId + ":");
+            CompetenceComponentFunctionality.loggingCC("   LV:"+previousLearnValue+"->"+newLearnValue);
+            CompetenceComponentFunctionality.loggingCC("   LL:" + previousLevelLearning + "->" + newLevelLearning);
+            CompetenceComponentFunctionality.loggingCC("   AV:" + previousAssessmentValue + "->" + newAssessmentValue);
+            CompetenceComponentFunctionality.loggingCC("   AL:" + previousLevelAssessment + "->" + newLevelAssessment);
+        }
+    }
     #endregion
     #region Exceptions
     public class DataModelNotFoundException : Exception
