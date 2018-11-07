@@ -137,17 +137,17 @@ namespace CompetenceComponentNamespace
         /// </summary>
         /// <param name="gamesituation">string id of the gamesituation for the update</param>
         /// <param name="success">true if the competence is upgraded, false if it is downgraded</param>
-        public void updateGamesituation(string gamesituation, bool success)
+        public GamesituationUpdateDescription updateGamesituation(string gamesituation, bool success)
         {
             if (!isInitialized)
                 initialize();
 
 
             if (!isInitialized)
-                return;
+                return null;
 
             CompetenceComponentFunctionality.updateDueToForgetting();
-            CompetenceComponentFunctionality.UpdateGamesituation(gamesituation, success);
+            return CompetenceComponentFunctionality.UpdateGamesituation(gamesituation, success);
         }
 
         /// <summary>
@@ -242,6 +242,36 @@ namespace CompetenceComponentNamespace
 
             int level = getCompetenceLevels()[competenceId][pos];
             return level;
+        }
+
+        /// <summary>
+        /// Returns the competence id and its competence values in a dictionary.
+        /// </summary>
+        /// <returns>
+        /// float[0]=learning value
+        /// float[1]=assessment value
+        /// </returns>
+        public Dictionary<string,float[]> getCompetenceValues()
+        {
+            if (!isInitialized)
+                initialize();
+
+            if (!isInitialized)
+                return null;
+
+            CompetenceComponentFunctionality.updateDueToForgetting();
+            return CompetenceComponentFunctionality.getCompetenceValues();
+        }
+
+        public void setCompetenceValues(string competenceId, float learningValue, float assessmentValue)
+        {
+            if (!isInitialized)
+                initialize();
+
+            if (!isInitialized)
+                return;
+
+            CompetenceComponentFunctionality.setCompetenceValues(competenceId, learningValue, assessmentValue);
         }
 
         #endregion Methods

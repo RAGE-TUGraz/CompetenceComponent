@@ -98,9 +98,19 @@ namespace CompetenceComponentNamespace
             assessmentObject.updateCompetence(competence, success, type);
         }
 
-        internal static void UpdateGamesituation(string gamesituation, bool success)
+        internal static Dictionary<string, float[]> getCompetenceValues()
         {
-            assessmentObject.updateGamesituation(gamesituation, success);
+            return assessmentObject.getCompetenceValues();
+        }
+
+        internal static void setCompetenceValues(string competenceId, float learningValue, float assessmentValue)
+        {
+            assessmentObject.setCompetenceValues(competenceId, learningValue, assessmentValue);
+        }
+
+        internal static GamesituationUpdateDescription UpdateGamesituation(string gamesituation, bool success)
+        {
+            return assessmentObject.updateGamesituation(gamesituation, success);
         }
 
         internal static CompetenceComponentSettings getSettings()
@@ -773,6 +783,7 @@ namespace CompetenceComponentNamespace
         public List<AssessmentCompetence> competences;
         public List<AssessmentGamesituation> gamesituations;
         public Difficulties difficulties;
+        private string dataModelName = null;
         #endregion
         #region Constructor
         public CompetenceAssessmentObject()
@@ -798,13 +809,23 @@ namespace CompetenceComponentNamespace
             return null;
         }
 
+        private string getStorageModelName()
+        {
+            if (dataModelName == null)
+            {
+                dataModelName= CompetenceComponentFunctionality.getSettings().CompetenceValueStoragePrefix;
+            }
+            
+            return dataModelName+"_CompetenceComponent_AssessmentState";
+        }
+
         public void loadAssessmentState()
         {
             GameStorageClientAsset gameStorage = CompetenceComponentFunctionality.getGameStorageAsset();
             StorageLocations storageLocation = StorageLocations.Local;
 
             //try to load model, if possible -> load assessment state, else create model and store model + competence state
-            String model = "CompetenceComponent_AssessmentState";
+            String model = getStorageModelName();
 
             gameStorage.AddModel(model);
             Boolean isStructureRestored = gameStorage.LoadStructure(model, storageLocation, SerializingFormat.Xml);
@@ -853,7 +874,7 @@ namespace CompetenceComponentNamespace
         {
             GameStorageClientAsset gameStorage = CompetenceComponentFunctionality.getGameStorageAsset();
             StorageLocations storageLocation = StorageLocations.Local;
-            String model = "CompetenceComponent_AssessmentState";
+            String model = getStorageModelName();
 
             //gameStorage.AddModel(model);
 
@@ -1061,6 +1082,28 @@ namespace CompetenceComponentNamespace
             }
 
             return competenceLevels;
+        }
+
+        public Dictionary<string, float[]> getCompetenceValues()
+        {
+            Dictionary<string, float[]> competenceValues = new Dictionary<string, float[]>();
+            foreach (AssessmentCompetence competence in competences)
+            {
+                float[] level = new float[2];
+                level[0] = competence.valueAssessment;
+                level[1] = competence.valueLearning;
+                competenceValues[competence.id] = level;
+            }
+
+            return competenceValues;
+        }
+
+        public void setCompetenceValues(string competenceId, float learningValue, float assessmentValue)
+        {
+            AssessmentCompetence comp = getAssessmentCompetenceById(competenceId);
+            comp.valueLearning = learningValue;
+            comp.valueAssessment = assessmentValue;
+            storeAssessmentState();
         }
 
         //returns two interger: possessed difficulty >=1, and max difficulty

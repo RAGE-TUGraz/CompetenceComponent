@@ -54,6 +54,7 @@ namespace CompetenceComponentNamespace
             NumberOfLevels = 3;
             LinearDecreasionOfCompetenceValuePerDay = 0.1f;
             SourceFile = "dataModel.xml";
+            CompetenceValueStoragePrefix = "default";
             Phase = CompetenceComponentPhase.DEFAULT;
             CompetencePauseTimeInSeconds = 60*24;
             ThreasholdRecommendationSelection = 24/(24*60*2); //half minute
@@ -132,6 +133,20 @@ namespace CompetenceComponentNamespace
             set;
         }
 
+
+        /// <summary>
+        /// Specifies from which file to load the data model xml
+        /// </summary>
+        ///
+        /// <value>
+        /// string
+        /// </value>
+        [XmlElement()]
+        public string CompetenceValueStoragePrefix
+        {
+            get;
+            set;
+        }
 
         /// <summary>
         /// Specifies which value need to be reached by competencies to be select an assessment game situation

@@ -79,6 +79,9 @@ namespace TestCompetenceComponent
             cc.resetCompetenceState();
             printCompetenceLevels(cc.getCompetenceLevels());
 
+            cc.setCompetenceValues(new List<string>(cc.getCompetenceValues().Keys)[0],1,1);
+            Console.WriteLine("Load Value:"+cc.getCompetenceValues()[new List<string>(cc.getCompetenceValues().Keys)[0]][0]);
+
             bool doGamesituations = true;
 
             bool doLoop = true;
