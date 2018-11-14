@@ -37,6 +37,8 @@ namespace TestCompetenceComponent
     {
         static void Main(string[] args)
         {
+            test();
+            /*
             //create Asset Manager and assign Bridge
             AssetManager am = AssetManager.Instance;
             am.Bridge = new Bridge();
@@ -51,6 +53,7 @@ namespace TestCompetenceComponent
             ccs.Phase = CompetenceComponentPhase.DEFAULT;
             ccs.ThreasholdRecommendationSelection = 1f/(60f*60f);
             cc.Settings = ccs;
+            //*/
 
             //test loading/storing assessment object 
             /*
@@ -62,6 +65,7 @@ namespace TestCompetenceComponent
 
             //cc.getDataModel().printToCommandline();
 
+            /*
             DataModel dm = new DataModel();
             dm.addCompetence("C1");
             dm.addCompetence("C2");
@@ -74,8 +78,10 @@ namespace TestCompetenceComponent
             dm.addGamesituation("GS1","easy",true, true, competencies);
             dm.printToCommandline();
 
+            //*/
 
-            //*
+
+            /*
             cc.resetCompetenceState();
             printCompetenceLevels(cc.getCompetenceLevels());
 
@@ -137,6 +143,105 @@ namespace TestCompetenceComponent
             foreach (string competence in levels.Keys)
             {
                 Console.WriteLine(competence+":  A:"+levels[competence][0] + "_L:" + levels[competence][1] + "/"+ (((CompetenceComponentSettings)CompetenceComponent.Instance.Settings).NumberOfLevels-1).ToString());
+            }
+        }
+
+        public static void test()
+        {
+            testRun(true, true);
+            testRun(true, false);
+            testRun(false, true);
+            testRun(false, false);
+        }
+
+        public static void testRun(bool dm1, bool set)
+        {
+            //PlayerPrefs.DeleteAll();
+
+            //Bridge
+            Bridge bridge = new Bridge();
+
+            //Create two data models that share one competence
+            DataModel dataModel = new DataModel();
+            string dmName = "";
+            string playerName = "";
+            if (dm1)
+            {
+                dataModel.addCompetence("C1");
+                dataModel.addCompetence("C2");
+                dmName = "firstDMName.xml";
+                playerName = "player_dm1";
+            }
+            else
+            {
+                dataModel.addCompetence("C1");
+                dataModel.addCompetence("C3");
+                dmName = "secondDMName.xml";
+                playerName = "player_dm2";
+            }
+            
+
+           
+            AssetManager am = AssetManager.Instance;
+            //Creation of the Asset Manager
+
+            am.Bridge = new Bridge();
+            //Set the bridge of the Asset Manager(Bridge implementation needs to be in place)
+
+
+            //Save data models
+            dataModel.storeToFile(dmName);
+
+            CompetenceComponent cc = CompetenceComponent.Instance;
+            //Creation of the Asset
+
+            CompetenceComponentSettings ccs = new CompetenceComponentSettings();
+            //Creation of the Asset’s settings. In the following, the setting-values are adjusted.
+
+            ccs.NumberOfLevels = 3;
+            //Set the number of levels for the competences -learning and assessment values.
+
+            ccs.LinearDecreasionOfCompetenceValuePerDay = 0.1f;
+            //Set the decreation rate(forgetting) -this is done linearely
+
+            ccs.SourceFile = dmName;
+            //Set the path of the xml-data model.
+
+            ccs.CompetenceValueStoragePrefix = playerName;
+            //Set the prefix of the file storing the competence values.
+
+            ccs.CompetencePauseTimeInSeconds = 5;
+            //The pause time for a competence on the lowest level.This quantity is introduced for the Leitner-System.
+
+            ccs.Phase = CompetenceComponentPhase.DEFAULT;
+            //Can either be CompetenceComponentPhase.DEFAULT or CompetenceComponentPhase.ASSESSMENT.In the default state, learning and assessment game situations are selected.In assessment state, only assessment game situations are selected.
+
+            ccs.ThreasholdRecommendationSelection = 1f / (60f * 60f);
+            //Threshold for Assessment value of game situations.If this value is exceeded a assessment game situation is selected.Otherwise, a learning game situation is selected.
+
+            cc.Settings = ccs;
+            //The Assets’s settings are stored in the Asset.
+
+            
+            cc.initialize();
+
+            if (dm1 && set)
+            {
+                cc.setCompetenceValues("C1", 0.5f, 0.5f);
+                cc.setCompetenceValues("C2", 0.75f, 0.75f);
+            }
+            else if(set)
+            {
+                cc.setCompetenceValues("C1", 0.75f, 0.75f);
+                cc.setCompetenceValues("C3", 0.75f, 0.75f);
+            }
+
+            Dictionary<string, float[]> values = cc.getCompetenceValues();
+
+
+            foreach (KeyValuePair<string, float[]> pair in values)
+            {
+                Console.WriteLine("{0} - learning: {1} - assessment: {2}", pair.Key, pair.Value[0], pair.Value[1]);
             }
         }
     }

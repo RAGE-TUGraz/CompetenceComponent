@@ -302,6 +302,8 @@ namespace CompetenceComponentNamespace
             return CompetenceComponentFunctionality.getAssessmentObject();
         }
 
+
+
         #endregion
     }
 }

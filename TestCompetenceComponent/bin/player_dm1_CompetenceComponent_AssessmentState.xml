@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Model>
+<Nodes>
+<Node>
+  <Value>&lt;string&gt;0,5&amp;amp;0,5&amp;amp;14.11.2018 17:36:50&amp;amp;14.11.2018 17:36:50&amp;amp;14.11.2018 17:36:50&lt;/string&gt;</Value>
+  <Path>C1</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,75&amp;amp;0,75&amp;amp;14.11.2018 17:36:50&amp;amp;14.11.2018 17:36:50&amp;amp;14.11.2018 17:36:50&lt;/string&gt;</Value>
+  <Path>C2</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,5&amp;amp;0,5&amp;amp;14.11.2018 17:36:50&amp;amp;14.11.2018 17:36:50&amp;amp;14.11.2018 17:36:50&lt;/string&gt;</Value>
+  <Path>C1</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,75&amp;amp;0,75&amp;amp;14.11.2018 17:36:50&amp;amp;14.11.2018 17:36:50&amp;amp;14.11.2018 17:36:50&lt;/string&gt;</Value>
+  <Path>C2</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,5&amp;amp;0,5&amp;amp;14.11.2018 17:36:50&amp;amp;14.11.2018 17:36:50&amp;amp;14.11.2018 17:36:50&lt;/string&gt;</Value>
+  <Path>C1</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+<Node>
+  <Value>&lt;string&gt;0,75&amp;amp;0,75&amp;amp;14.11.2018 17:36:50&amp;amp;14.11.2018 17:36:50&amp;amp;14.11.2018 17:36:50&lt;/string&gt;</Value>
+  <Path>C2</Path>
+  <ValueType>System.String</ValueType>
+</Node>
+</Nodes>
+</Model>

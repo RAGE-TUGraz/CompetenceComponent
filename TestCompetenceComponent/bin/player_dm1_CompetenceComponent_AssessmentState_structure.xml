@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Model>
+<Nodes>
+<NodePath>
+  <Path />
+  <Purpose>player_dm1_CompetenceComponent_AssessmentState</Purpose>
+  <Location>Local</Location>
+</NodePath>
+<NodePath>
+  <Path>C1</Path>
+  <Location>Local</Location>
+</NodePath>
+<NodePath>
+  <Path>C2</Path>
+  <Location>Local</Location>
+</NodePath>
+</Nodes>
+</Model>

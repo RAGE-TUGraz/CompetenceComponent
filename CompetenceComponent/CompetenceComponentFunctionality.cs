@@ -71,6 +71,7 @@ namespace CompetenceComponentNamespace
         {
             if (doLogging)
                 CompetenceComponent.Instance.Log(severity, "[CC]: " + msg);
+
         }
 
         #endregion
@@ -827,7 +828,14 @@ namespace CompetenceComponentNamespace
             //try to load model, if possible -> load assessment state, else create model and store model + competence state
             String model = getStorageModelName();
 
-            gameStorage.AddModel(model);
+            try
+            {
+                gameStorage.AddModel(model);
+            }
+            catch (Exception e)
+            {
+
+            }
             Boolean isStructureRestored = gameStorage.LoadStructure(model, storageLocation, SerializingFormat.Xml);
             if (isStructureRestored)
             {
