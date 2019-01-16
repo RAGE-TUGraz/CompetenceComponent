@@ -491,6 +491,21 @@ namespace CompetenceComponentNamespace
 
         }
 
+        public bool isCompetenceInOneGS(string competenceName)
+        {
+            foreach(Gamesituation gs in this.elements.gamesituationList.gamesituations)
+            {
+                foreach (GamesituationCompetence comp in gs.competences)
+                {
+                    if (comp.id.Equals(competenceName))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
         public static DataModel createDummyDataModel(int numberOfCompetences)
         {
             DataModel dm = new DataModel();
@@ -988,15 +1003,27 @@ namespace CompetenceComponentNamespace
 
             foreach (Competence competence in dataModel.elements.competenceList.competences)
             {
-                competences.Add(new AssessmentCompetence(competence.id, initialValue));
+                //check: is competence in at least one GS?
+                if (dataModel.isCompetenceInOneGS(competence.id))
+                {
+                    competences.Add(new AssessmentCompetence(competence.id, initialValue));
+                }
             }
 
             foreach (PrerequisiteCompetence comp in dataModel.relations.competenceprerequisites.competenceList)
             {
+                //TODO check: are both competencies in at least one GS?
                 AssessmentCompetence competence = getAssessmentCompetenceById(comp.id);
+                if (competence == null)
+                {
+                    continue;
+                }
                 foreach (Prerequisite prerequisite in comp.prerequisites)
                 {
-                    competence.prerequisites.Add(getAssessmentCompetenceById(prerequisite.id));
+                    if (dataModel.isCompetenceInOneGS(prerequisite.id))
+                    {
+                        competence.prerequisites.Add(getAssessmentCompetenceById(prerequisite.id));
+                    }
                 }
             }
 
