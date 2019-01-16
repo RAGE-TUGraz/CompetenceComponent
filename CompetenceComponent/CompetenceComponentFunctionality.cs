@@ -109,9 +109,9 @@ namespace CompetenceComponentNamespace
             assessmentObject.setCompetenceValues(competenceId, learningValue, assessmentValue);
         }
 
-        internal static GamesituationUpdateDescription UpdateGamesituation(string gamesituation, bool success)
+        internal static GamesituationUpdateDescription UpdateGamesituation(string gamesituation, bool success, float quality)
         {
-            return assessmentObject.updateGamesituation(gamesituation, success);
+            return assessmentObject.updateGamesituation(gamesituation, success, quality);
         }
 
         internal static CompetenceComponentSettings getSettings()
@@ -894,7 +894,7 @@ namespace CompetenceComponentNamespace
             gameStorage.SaveData(model, storageLocation, SerializingFormat.Xml);
         }
 
-        public void updateCompetence(string competenceId, bool success, UpdateType type, float factor = 1.0f)
+        public void updateCompetence(string competenceId, bool success, UpdateType type, float quality, float factor = 1.0f)
         {
             AssessmentCompetence ac = getAssessmentCompetenceById(competenceId);
             if (ac == null)
@@ -906,6 +906,7 @@ namespace CompetenceComponentNamespace
 
             float updateValue = 1.0f / (float)CompetenceComponentFunctionality.getSettings().NumberOfLevels;
             updateValue *= factor;
+            updateValue *= quality;
             float oldValue=0;
             float newValue=0;
             if (type.Equals(UpdateType.ASSESSMENT))
@@ -931,7 +932,7 @@ namespace CompetenceComponentNamespace
             storeAssessmentState();
         }
 
-        public GamesituationUpdateDescription updateGamesituation(string gamesituationId, bool success)
+        public GamesituationUpdateDescription updateGamesituation(string gamesituationId, bool success, float quality)
         {
             AssessmentGamesituation situation = getAssessmentGamesituationById(gamesituationId);
             if (situation == null)
@@ -955,9 +956,9 @@ namespace CompetenceComponentNamespace
                 newCompetenceUpdateInfo.previousLevelAssessment = aCompetence.getCompetenceLevel(UpdateType.ASSESSMENT);
                 //order of update - low competences should be updated first
                 if (situation.isLearning)
-                    updateCompetence(competence.id, success, UpdateType.LEARNING, situation.difficulty * competence.weight);
+                    updateCompetence(competence.id, success, UpdateType.LEARNING, quality, situation.difficulty * competence.weight);
                 if (situation.isAssessment)
-                    updateCompetence(competence.id, success, UpdateType.ASSESSMENT, situation.difficulty * competence.weight);
+                    updateCompetence(competence.id, success, UpdateType.ASSESSMENT, quality, situation.difficulty * competence.weight);
 
                 //set update infos 2
                 newCompetenceUpdateInfo.newAssessmentValue = aCompetence.valueAssessment;

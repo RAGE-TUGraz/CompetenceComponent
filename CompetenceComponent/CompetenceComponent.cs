@@ -137,8 +137,13 @@ namespace CompetenceComponentNamespace
         /// </summary>
         /// <param name="gamesituation">string id of the gamesituation for the update</param>
         /// <param name="success">true if the competence is upgraded, false if it is downgraded</param>
-        public GamesituationUpdateDescription updateGamesituation(string gamesituation, bool success)
+        public GamesituationUpdateDescription updateGamesituation(string gamesituation, bool success, float quality = 1.0f)
         {
+            if (quality < 0 || quality >1)
+            {
+                throw new Exception("Quality values for game situation updtae need to be between and including 0 and 1.");
+            }
+
             if (!isInitialized)
                 initialize();
 
@@ -147,7 +152,7 @@ namespace CompetenceComponentNamespace
                 return null;
 
             CompetenceComponentFunctionality.updateDueToForgetting();
-            return CompetenceComponentFunctionality.UpdateGamesituation(gamesituation, success);
+            return CompetenceComponentFunctionality.UpdateGamesituation(gamesituation, success, quality);
         }
 
         /// <summary>
