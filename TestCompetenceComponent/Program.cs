@@ -37,8 +37,8 @@ namespace TestCompetenceComponent
     {
         static void Main(string[] args)
         {
-            test();
-            /*
+            //test();
+            //*
             //create Asset Manager and assign Bridge
             AssetManager am = AssetManager.Instance;
             am.Bridge = new Bridge();
@@ -65,7 +65,7 @@ namespace TestCompetenceComponent
 
             //cc.getDataModel().printToCommandline();
 
-            /*
+            //*
             DataModel dm = new DataModel();
             dm.addCompetence("C1");
             dm.addCompetence("C2");
@@ -81,7 +81,7 @@ namespace TestCompetenceComponent
             //*/
 
 
-            /*
+            //*
             cc.resetCompetenceState();
             printCompetenceLevels(cc.getCompetenceLevels());
 

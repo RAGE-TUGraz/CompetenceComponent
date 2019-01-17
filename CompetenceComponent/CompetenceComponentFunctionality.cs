@@ -96,7 +96,7 @@ namespace CompetenceComponentNamespace
         /// <param name="success">true if the competence is upgraded, false if it is downgraded</param>
         internal static void UpdateCompetence(string competence, bool success, UpdateType type)
         {
-            assessmentObject.updateCompetence(competence, success, type);
+            assessmentObject.updateCompetence(competence, success, type, 1f);
         }
 
         internal static Dictionary<string, float[]> getCompetenceValues()
