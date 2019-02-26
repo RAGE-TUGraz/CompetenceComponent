@@ -331,6 +331,8 @@ namespace CompetenceComponentNamespace
             float sumOfWeights = 0;
             Gamesituation gamesituation = new Gamesituation();
             gamesituation.id = id;
+            gamesituation.isAssessment = isAssessment;
+            gamesituation.isLearning = isLearning;
             gamesituation.difficulty = difficulty;
             foreach (string comp_id in competencies.Keys)
             {
